@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Vibration Settings • Iqranix</title>
+
+<meta name="theme-color"
+content="#0B6E4F">
+
+<link rel="stylesheet"
+href="vibration-settings.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html"
+class="backButton">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+src="logo.png"
+alt="Iqranix Logo"
+class="heroLogo">
+
+<h1>
+
+Vibration Settings
+
+</h1>
+
+<p>
+
+Customize how Iqranix vibrates for Adhan, reminders and notifications.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>
+
+📳 General Vibration
+
+</h2>
+
+<p class="description">
+
+Enable or disable vibration throughout the app.
+
+</p>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Enable Vibration
+
+</h3>
+
+<p>
+
+Turn vibration on or off for all supported features.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="enableVibration"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Vibrate During Adhan
+
+</h3>
+
+<p>
+
+The phone vibrates when the Adhan starts.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="vibrateAdhan"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Vibrate Before Adhan
+
+</h3>
+
+<p>
+
+Short vibration before the Adhan notification.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="vibrateBefore">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+<section class="card">
+
+<h2>
+
+📱 Interaction Vibration
+
+</h2>
+
+<p class="description">
+
+Choose how Iqranix responds to touch interactions.
+
+</p>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Button Feedback
+
+</h3>
+
+<p>
+
+Vibrate briefly whenever a button is pressed.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="buttonVibration"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Long Press Feedback
+
+</h3>
+
+<p>
+
+Vibrate when performing a long press.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="longPressVibration"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Vibration Duration
+
+</h3>
+
+<p>
+
+Choose how long vibration lasts.
+
+</p>
+
+</div>
+
+<select id="vibrationDuration">
+
+<option value="30">
+
+Short (30 ms)
+
+</option>
+
+<option value="60" selected>
+
+Normal (60 ms)
+
+</option>
+
+<option value="120">
+
+Long (120 ms)
+
+</option>
+
+<option value="250">
+
+Extra Long (250 ms)
+
+</option>
+
+</select>
+
+</div>
+
+<div class="buttonGroup">
+
+<button
+id="testVibration"
+class="secondaryButton">
+
+📳 Test Vibration
+
+</button>
+
+</div>
+
+</section>
+<!-- BATTERY SAVER -->
+
+<section class="card">
+
+<h2>
+
+🔋 Battery Saving
+
+</h2>
+
+<p class="description">
+
+Reduce vibration usage to help conserve your device's battery.
+
+</p>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+Battery Saver Mode
+
+</h3>
+
+<p>
+
+Limit vibration for non-essential actions while keeping important prayer notifications active.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="batterySaver">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- INFORMATION -->
+
+<section class="card">
+
+<h2>
+
+ℹ️ About Vibration
+
+</h2>
+
+<p class="description">
+
+Vibration settings depend on your device hardware. Some phones may ignore custom vibration durations or disable vibration automatically when Silent Mode or Do Not Disturb is enabled.
+
+</p>
+
+<div class="buttonGroup">
+
+<button
+id="saveVibrationSettings"
+class="primaryButton">
+
+💾 Save Settings
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="vibration-settings.js"></script>
+
+</body>
+
+</html>
