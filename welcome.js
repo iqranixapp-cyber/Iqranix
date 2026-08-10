@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Index.html
      */
 
-    const HOME_PAGE = "Index.html";
+    const HOME_PAGE = "index.html";
 
     const TERMS_ACCEPTED_KEY = "iqranix_terms_accepted";
 
