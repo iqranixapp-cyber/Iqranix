@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0B6E4F"
+    >
+
+    <meta
+        name="description"
+        content="IQRANIX Islamic Quiz — Test your knowledge of Islam."
+    >
+
+    <title>Islamic Quiz | IQRANIX</title>
+
+    <link
+        rel="stylesheet"
+        href="quiz.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="quiz-header">
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+            aria-label="Go back"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-title">
+
+            <span>
+                IQRANIX • KNOWLEDGE
+            </span>
+
+            <h1>
+                Islamic Quiz
+            </h1>
+
+        </div>
+
+        <div class="header-score">
+            <i class="fa-solid fa-star"></i>
+            <span id="headerScore">0</span>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="quiz-page">
+
+        <!-- INTRO -->
+
+        <section
+            id="quizIntro"
+            class="quiz-intro"
+        >
+
+            <div class="intro-icon">
+                🧠
+            </div>
+
+            <span class="section-label">
+                TEST YOUR KNOWLEDGE
+            </span>
+
+            <h2>
+                How much do you know about Islam?
+            </h2>
+
+            <p>
+                Answer questions about the Qur'an, Hadith,
+                Prophets, Seerah, Companions, worship and
+                Islamic history.
+            </p>
+
+            <div class="quiz-info">
+
+                <div>
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Type your answer</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Get instant feedback</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Learn the correct answer</span>
+                </div>
+
+            </div>
+
+            <button
+                id="startQuiz"
+                class="primary-button"
+                type="button"
+            >
+                Start Quiz
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </section>
+
+
+        <!-- QUIZ -->
+
+        <section
+            id="quizContainer"
+            class="quiz-container hidden"
+        >
+
+            <!-- PROGRESS -->
+
+            <div class="quiz-progress">
+
+                <div class="progress-info">
+
+                    <span id="questionNumber">
+                        Question 1
+                    </span>
+
+                    <span id="questionTotal">
+                        of 10
+                    </span>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        id="quizProgressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION CARD -->
+
+            <article class="question-card">
+
+                <span
+                    id="questionCategory"
+                    class="question-category"
+                >
+                    SEERAH
+                </span>
+
+                <h2 id="questionText">
+                    Question loading...
+                </h2>
+
+                <!-- ANSWER -->
+
+                <label
+                    for="answerInput"
+                    class="answer-label"
+                >
+                    Your answer
+                </label>
+
+                <input
+                    id="answerInput"
+                    class="answer-input"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Type your answer here..."
+                >
+
+                <!-- SUBMIT -->
+
+                <button
+                    id="submitAnswer"
+                    class="submit-button"
+                    type="button"
+                >
+                    Submit Answer
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+
+                <!-- RESULT -->
+
+                <div
+                    id="answerResult"
+                    class="answer-result hidden"
+                >
+
+                    <div
+                        id="resultIcon"
+                        class="result-icon"
+                    >
+                    </div>
+
+                    <div class="result-text">
+
+                        <h3 id="resultTitle">
+                            Correct!
+                        </h3>
+
+                        <p id="resultMessage">
+                        </p>
+
+                        <div class="correct-answer-box">
+
+                            <span>
+                                CORRECT ANSWER
+                            </span>
+
+                            <strong id="correctAnswer">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEXT -->
+
+                <button
+                    id="nextQuestion"
+                    class="next-button hidden"
+                    type="button"
+                >
+                    Next Question
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- FINAL RESULT -->
+
+        <section
+            id="quizResult"
+            class="quiz-result hidden"
+        >
+
+            <div class="result-trophy">
+                🏆
+            </div>
+
+            <span class="section-label">
+                QUIZ COMPLETE
+            </span>
+
+            <h2>
+                Well done!
+            </h2>
+
+            <p id="finalMessage">
+                You have completed the quiz.
+            </p>
+
+            <div class="final-score">
+
+                <span>
+                    YOUR SCORE
+                </span>
+
+                <strong id="finalScore">
+                    0 / 10
+                </strong>
+
+                <small id="finalPercentage">
+                    0%
+                </small>
+
+            </div>
+
+            <div class="final-actions">
+
+                <button
+                    id="restartQuiz"
+                    class="primary-button"
+                    type="button"
+                >
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Try Again
+                </button>
+
+                <button
+                    id="backHome"
+                    class="secondary-button"
+                    type="button"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    Back Home
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- TOAST -->
+
+    <div
+        id="quizToast"
+        class="quiz-toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="quiz.js"></script>
+
+</body>
+</html>

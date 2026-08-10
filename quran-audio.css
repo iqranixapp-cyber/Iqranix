@@ -1,0 +1,1002 @@
+/* =========================================================
+   IQRANIX QURAN AUDIO
+   STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #f3f8f5;
+    color: #17211d;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.quran-audio-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            180deg,
+            #eefaf4 0%,
+            #f7fbf9 45%,
+            #eef8f3 100%
+        );
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.audio-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 16px;
+
+    background: #07895b;
+    color: white;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.header-button {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.header-button:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.23);
+}
+
+
+.header-title {
+    flex: 1;
+
+    padding: 0 13px;
+}
+
+
+.header-title h1 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+.header-title p {
+    margin-top: 2px;
+
+    font-size: 11px;
+    opacity: 0.86;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.audio-main {
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 18px 14px 50px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.audio-card,
+.player-card,
+.now-playing,
+.surah-section {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(0, 60, 40, 0.08);
+}
+
+
+.audio-card {
+    padding: 18px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.card-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.heading-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #e5f6ee;
+    color: #07895b;
+
+    font-size: 19px;
+}
+
+
+.card-heading h2 {
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #17211d;
+}
+
+
+.card-heading p {
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #73817b;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.select-container {
+    position: relative;
+}
+
+
+.select-container select {
+    width: 100%;
+    height: 52px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid #d7e7df;
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #f8fcfa;
+
+    color: #18251f;
+
+    padding: 0 46px 0 15px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.select-container select:focus {
+    border-color: #07895b;
+
+    box-shadow:
+        0 0 0 3px rgba(7, 137, 91, 0.1);
+}
+
+
+.select-container > i {
+    position: absolute;
+
+    top: 50%;
+    right: 17px;
+
+    transform: translateY(-50%);
+
+    color: #07895b;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SELECTED SURAH
+   ========================================================= */
+
+.selected-surah {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 14px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f8f0,
+            #f5fbf8
+        );
+
+    border: 1px solid #d7eee3;
+}
+
+
+.selected-number {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #07895b;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.selected-details {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.selected-arabic {
+    font-family: "Amiri", serif;
+
+    font-size: 18px;
+
+    direction: rtl;
+
+    color: #087d56;
+}
+
+
+.selected-english {
+    margin-top: -1px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #17211d;
+}
+
+
+.selected-meta {
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    color: #78877f;
+}
+
+
+.selected-headphones {
+    margin-right: 4px;
+
+    color: #07895b;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
+
+.player-card {
+    padding: 20px 17px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #087d54,
+            #07895b 55%,
+            #056f4a
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 110, 70, 0.22);
+}
+
+
+.player-title {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.player-number {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.player-title h2 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.player-arabic {
+    margin-top: 1px;
+
+    font-family: "Amiri", serif;
+
+    direction: rtl;
+
+    font-size: 19px;
+}
+
+
+.player-title p {
+    margin-top: 1px;
+
+    font-size: 10px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   AUDIO STATUS
+   ========================================================= */
+
+.audio-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 17px 0 10px;
+
+    font-size: 11px;
+
+    opacity: 0.9;
+}
+
+
+.audio-status i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HIDE NATIVE AUDIO
+   ========================================================= */
+
+#quranAudio {
+    display: none;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-container {
+    width: 100%;
+}
+
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    opacity: 0.82;
+}
+
+
+#progressBar {
+    width: 100%;
+    height: 5px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    cursor: pointer;
+}
+
+
+#progressBar::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+#progressBar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTROLS
+   ========================================================= */
+
+.main-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    margin-top: 19px;
+}
+
+
+.control-button,
+.play-button {
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+
+.control-button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    font-size: 14px;
+}
+
+
+.play-button {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: white;
+    color: #07895b;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+
+.control-button:active,
+.play-button:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================================================
+   EXTRA CONTROLS
+   ========================================================= */
+
+.extra-controls {
+    display: flex;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 18px;
+}
+
+
+.extra-button {
+    min-height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 7px 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+
+.extra-button.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.extra-button i {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   VOLUME
+   ========================================================= */
+
+.volume-container {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 13px;
+
+    padding: 0 5px;
+}
+
+
+.volume-container i {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+
+#volumeBar {
+    flex: 1;
+
+    height: 4px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.28);
+
+    outline: none;
+}
+
+
+#volumeBar::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+#volumeBar::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+/* =========================================================
+   NOW PLAYING
+   ========================================================= */
+
+.now-playing {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+}
+
+
+.now-playing-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #e5f6ee;
+    color: #07895b;
+}
+
+
+.now-playing-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.now-playing-text span {
+    display: block;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    color: #84928c;
+}
+
+
+.now-playing-text strong {
+    display: block;
+
+    margin-top: 1px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 12px;
+
+    color: #17211d;
+}
+
+
+.sound-bars {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    height: 25px;
+}
+
+
+.sound-bars span {
+    width: 3px;
+
+    height: 8px;
+
+    border-radius: 5px;
+
+    background: #07895b;
+}
+
+
+.sound-bars.playing span:nth-child(1) {
+    animation: soundOne 0.7s infinite ease-in-out;
+}
+
+
+.sound-bars.playing span:nth-child(2) {
+    animation: soundTwo 0.55s infinite ease-in-out;
+}
+
+
+.sound-bars.playing span:nth-child(3) {
+    animation: soundThree 0.8s infinite ease-in-out;
+}
+
+
+.sound-bars.playing span:nth-child(4) {
+    animation: soundTwo 0.6s infinite ease-in-out;
+}
+
+
+@keyframes soundOne {
+
+    0%, 100% {
+        height: 7px;
+    }
+
+    50% {
+        height: 21px;
+    }
+
+}
+
+
+@keyframes soundTwo {
+
+    0%, 100% {
+        height: 12px;
+    }
+
+    50% {
+        height: 23px;
+    }
+
+}
+
+
+@keyframes soundThree {
+
+    0%, 100% {
+        height: 5px;
+    }
+
+    50% {
+        height: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SURAH SECTION
+   ========================================================= */
+
+.surah-section {
+    padding: 18px 13px;
+}
+
+
+.section-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+
+.section-title-row h2 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+.section-title-row p {
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    color: #84918b;
+}
+
+
+#surahCount {
+    min-width: 38px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 9px;
+
+    border-radius: 9px;
+
+    background: #e5f6ee;
+    color: #07895b;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+
+.search-box > i {
+    position: absolute;
+    left: 14px;
+
+    color: #7b8983;
+
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+
+.search-box input {
+    width: 100%;
+    height: 45px;
+
+    border: 1px solid #dce9e3;
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #f8fcfa;
+
+    color: #17211d;
+
+    padding: 0 42px 0 38px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+
+.search-box input:focus {
+    border-color: #07895b;
+
+    box-shadow:
+        0 0 0 3px rgba(7, 137, 91, 0.08);
+}
+
+
+#clearSearch {
+    position: absolute;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #78857f;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SURAH LIST
+   ========================================================= */
+
+.surah-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.surah-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 66px;
+
+    padding: 9px

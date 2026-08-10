@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Iqranix Settings</title>
+
+<meta name="theme-color"
+content="#0B6E4F">
+
+<link rel="stylesheet"
+href="styles.css">
+
+<style>
+
+:root{
+
+--bg:#081a18;
+--card:#102c29;
+--card2:#143732;
+
+--primary:#17b978;
+--gold:#ffd166;
+
+--text:#ffffff;
+--sub:#b6c7c4;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+body{
+
+background:var(--bg);
+color:var(--text);
+padding-bottom:120px;
+
+}
+
+a{
+
+text-decoration:none;
+color:inherit;
+
+}
+
+.header{
+
+padding:24px;
+display:flex;
+align-items:center;
+gap:18px;
+
+}
+
+.backBtn{
+
+width:52px;
+height:52px;
+
+border-radius:16px;
+
+background:var(--card);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:26px;
+
+color:white;
+
+}
+
+.titleBox h1{
+
+font-size:36px;
+color:var(--primary);
+margin-bottom:6px;
+
+}
+
+.titleBox p{
+
+color:var(--sub);
+
+font-size:16px;
+
+}
+
+.container{
+
+width:92%;
+margin:auto;
+
+}
+
+.card{
+
+background:var(--card);
+
+border-radius:24px;
+
+padding:22px;
+
+margin-bottom:22px;
+
+border:1px solid var(--border);
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.card h2{
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+font-size:24px;
+
+}
+
+.setting{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.setting:last-child{
+
+border-bottom:none;
+
+}
+
+.settingTitle{
+
+font-size:18px;
+font-weight:bold;
+
+}
+
+.settingDesc{
+
+margin-top:4px;
+
+font-size:14px;
+
+color:var(--sub);
+
+}
+
+.switch{
+
+position:relative;
+
+width:58px;
+
+height:30px;
+
+}
+
+.switch input{
+
+display:none;
+
+}
+
+.slider{
+
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+cursor:pointer;
+
+background:#555;
+
+border-radius:50px;
+
+transition:.3s;
+
+}
+
+.slider:before{
+
+content:"";
+
+position:absolute;
+
+height:24px;
+width:24px;
+
+left:3px;
+bottom:3px;
+
+background:#FFF;
+
+border-radius:50%;
+
+transition:.3s;
+
+}
+
+input:checked + .slider{
+
+background:var(--primary);
+
+}
+
+input:checked + .slider:before{
+
+transform:translateX(28px);
+
+}
+
+select{
+
+width:100%;
+
+margin-top:15px;
+
+padding:14px;
+
+border:none;
+
+outline:none;
+
+background:var(--card2);
+
+color:#FFF;
+
+border-radius:14px;
+
+font-size:16px;
+
+}
+
+.menuItem{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 0;
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+cursor:pointer;
+
+}
+
+.menuItem:last-child{
+
+border-bottom:none;
+
+}
+
+.arrow{
+
+font-size:20px;
+
+color:var(--gold);
+
+}
+.footer{
+text-align:center;
+padding:40px 20px;
+color:var(--sub);
+}
+
+.logo{
+font-size:34px;
+color:var(--gold);
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.version{
+margin-top:15px;
+font-size:14px;
+color:#7da49e;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<a href="Index.html" class="backBtn">
+
+←
+
+</a>
+
+<div class="titleBox">
+
+<h1>⚙ Settings</h1>
+
+<p>
+
+Customize your Iqranix experience
+
+</p>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<!--=========================
+      APPEARANCE
+==========================-->
+
+<div class="card">
+
+<h2>🎨 Appearance</h2>
+
+<div class="setting">
+
+<div>
+
+<div class="settingTitle">
+
+Dark Mode
+
+</div>
+
+<div class="settingDesc">
+
+Use the premium dark theme
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="darkMode"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting">
+
+<div>
+
+<div class="settingTitle">
+
+Quran Font Size
+
+</div>
+
+<div class="settingDesc">
+
+Choose your reading size
+
+</div>
+
+</div>
+
+</div>
+
+<select id="fontSize">
+
+<option value="small">
+Small
+</option>
+
+<option value="medium" selected>
+Medium
+</option>
+
+<option value="large">
+Large
+</option>
+
+<option value="extra-large">
+Extra Large
+</option>
+
+</select>
+
+<p
+id="fontSizeStatus"
+class="settingDesc"
+style="margin-top:10px;">
+Current size: Medium
+</p>
+</div>
+<!--=========================
+      NOTIFICATIONS
+==========================-->
+
+<div class="card">
+
+<h2>🔔 Notifications</h2>
+
+<a href="notifications.html" class="menuItem">
+
+<span>🔔 Notification Settings</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+</div>
+
+<!--=========================
+        QURAN
+==========================-->
+
+<div class="card">
+
+<h2>📖 Quran</h2>
+
+<div class="setting">
+
+<div>
+
+<div class="settingTitle">
+
+Default Reciter
+
+</div>
+
+<div class="settingDesc">
+
+Choose your favourite reciter
+
+</div>
+
+</div>
+
+</div>
+
+<select id="defaultReciter">
+
+<option selected>Mishary Alafasy</option>
+
+<option>Abdul Basit</option>
+
+<option>Maher Al Muaiqly</option>
+
+<option>Yasser Al Dosari</option>
+
+<option>Saad Al Ghamdi</option>
+
+</select>
+
+<div class="setting">
+
+<div>
+
+<div class="settingTitle">
+
+Show Translation
+
+</div>
+
+<div class="settingDesc">
+
+Display translation automatically
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="translationDefault"
+checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting">
+
+<div>
+
+<div class="settingTitle">
+
+Auto Play Next Surah
+
+</div>
+
+<div class="settingDesc">
+
+Continue recitation automatically
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="autoPlay">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<!--=========================
+      PRAYER SETTINGS
+==========================-->
+
+<div class="card">
+
+<h2>🕌 Prayer</h2>
+
+<a href="location-permission.html" class="menuItem">
+
+<span>📍 Location Permission</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="qibla-calibration.html" class="menuItem">
+
+<span>🧭 Qibla Calibration</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="calculation-method.html" class="menuItem">
+
+<span>🕒 Prayer Calculation Method</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="madhhab.html" class="menuItem">
+
+<span>🕌 Madhhab</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="prayer-adjustments.html" class="menuItem">
+
+<span>⏱ Prayer Time Adjustments</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="notifications.html" class="menuItem">
+
+<span>🔔 Adhan & Notifications</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="adhan-volume.html" class="menuItem">
+
+<span>🔊 Adhan Volume</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="vibration-settings.html" class="menuItem">
+
+<span>📳 Vibration Settings</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="high-latitude.html" class="menuItem">
+
+<span>🌙 High Latitude Method</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+<a href="prayer-preferences.html" class="menuItem">
+
+<span>💾 Prayer Preferences</span>
+
+<span class="arrow">›</span>
+
+</a>
+
+</div>
+<!--=========================
+        INFORMATION
+==========================-->
+
+<div class="card">
+
+<h2>ℹ️ Information</h2>
+
+<a href="about.html" class="menuItem">
+<span>📖 About Iqranix</span>
+<span class="arrow">›</span>
+</a>
+
+<a href="privacy.html" class="menuItem">
+<span>🔒 Privacy Policy</span>
+<span class="arrow">›</span>
+</a>
+
+<a href="terms.html" class="menuItem">
+<span>📜 Terms & Conditions</span>
+<span class="arrow">›</span>
+</a>
+
+<a href="disclaimer.html" class="menuItem">
+<span>⚠️ Disclaimer</span>
+<span class="arrow">›</span>
+</a>
+
+<a href="faq.html" class="menuItem">
+<span>❓ Frequently Asked Questions</span>
+<span class="arrow">›</span>
+</a>
+
+<a href="contact.html" class="menuItem">
+<span>📩 Contact Support</span>
+<span class="arrow">›</span>
+</a>
+
+</div>
+
+<!--=========================
+            MORE
+==========================-->
+
+<div class="card">
+
+<h2>✨ More</h2>
+
+<div class="menuItem" id="shareApp">
+<span>📤 Share Iqranix</span>
+<span class="arrow">›</span>
+</div>
+
+<div class="menuItem" id="rateApp">
+<span>⭐ Rate Iqranix</span>
+<span class="arrow">›</span>
+</div>
+
+<div class="menuItem" id="checkUpdates">
+<span>🔄 Check for Updates</span>
+<span class="arrow">›</span>
+</div>
+
+<div class="menuItem">
+
+<span>📱 Version</span>
+
+<strong>v1.0.0</strong>
+
+</div>
+
+</div>
+
+<footer class="footer">
+
+<div class="logo">
+
+🕌 Iqranix
+
+</div>
+
+<p>
+
+Read • Listen • Reflect • Memorize
+
+</p>
+
+<div class="version">
+
+© 2026 Iqranix
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="settings.js"></script>
+
+</body>
+
+</html>

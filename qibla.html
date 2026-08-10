@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#078b68"
+    >
+
+    <title>Qibla Compass – IQRANIX</title>
+
+    <link
+        rel="stylesheet"
+        href="qibla.css"
+    >
+</head>
+
+<body>
+
+<header class="qibla-header">
+
+    <button
+        id="backButton"
+        class="back-button"
+        type="button"
+        aria-label="Go back"
+    >
+        ←
+    </button>
+
+    <div>
+        <h1>Qibla Compass</h1>
+        <p>Find the direction of the Kaaba</p>
+    </div>
+
+</header>
+
+
+<main class="qibla-page">
+
+
+    <!-- INTRO -->
+
+    <section class="intro-card">
+
+        <div class="intro-icon">
+            🕋
+        </div>
+
+        <h2>Find Your Qibla</h2>
+
+        <p>
+            Allow location and compass access, then hold your
+            phone flat and slowly turn until the Qibla arrow
+            points toward the Kaaba.
+        </p>
+
+    </section>
+
+
+    <!-- COMPASS -->
+
+    <section class="compass-section">
+
+        <div
+            id="compass"
+            class="compass"
+        >
+
+            <!-- Outer decorative rings -->
+
+            <div class="compass-ring ring-one"></div>
+            <div class="compass-ring ring-two"></div>
+
+
+            <!-- Cardinal directions -->
+
+            <span class="direction north">
+                N
+            </span>
+
+            <span class="direction east">
+                E
+            </span>
+
+            <span class="direction south">
+                S
+            </span>
+
+            <span class="direction west">
+                W
+            </span>
+
+
+            <!-- Degree markings -->
+
+            <div class="degree-mark mark-0"></div>
+            <div class="degree-mark mark-45"></div>
+            <div class="degree-mark mark-90"></div>
+            <div class="degree-mark mark-135"></div>
+            <div class="degree-mark mark-180"></div>
+            <div class="degree-mark mark-225"></div>
+            <div class="degree-mark mark-270"></div>
+            <div class="degree-mark mark-315"></div>
+
+
+            <!-- Islamic decorative star -->
+
+            <div class="compass-star">
+                ✦
+            </div>
+
+
+            <!-- QIBLA ARROW -->
+
+            <div
+                id="qiblaArrow"
+                class="qibla-arrow"
+            >
+
+                <div class="arrow-shaft"></div>
+
+                <div class="arrow-head">
+                    🕋
+                </div>
+
+            </div>
+
+
+            <!-- CENTER -->
+
+            <div class="compass-center">
+
+                <div class="center-inner">
+                    ☪
+                </div>
+
+            </div>
+
+
+            <!-- Qibla label -->
+
+            <div class="qibla-label">
+                QIBLA
+            </div>
+
+        </div>
+
+
+        <p
+            id="compassInstruction"
+            class="compass-instruction"
+        >
+            Press “Activate Compass” to begin.
+        </p>
+
+    </section>
+
+
+    <!-- CONTROLS -->
+
+    <section class="controls-card">
+
+        <button
+            id="activateCompass"
+            class="primary-button"
+            type="button"
+        >
+            🧭 Activate Compass
+        </button>
+
+        <button
+            id="locationButton"
+            class="secondary-button"
+            type="button"
+        >
+            📍 Update Location
+        </button>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🧭
+            </div>
+
+            <span class="info-label">
+                Qibla Bearing
+            </span>
+
+            <strong id="bearingValue">
+                —
+            </strong>
+
+            <small>
+                from true north
+            </small>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🕋
+            </div>
+
+            <span class="info-label">
+                Direction
+            </span>
+
+            <strong id="directionValue">
+                —
+            </strong>
+
+            <small>
+                compass direction
+            </small>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📏
+            </div>
+
+            <span class="info-label">
+                Distance
+            </span>
+
+            <strong id="distanceValue">
+                —
+            </strong>
+
+            <small>
+                to the Kaaba
+            </small>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📍
+            </div>
+
+            <span class="info-label">
+                Location
+            </span>
+
+            <strong id="locationValue">
+                Searching...
+            </strong>
+
+            <small>
+                GPS status
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATUS -->
+
+    <section class="status-card">
+
+        <div class="status-icon">
+            ☪
+        </div>
+
+        <div>
+
+            <strong id="statusTitle">
+                Ready
+            </strong>
+
+            <p id="statusText">
+                Allow location access to calculate your Qibla.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KAABA INFO -->
+
+    <section class="kaaba-card">
+
+        <div class="kaaba-symbol">
+            🕋
+        </div>
+
+        <div>
+
+            <h2>
+                The Holy Kaaba
+            </h2>
+
+            <p>
+                Masjid al-Haram, Makkah, Saudi Arabia
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast"
+    aria-live="polite"
+>
+</div>
+
+
+<script src="qibla.js"></script>
+
+</body>
+</html>

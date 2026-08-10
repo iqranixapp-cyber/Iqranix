@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <meta
+        name="description"
+        content="Iqranix Quran Reader — Read, listen and recite the Holy Quran."
+    >
+
+    <title>Quran Reader • Iqranix</title>
+
+
+    <!-- ==============================
+            FONTS
+    =============================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ==============================
+            ICONS
+    =============================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- ==============================
+            QURAN READER CSS
+    =============================== -->
+
+    <link
+        rel="stylesheet"
+        href="quran-reader.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="quran-app">
+
+
+    <!-- =========================================
+                    HEADER
+    ========================================== -->
+
+    <header class="quran-header">
+
+        <button
+            id="backButton"
+            class="header-btn"
+            type="button"
+            aria-label="Go back"
+        >
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+
+        <div class="header-center">
+
+            <!--
+                JavaScript will replace this with
+                the actual Surah name when loaded.
+            -->
+
+            <h1 id="surahEnglishName">
+                Quran Reader
+            </h1>
+
+            <p id="surahHeaderInfo">
+                Iqranix
+            </p>
+
+        </div>
+<select id="surahSelect" class="surah-select" aria-label="Choose Surah">
+    <option value="">Choose Surah</option>
+</select>
+
+        <button
+            id="readerSettingsButton"
+            class="header-btn"
+            type="button"
+            aria-label="Reader settings"
+        >
+            <i class="fas fa-gear"></i>
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================================
+                    SETTINGS PANEL
+    ========================================== -->
+
+    <section
+        id="readerSettings"
+        class="settings-panel"
+        hidden
+    >
+
+        <div class="settings-top">
+
+            <h2>
+                Reader Settings
+            </h2>
+
+            <button
+                id="closeSettings"
+                class="close-settings"
+                type="button"
+                aria-label="Close settings"
+            >
+                <i class="fas fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="setting-row">
+
+            <div>
+
+                <strong>
+                    Arabic Text Size
+                </strong>
+
+                <p>
+                    Adjust the Quran text size.
+                </p>
+
+            </div>
+
+
+            <div class="font-controls">
+
+                <button
+                    id="fontDecrease"
+                    type="button"
+                >
+                    A−
+                </button>
+
+                <button
+                    id="fontIncrease"
+                    type="button"
+                >
+                    A+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+                SURAH INFORMATION
+    ========================================== -->
+
+    <section class="surah-heading">
+
+        <div class="heading-line"></div>
+
+
+        <div class="surah-heading-content">
+
+            <h2 id="surahArabicName">
+                سورة
+            </h2>
+
+            <p id="surahEnglishTitle">
+                Quran
+            </p>
+
+            <span id="surahDetails">
+                Preparing Surah...
+            </span>
+
+        </div>
+
+
+        <div class="heading-line"></div>
+
+    </section>
+
+
+
+    <!-- =========================================
+                    BISMILLAH
+    ========================================== -->
+
+    <div
+        id="bismillah"
+        class="bismillah"
+    >
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+    </div>
+
+
+
+    <!-- =========================================
+                QURAN READING AREA
+    ========================================== -->
+
+    <main class="quran-main">
+
+
+        <!--
+            Loading indicator.
+
+            It starts hidden so users don't see a
+            permanent "Loading..." message.
+
+            JavaScript can display it temporarily
+            when necessary.
+        -->
+
+        <div
+            id="loadingMessage"
+            class="loading-message"
+            hidden
+        >
+
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+
+            <span>
+                Preparing Quran...
+            </span>
+
+        </div>
+
+
+        <!-- =====================================
+                CONTINUOUS QURAN TEXT
+
+             IMPORTANT:
+             Do NOT change this ID.
+
+             quran-reader.js inserts the
+             Arabic Ayahs here.
+        ====================================== -->
+
+        <article
+            id="ayahContainer"
+            class="quran-text"
+            dir="rtl"
+            lang="ar"
+            aria-label="Quran text"
+        ></article>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+            RECITATION STATUS BAR
+    ========================================== -->
+
+    <div
+        id="recitationBar"
+        class="recitation-bar"
+    >
+
+        <div class="recitation-status">
+
+            <span
+                id="statusDot"
+                class="status-dot"
+            ></span>
+
+            <span id="statusText">
+                Ready to recite
+            </span>
+
+        </div>
+
+
+        <strong id="currentAyahLabel">
+            Ayah 1
+        </strong>
+
+    </div>
+
+
+
+    <!-- =========================================
+            RECOGNIZED SPEECH
+    ========================================== -->
+
+    <div
+        id="recognizedSpeech"
+        class="recognized-speech"
+        hidden
+    >
+
+        <span class="speech-label">
+            Heard:
+        </span>
+
+        <span id="recognizedText"></span>
+
+    </div>
+
+
+
+    <!-- =========================================
+            FLOATING MICROPHONE
+    ========================================== -->
+
+    <div class="microphone-wrapper">
+
+        <button
+            id="microphoneButton"
+            class="floating-microphone"
+            type="button"
+            aria-label="Start Quran recitation"
+            title="Start recitation"
+        >
+
+            <i
+                id="microphoneIcon"
+                class="fas fa-microphone"
+            ></i>
+
+        </button>
+
+
+        <button
+            id="stopMicrophoneButton"
+            class="floating-stop"
+            type="button"
+            aria-label="Stop listening"
+            hidden
+        >
+
+            <i class="fas fa-stop"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+            RECITATION CONTROLS
+    ========================================== -->
+
+    <div class="reader-controls">
+
+        <button
+            id="previousAyah"
+            class="control-button"
+            type="button"
+            aria-label="Previous ayah"
+        >
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+
+        <button
+            id="repeatAyah"
+            class="control-button"
+            type="button"
+            aria-label="Repeat ayah"
+        >
+            <i class="fas fa-repeat"></i>
+        </button>
+
+
+        <button
+            id="nextAyah"
+            class="control-button"
+            type="button"
+            aria-label="Next ayah"
+        >
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================================
+                COMPACT AUDIO PLAYER
+    ========================================== -->
+
+    <section
+        id="audioSection"
+        class="audio-section compact-audio"
+    >
+
+        <div class="audio-heading">
+
+            <div class="audio-icon">
+
+                <i class="fas fa-headphones"></i>
+
+            </div>
+
+
+            <div class="audio-title">
+
+                <h2>
+                    Listen to Quran
+                </h2>
+
+                <p>
+                    Choose a reciter
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="audio-controls-row">
+
+            <label
+                for="reciterSelect"
+                class="reciter-label"
+            >
+                Reciter
+            </label>
+
+
+            <select id="reciterSelect">
+
+                <option value="">
+                    Select reciter
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <audio
+            id="quranAudio"
+            controls
+            preload="metadata"
+        ></audio>
+
+    </section>
+
+
+
+    <!-- =========================================
+                RECITATION LEGEND
+    ========================================== -->
+
+    <section class="recitation-legend">
+
+        <div class="legend-title">
+
+            <i class="fas fa-microphone-lines"></i>
+
+            <strong>
+                Recitation Guide
+            </strong>
+
+        </div>
+
+
+        <div class="legend-items">
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-circle current"
+                ></span>
+
+                Current ayah
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-circle correct"
+                ></span>
+
+                Correct
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span
+                    class="legend-circle mistake"
+                ></span>
+
+                Possible mistake
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+                    BOOKMARK
+    ========================================== -->
+
+    <button
+        id="bookmarkButton"
+        class="bookmark-button"
+        type="button"
+    >
+
+        <i class="far fa-bookmark"></i>
+
+        Bookmark Ayah
+
+    </button>
+
+
+
+    <!-- =========================================
+                SURAH NAVIGATION
+    ========================================== -->
+
+    <nav class="surah-navigation">
+
+        <button
+            id="previousSurah"
+            type="button"
+        >
+
+            <i class="fas fa-chevron-left"></i>
+
+            Previous Surah
+
+        </button>
+
+
+        <div class="ayah-counter">
+
+            <strong id="currentAyah">
+                1
+            </strong>
+
+            <span>
+                /
+            </span>
+
+            <span id="totalAyahs">
+                0
+            </span>
+
+        </div>
+
+
+        <button
+            id="nextSurah"
+            type="button"
+        >
+
+            Next Surah
+
+            <i class="fas fa-chevron-right"></i>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =========================================
+                    FOOTER
+    ========================================== -->
+
+    <footer class="reader-footer">
+
+        <strong>
+            🕌 Iqranix
+        </strong>
+
+        <span>
+            Read • Listen • Recite
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =========================================
+                    JAVASCRIPT
+========================================== -->
+
+<script src="quran-reader.js"></script>
+
+
+</body>
+
+</html>

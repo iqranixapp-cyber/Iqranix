@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#087f5b">
+
+    <meta name="description"
+          content="IQRANIX — Your premium Islamic companion for Quran, prayer, duas, Qibla, Fiqh, Seerah and more.">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="IQRANIX">
+
+    <title>IQRANIX — Islamic Companion</title>
+
+    <!-- App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Main Home Stylesheet -->
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const accepted = localStorage.getItem("iqranix_terms_accepted");
+
+    if (accepted !== "true") {
+        window.location.replace("welcome.html");
+    }
+
+});
+</script> 
+    
+
+    <!-- =========================================================
+         PAGE BACKGROUND
+         =========================================================
+         Put your future HD background image in the SAME folder
+         as this Index.html and name it:
+
+         background.jpg
+
+         No folder is required.
+         ========================================================= -->
+    <!-- =========================================================
+         PAGE BACKGROUND
+         =========================================================
+         Put your future HD background image in the SAME folder
+         as this Index.html and name it:
+
+         background.jpg
+
+         No folder is required.
+         ========================================================= -->
+
+    <div class="page-background"></div>
+
+    <div class="page-overlay"></div>
+
+
+    <!-- =========================================================
+         APP HEADER
+         ========================================================= -->
+
+    <header class="app-header">
+
+        <div class="brand-area">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-mosque"></i>
+            </div>
+
+            <div class="brand-text">
+                <h1>IQRANIX</h1>
+                <p>Your Islamic companion</p>
+            </div>
+
+        </div>
+
+
+        <!-- Existing settings file -->
+        <a href="settings.html"
+           class="settings-button"
+           aria-label="Open Settings">
+
+            <i class="fa-solid fa-gear"></i>
+
+        </a>
+
+    </header>
+
+
+
+    <main class="home-container">
+
+
+        <!-- =====================================================
+             WELCOME HERO
+             ===================================================== -->
+
+        <section class="welcome-card">
+
+            <div class="welcome-decoration"></div>
+
+            <div class="arabic-greeting">
+                السَّلَامُ عَلَيْكُمْ
+            </div>
+
+            <div class="welcome-content">
+
+                <span class="welcome-small">
+                    Assalamu Alaikum 👋
+                </span>
+
+                <h2>
+                    Welcome to IQRANIX
+                </h2>
+
+                <p>
+                    May Allah bless your day with peace,
+                    guidance and barakah.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEXT PRAYER
+             Connected to existing prayer.html
+             ===================================================== -->
+
+        <a href="prayer.html"
+           class="next-prayer-card">
+
+            <div class="next-prayer-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div class="next-prayer-content">
+
+                <span class="section-label">
+                    PRAYER
+                </span>
+
+                <h2>
+                    Prayer Times
+                </h2>
+
+                <p id="home-location">
+                    Your location
+                </p>
+
+                <strong id="home-next-prayer">
+                    Next Prayer
+                </strong>
+
+            </div>
+
+            <div class="next-prayer-time"
+                 id="home-prayer-time">
+                --:--
+            </div>
+
+            <div class="card-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </a>
+
+
+
+        <!-- =====================================================
+             EXPLORE
+             ===================================================== -->
+
+        <section class="explore-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    DISCOVER
+                </span>
+
+                <h2>
+                    Explore IQRANIX
+                </h2>
+
+                <p>
+                    Everything you need for your Islamic journey.
+                </p>
+
+            </div>
+
+
+
+            <div class="premium-card-grid">
+
+
+                <!-- =================================================
+                     QURAN
+                     EXISTING FILE: quran.html
+                     ================================================= -->
+
+                <a href="quran.html"
+                   class="premium-card card-quran">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-book-quran"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            QURAN
+                        </span>
+
+                        <h3>
+                            Holy Quran
+                        </h3>
+
+                        <p>
+                            Read and listen to all 114 Surahs.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     PRAYER
+                     EXISTING FILE: prayer.html
+                     ================================================= -->
+
+                <a href="prayer.html"
+                   class="premium-card card-prayer">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            WORSHIP
+                        </span>
+
+                        <h3>
+                            Prayer Times
+                        </h3>
+
+                        <p>
+                            View today's Salah schedule.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     DUAS
+                     Existing file: duas.html
+                     ================================================= -->
+
+                <a href="duas.html"
+                   class="premium-card card-duas">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            SUPPLICATIONS
+                        </span>
+
+                        <h3>
+                            Daily Duas
+                        </h3>
+
+                        <p>
+                            Authentic supplications for everyday life.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     QIBLA
+                     Existing file: qibla-calibration.html
+                     ================================================= -->
+
+                <a href="qibla-calibration.html"
+                   class="premium-card card-qibla">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            DIRECTION
+                        </span>
+
+                        <h3>
+                            Qibla
+                        </h3>
+
+                        <p>
+                            Find the direction of the Kaaba.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     TASBIH
+                     Existing file: tasbih.html
+                     ================================================= -->
+
+                <a href="tasbih.html"
+                   class="premium-card card-tasbih">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-circle-dot"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            DHIKR
+                        </span>
+
+                        <h3>
+                            Tasbih
+                        </h3>
+
+                        <p>
+                            Count your dhikr and keep your remembrance.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     HIJRI CALENDAR
+                     Existing file: hijri-calendar.html
+                     ================================================= -->
+
+                <a href="hijri-calendar.html"
+                   class="premium-card card-calendar">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            CALENDAR
+                        </span>
+
+                        <h3>
+                            Hijri Calendar
+                        </h3>
+
+                        <p>
+                            Explore Islamic dates and important occasions.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     PROPHETS
+                     New file: prophets.html
+                     ================================================= -->
+
+                <a href="prophets.html"
+                   class="premium-card card-prophets">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-star-and-crescent"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            STORIES
+                        </span>
+
+                        <h3>
+                            Prophets & Messengers
+                        </h3>
+
+                        <p>
+                            Discover the stories and lessons of the Prophets.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     SEERAH
+                     New file: seerah.html
+                     ================================================= -->
+
+                <a href="seerah.html"
+                   class="premium-card card-seerah">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            SEERAH
+                        </span>
+
+                        <h3>
+                            Life of the Prophet ﷺ
+                        </h3>
+
+                        <p>
+                            Explore the life, character and lessons of
+                            Muhammad ﷺ.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     FIQH
+                     Existing file: madhhab.html
+                     ================================================= -->
+
+                <a href="fiqh.html"
+                   class="premium-card card-fiqh">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            KNOWLEDGE
+                        </span>
+
+                        <h3>
+                            Fiqh
+                        </h3>
+
+                        <p>
+                            Explore Islamic rulings and practical guidance.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     NASHEEDS
+                     New file: nasheeds.html
+                     ================================================= -->
+
+                <a href="nasheeds.html"
+                   class="premium-card card-nasheeds">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            AUDIO
+                        </span>
+
+                        <h3>
+                            Islamic Nasheeds
+                        </h3>
+
+                        <p>
+                            Listen to beautiful Islamic audio and reminders.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     WALLPAPERS
+                     New file: wallpapers.html
+                     ================================================= -->
+
+                <a href="wallpapers.html"
+                   class="premium-card card-wallpapers">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            MEDIA
+                        </span>
+
+                        <h3>
+                            Islamic Wallpapers
+                        </h3>
+
+                        <p>
+                            Beautiful Islamic wallpapers for your device.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     RINGTONES
+                     New file: ringtones.html
+                     ================================================= -->
+
+                <a href="ringtones.html"
+                   class="premium-card card-ringtones">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            AUDIO
+                        </span>
+
+                        <h3>
+                            Islamic Ringtones
+                        </h3>
+
+                        <p>
+                            Discover suitable Islamic sounds and reminders.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+               <!-- =====================================================
+     ISLAMIC QUIZ
+     ===================================================== -->
+
+<a href="quiz.html"
+   class="premium-card card-quiz">
+
+    <div class="card-icon">
+        <i class="fa-solid fa-brain"></i>
+    </div>
+
+    <div class="card-body">
+
+        <span class="card-label">
+            TEST YOUR KNOWLEDGE
+        </span>
+
+        <h3>
+            Islamic Quiz
+        </h3>
+
+        <p>
+            Challenge yourself with questions about
+            the Qur'an, Hadith, Prophets, Seerah,
+            Companions, worship and Islamic history.
+        </p>
+
+    </div>
+
+    <div class="card-arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+
+</a> 
+                <!-- =================================================
+                     NEARBY MOSQUES
+                     New file: mosques.html
+                     ================================================= -->
+
+                <a href="mosques.html"
+                   class="premium-card card-mosques">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            COMMUNITY
+                        </span>
+
+                        <h3>
+                            Nearby Mosques
+                        </h3>
+
+                        <p>
+                            Find mosques and Islamic places around you.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     DAILY REMINDERS
+                     Existing file: notifications.html
+                     ================================================= -->
+
+                <a href="reminders.html"
+                   class="premium-card card-reminders">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            REMINDERS
+                        </span>
+
+                        <h3>
+                            Daily Reminders
+                        </h3>
+
+                        <p>
+                            Stay connected with beneficial reminders.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     BOOKMARKS
+                     Existing file: bookmarks.html
+                     ================================================= -->
+
+                <a href="bookmarks.html"
+                   class="premium-card card-bookmarks">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="card-label">
+                            SAVED
+                        </span>
+
+                        <h3>
+                            Bookmarks
+                        </h3>
+
+                        <p>
+                            Quickly return to your saved content.
+                        </p>
+
+                    </div>
+
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </a>
+
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SUPPORT IQRANIX
+             ===================================================== -->
+
+        <section class="support-section">
+
+            <a href="support.html"
+               class="support-card">
+
+                <div class="support-glow"></div>
+
+                <div class="support-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="support-content">
+
+                    <span class="support-label">
+                        SUPPORT IQRANIX
+                    </span>
+
+                    <h2>
+                        Help Us Grow
+                    </h2>
+
+                    <p>
+                        Support the development of IQRANIX and help us
+                        continue building useful Islamic resources for
+                        the Ummah.
+                    </p>
+
+                    <span class="support-button">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+
+        <footer class="home-footer">
+
+            <div class="footer-logo">
+                IQRANIX
+            </div>
+
+            <p>
+                Your Islamic companion
+            </p>
+
+            <div class="footer-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                © <span id="current-year"></span> IQRANIX.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         HOME JAVASCRIPT
+         ========================================================= -->
+
+    <script src="home.js"></script>
+
+
+    <!-- =========================================================
+         SMALL FALLBACK FOR YEAR
+         ========================================================= -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const yearElement =
+                document.getElementById("current-year");
+
+            if (yearElement) {
+                yearElement.textContent =
+                    new Date().getFullYear();
+            }
+
+        });
+    </script>
+
+
+</>
+</html>

@@ -1,0 +1,1142 @@
+/* =====================================================
+   IQRANIX — SUPPORT PAGE
+   ===================================================== */
+
+:root {
+    --primary: #087f5b;
+    --primary-dark: #056044;
+    --primary-light: #e8f7f1;
+
+    --text: #17352d;
+    --text-light: #6b7d77;
+
+    --white: #ffffff;
+    --background: #f4f8f6;
+    --border: #dce9e4;
+
+    --paypal: #ffc439;
+    --mpesa: #39a845;
+
+    --shadow:
+        0 10px 30px rgba(8, 127, 91, 0.08);
+
+    --radius: 20px;
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.support-header {
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #0a9a70
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(8, 127, 91, 0.18);
+
+    position: relative;
+}
+
+
+.back-button {
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.back-button:active {
+    transform: scale(0.94);
+}
+
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+.header-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+.header-text p {
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+.support-page {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding: 22px 16px 40px;
+}
+
+
+/* =====================================================
+   INTRO CARD
+   ===================================================== */
+
+.intro-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 28px 22px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 25px;
+}
+
+
+.intro-icon {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 20px;
+
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 31px;
+}
+
+
+.intro-card h2 {
+    font-size: 23px;
+
+    margin-bottom: 13px;
+
+    color: var(--primary-dark);
+}
+
+
+.intro-card p {
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   BARAKAH MESSAGE
+   ===================================================== */
+
+.barakah-message {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: left;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    background: var(--primary-light);
+
+    border-radius: 15px;
+}
+
+
+.barakah-message span {
+    font-size: 22px;
+}
+
+
+.barakah-message p {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SECTION
+   ===================================================== */
+
+.support-section {
+    margin-bottom: 25px;
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+.section-heading h2 {
+    font-size: 19px;
+
+    color: var(--text);
+}
+
+
+.section-heading p {
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+
+/* =====================================================
+   SUPPORT CARDS
+   ===================================================== */
+
+.support-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.support-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 35px rgba(8, 127, 91, 0.12);
+}
+
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+.payment-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+.paypal-icon {
+    background: #fff6d9;
+}
+
+
+.mpesa-icon {
+    background: #eaf8eb;
+}
+
+
+.payment-info {
+    flex: 1;
+}
+
+
+.payment-label {
+    display: inline-block;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: var(--primary);
+
+    margin-bottom: 4px;
+}
+
+
+.payment-info h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.payment-info p {
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PAYMENT BUTTONS
+   ===================================================== */
+
+.payment-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 17px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.payment-button:active {
+    transform: scale(0.98);
+}
+
+
+.paypal-button {
+    background: var(--paypal);
+
+    color: #17352d;
+}
+
+
+.paypal-button:hover {
+    filter: brightness(0.96);
+}
+
+
+.mpesa-button {
+    background: var(--mpesa);
+
+    color: white;
+}
+
+
+.mpesa-button:hover {
+    filter: brightness(0.94);
+}
+
+
+.button-arrow {
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   MORE OPTIONS
+   ===================================================== */
+
+.options-card {
+    opacity: 0.95;
+}
+
+
+/* =====================================================
+   THANK YOU
+   ===================================================== */
+
+.thank-you-card {
+    background:
+        linear-gradient(
+            135deg,
+            #e8f7f1,
+            #f9fffc
+        );
+
+    border: 1px solid #cfe9df;
+
+    border-radius: var(--radius);
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+
+.thank-you-icon {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+
+.thank-you-card h2 {
+    color: var(--primary-dark);
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.thank-you-card p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+
+.thank-you-heart {
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   PAYPAL MODAL
+   ===================================================== */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+}
+
+
+.modal.open {
+    display: flex;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+   ===================================================== */
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(4, 25, 19, 0.72);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =====================================================
+   PAYPAL WINDOW
+   ===================================================== */
+
+.paypal-modal {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background: var(--white);
+
+    border-radius: 24px;
+
+    padding: 28px 20px 22px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.25);
+
+    animation:
+        modalOpen 0.25s ease;
+}
+
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+   ===================================================== */
+
+.modal-close {
+    position: absolute;
+
+    top: 13px;
+    right: 13px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f4f2;
+
+    color: #47645b;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.modal-close:hover {
+    background: #e4ece8;
+}
+
+
+.modal-close:active {
+    transform: scale(0.92);
+}
+
+
+/* =====================================================
+   PAYPAL MODAL HEADER
+   ===================================================== */
+
+.paypal-modal-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 5px auto 12px;
+
+    border-radius: 18px;
+
+    background: #fff6d9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+
+.paypal-modal h2 {
+    text-align: center;
+
+    color: var(--primary-dark);
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+
+.modal-description {
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   AMOUNT BUTTONS
+   ===================================================== */
+
+.amount-choices {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.amount-button {
+    min-height: 45px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #f8fbfa;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.amount-button:hover {
+    border-color: var(--primary);
+}
+
+
+.amount-button:active {
+    transform: scale(0.96);
+}
+
+
+.amount-button.active {
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+}
+
+
+/* =====================================================
+   SELECTED AMOUNT
+   ===================================================== */
+
+.selected-amount-box {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background: var(--primary-light);
+
+    border: 1px solid #d1ebe1;
+}
+
+
+.selected-amount-box span {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+.selected-amount-box strong {
+    color: var(--primary-dark);
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   PAYPAL BUTTON CONTAINER
+   ===================================================== */
+
+.paypal-button-container {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 5px;
+}
+
+
+.paypal-loading {
+    min-height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   LOADING SPINNER
+   ===================================================== */
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #d8e5e0;
+
+    border-top-color: var(--primary);
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   PAYPAL STATUS
+   ===================================================== */
+
+.paypal-status {
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   SECURE PAYMENT NOTICE
+   ===================================================== */
+
+.sandbox-note {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 16px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background: #f5f8f7;
+
+    border: 1px solid var(--border);
+}
+
+
+.sandbox-note span {
+    font-size: 18px;
+}
+
+
+.sandbox-note p {
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+.sandbox-note strong {
+    color: var(--text);
+}
+
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+.toast {
+    position: fixed;
+
+    z-index: 10000;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translate(-50%, 20px);
+
+    width: calc(100% - 32px);
+
+    max-width: 430px;
+
+    padding: 14px 17px;
+
+    border-radius: 14px;
+
+    background: #17352d;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .support-header {
+        padding:
+            15px 14px;
+    }
+
+
+    .header-text h1 {
+        font-size: 18px;
+    }
+
+
+    .header-text p {
+        font-size: 11px;
+    }
+
+
+    .support-page {
+        padding:
+            18px 12px 35px;
+    }
+
+
+    .intro-card {
+        padding:
+            23px 17px;
+    }
+
+
+    .intro-card h2 {
+        font-size: 21px;
+    }
+
+
+    .intro-card p {
+        font-size: 13px;
+    }
+
+
+    .support-card {
+        padding:
+            17px;
+    }
+
+
+    .payment-info h3 {
+        font-size: 15px;
+    }
+
+
+    .payment-info p {
+        font-size: 11px;
+    }
+
+
+    .amount-choices {
+        gap: 6px;
+    }
+
+
+    .amount-button {
+        min-height: 43px;
+
+        font-size: 12px;
+    }
+
+
+    .paypal-modal {
+        padding:
+            25px 15px 18px;
+
+        border-radius: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+   ===================================================== */
+
+@media (max-width: 350px) {
+
+    .header-icon {
+        display: none;
+    }
+
+
+    .amount-choices {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .card-top {
+        gap: 10px;
+    }
+
+
+    .payment-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 21px;
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+button:focus-visible {
+    outline:
+        3px solid rgba(8, 127, 91, 0.35);
+
+    outline-offset: 3px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}

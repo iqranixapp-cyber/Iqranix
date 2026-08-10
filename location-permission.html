@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Location Permission • Iqranix</title>
+
+<meta name="theme-color" content="#0B6E4F">
+
+<link rel="stylesheet" href="location-permission.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html" class="backButton">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+src="logo.png"
+alt="Iqranix Logo"
+class="heroLogo">
+
+<h1>
+
+Location Permission
+
+</h1>
+
+<p>
+
+Allow Iqranix to access your location for accurate prayer times, Qibla direction, nearby mosques, and other location-based features.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>
+
+📍 Location Status
+
+</h2>
+
+<p class="description">
+
+Current permission status:
+
+</p>
+
+<div class="statusBox">
+
+<h3 id="permissionStatus">
+
+Not Checked
+
+</h3>
+
+<p id="statusDescription">
+
+Tap the button below to check or request location permission.
+
+</p>
+
+</div>
+
+<button
+id="requestLocation"
+class="primaryButton">
+
+📍 Allow Location Access
+
+</button>
+<!-- CURRENT LOCATION -->
+
+<section class="card">
+
+<h2>
+
+🌍 Current Location
+
+</h2>
+
+<div class="locationInfo">
+
+<div class="infoRow">
+
+<span class="label">
+
+Latitude
+
+</span>
+
+<span id="latitude">
+
+--
+
+</span>
+
+</div>
+
+<div class="infoRow">
+
+<span class="label">
+
+Longitude
+
+</span>
+
+<span id="longitude">
+
+--
+
+</span>
+
+</div>
+
+<div class="infoRow">
+
+<span class="label">
+
+Accuracy
+
+</span>
+
+<span id="accuracy">
+
+--
+
+</span>
+
+</div>
+
+<div class="infoRow">
+
+<span class="label">
+
+Last Updated
+
+</span>
+
+<span id="lastUpdated">
+
+Never
+
+</span>
+
+</div>
+
+</div>
+
+<div class="buttonGroup">
+
+<button
+id="refreshLocation"
+class="secondaryButton">
+
+🔄 Refresh Location
+
+</button>
+
+</div>
+
+</section>
+
+<!-- LOCATION FEATURES -->
+
+<section class="card">
+
+<h2>
+
+🕌 Why Iqranix Needs Your Location
+
+</h2>
+
+<div class="featureList">
+
+<div class="featureItem">
+
+<span>🕋</span>
+
+<p>Calculate accurate prayer times based on your current location.</p>
+
+</div>
+
+<div class="featureItem">
+
+<span>🧭</span>
+
+<p>Determine the correct Qibla direction wherever you are.</p>
+
+</div>
+
+<div class="featureItem">
+
+<span>🕌</span>
+
+<p>Find nearby mosques and Islamic centres.</p>
+
+</div>
+
+<div class="featureItem">
+
+<span>🌅</span>
+
+<p>Automatically update prayer times whenever you travel.</p>
+
+</div>
+
+</div>
+<!-- PRIVACY NOTICE -->
+
+<section class="card">
+
+<h2>
+
+🔒 Your Privacy
+
+</h2>
+
+<p class="description">
+
+Iqranix respects your privacy. Your location is used only on your device to provide accurate Islamic features and is never sold or shared with third parties.
+
+</p>
+
+<div class="featureList">
+
+<div class="featureItem">
+
+<span>✅</span>
+
+<p>Your location is used for Prayer Times, Qibla, and Nearby Mosques.</p>
+
+</div>
+
+<div class="featureItem">
+
+<span>🔐</span>
+
+<p>Your coordinates remain on your device unless you choose to use an online location-based service.</p>
+
+</div>
+
+<div class="featureItem">
+
+<span>📴</span>
+
+<p>You can revoke location permission at any time from your device settings.</p>
+
+</div>
+
+</div>
+
+<div class="buttonGroup">
+
+<button
+id="saveLocationSettings"
+class="primaryButton">
+
+💾 Save Preference
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="location-permission.js"></script>
+
+</body>
+
+</html>

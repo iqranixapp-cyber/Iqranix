@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#087f5b"
+    >
+
+    <meta
+        name="description"
+        content="A detailed Seerah of Prophet Muhammad ﷺ — his life, mission, character, struggles, companions, and legacy."
+    >
+
+    <title>Prophet Muhammad ﷺ — Seerah | IQRANIX</title>
+
+    <link
+        rel="stylesheet"
+        href="seerah.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="seerah-header">
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+            aria-label="Go back"
+        >
+            ←
+        </button>
+
+        <div class="header-title">
+
+            <span class="header-label">
+                IQRANIX • SEERAH
+            </span>
+
+            <h1>
+                Prophet Muhammad ﷺ
+            </h1>
+
+            <p>
+                The life and legacy of the Messenger of Allah ﷺ
+            </p>
+
+        </div>
+
+        <button
+            id="headerBookmark"
+            class="header-bookmark"
+            type="button"
+            aria-label="View bookmarks"
+            title="Bookmarks"
+        >
+            ☆
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN PAGE
+    ====================================================== -->
+
+    <main class="seerah-page">
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="seerah-hero">
+
+            <div class="hero-symbol">
+                ﷺ
+            </div>
+
+            <span class="hero-kicker">
+                THE LIFE OF THE FINAL MESSENGER
+            </span>
+
+            <h2>
+                Muhammad ﷺ
+            </h2>
+
+            <p>
+                Explore the remarkable life of Prophet Muhammad ﷺ
+                from his noble ancestry and childhood in Makkah,
+                through revelation, persecution, migration,
+                Madinah, the major events of his mission,
+                and the legacy he left for the Ummah.
+            </p>
+
+            <div class="hero-note">
+
+                <span aria-hidden="true">
+                    📖
+                </span>
+
+                <span>
+                    Read each chapter carefully. The Seerah is
+                    presented as a journey through the life,
+                    mission, character and teachings of the
+                    Messenger of Allah ﷺ.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             READING PROGRESS
+        ================================================== -->
+
+        <section
+            class="reading-progress-card"
+            aria-label="Seerah reading progress"
+        >
+
+            <div class="progress-top">
+
+                <div>
+
+                    <span class="progress-label">
+                        YOUR READING PROGRESS
+                    </span>
+
+                    <span id="progressText">
+                        Chapter 0 of 76
+                    </span>
+
+                </div>
+
+                <strong id="progressPercent">
+                    0%
+                </strong>
+
+            </div>
+
+            <div
+                class="progress-track"
+                aria-hidden="true"
+            >
+
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                    style="width: 0%;"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SEARCH
+        ================================================== -->
+
+        <section
+            class="search-section"
+            aria-label="Search Seerah chapters"
+        >
+
+            <label
+                class="search-label"
+                for="searchInput"
+            >
+                Search the Seerah
+            </label>
+
+            <div class="search-box">
+
+                <span
+                    class="search-icon"
+                    aria-hidden="true"
+                >
+                    🔎
+                </span>
+
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Search chapters, events, Makkah, Madinah..."
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Search Seerah chapters"
+                >
+
+                <button
+                    id="clearSearch"
+                    class="clear-search"
+                    type="button"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CHAPTER LIST
+        ================================================== -->
+
+        <section
+            id="chaptersSection"
+            class="chapter-section"
+        >
+
+            <div class="section-heading">
+
+                <div
+                    class="section-heading-icon"
+                    aria-hidden="true"
+                >
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        COMPLETE SEERAH
+                    </span>
+
+                    <h2>
+                        Chapters
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                seerah.js will populate this container
+                with all 76 chapters.
+            -->
+
+            <div
+                id="chapterList"
+                class="chapter-list"
+            ></div>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                id="noResults"
+                class="no-results hidden"
+            >
+
+                <div
+                    class="no-results-icon"
+                    aria-hidden="true"
+                >
+                    🔎
+                </div>
+
+                <h3>
+                    No chapters found
+                </h3>
+
+                <p>
+                    Try another search term.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             READER
+        ================================================== -->
+
+        <section
+            id="seerahReader"
+            class="seerah-reader hidden"
+            aria-live="polite"
+        >
+
+            <!-- READER TOP -->
+
+            <div class="reader-top">
+
+                <button
+                    id="backToChapters"
+                    class="back-to-chapters"
+                    type="button"
+                >
+                    ← All Chapters
+                </button>
+
+                <button
+                    id="readerBookmark"
+                    class="reader-bookmark"
+                    type="button"
+                    aria-label="Bookmark this chapter"
+                    title="Bookmark chapter"
+                >
+                    ☆
+                </button>
+
+            </div>
+
+
+            <!-- READER HEADING -->
+
+            <header class="reader-heading">
+
+                <span
+                    id="readerChapterNumber"
+                    class="reader-chapter-number"
+                >
+                    CHAPTER 1
+                </span>
+
+                <h2 id="readerTitle">
+                    Loading chapter...
+                </h2>
+
+                <p
+                    id="readerSubtitle"
+                    class="reader-subtitle"
+                >
+                    Please wait...
+                </p>
+
+            </header>
+
+
+            <!-- =================================================
+                 CHAPTER CONTENT
+
+                 seerah.js inserts the detailed chapter here.
+            ================================================== -->
+
+            <article
+                id="readerContent"
+                class="reader-content"
+            ></article>
+
+
+            <!-- =================================================
+                 LESSONS
+            ================================================== -->
+
+            <section
+                id="lessonsSection"
+                class="lessons-section"
+            >
+
+                <div class="lessons-heading">
+
+                    <span aria-hidden="true">
+                        💡
+                    </span>
+
+                    <div>
+
+                        <span>
+                            REFLECTION
+                        </span>
+
+                        <h3>
+                            Lessons from this chapter
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="lessonsContent"
+                    class="lessons-content"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SOURCES
+            ================================================== -->
+
+            <section
+                id="sourcesSection"
+                class="sources-section"
+            >
+
+                <div class="sources-heading">
+
+                    <span aria-hidden="true">
+                        📚
+                    </span>
+
+                    <h3>
+                        Sources & References
+                    </h3>
+
+                </div>
+
+                <div
+                    id="sourcesContent"
+                    class="sources-content"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CHAPTER NAVIGATION
+            ================================================== -->
+
+            <nav
+                id="readerNavigation"
+                class="reader-navigation"
+                aria-label="Seerah chapter navigation"
+            >
+
+                <button
+                    id="previousChapter"
+                    class="chapter-nav-button previous"
+                    type="button"
+                >
+
+                    <span
+                        class="nav-arrow"
+                        aria-hidden="true"
+                    >
+                        ←
+                    </span>
+
+                    <span>
+
+                        <small>
+                            PREVIOUS
+                        </small>
+
+                        <strong id="previousChapterTitle">
+                            Previous chapter
+                        </strong>
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="nextChapter"
+                    class="chapter-nav-button next"
+                    type="button"
+                >
+
+                    <span>
+
+                        <small>
+                            NEXT
+                        </small>
+
+                        <strong id="nextChapterTitle">
+                            Next chapter
+                        </strong>
+
+                    </span>
+
+                    <span
+                        class="nav-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </span>
+
+                </button>
+
+            </nav>
+
+        </section>
+
+
+        <!-- =================================================
+             BOOKMARKS
+        ================================================== -->
+
+        <section
+            id="bookmarksSection"
+            class="bookmarks-section"
+        >
+
+            <div class="section-heading">
+
+                <div
+                    class="section-heading-icon"
+                    aria-hidden="true"
+                >
+                    🔖
+                </div>
+
+                <div>
+
+                    <span>
+                        SAVED READING
+                    </span>
+
+                    <h2>
+                        Bookmarked Chapters
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="bookmarksList"
+                class="bookmarks-list"
+            ></div>
+
+
+            <div
+                id="emptyBookmarks"
+                class="empty-bookmarks"
+            >
+
+                <span aria-hidden="true">
+                    🔖
+                </span>
+
+                <h3>
+                    No bookmarks yet
+                </h3>
+
+                <p>
+                    Bookmark chapters you want to return to later.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         SCROLL TO TOP
+    ====================================================== -->
+
+    <button
+        id="scrollTopButton"
+        class="scroll-top-button"
+        type="button"
+        aria-label="Scroll to top"
+        title="Scroll to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =====================================================
+         SEERAH JAVASCRIPT
+    ====================================================== -->
+
+    <script src="seerah.js"></script>
+
+</body>
+</html>

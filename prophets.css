@@ -1,0 +1,1395 @@
+/* =========================================================
+   IQRANIX — PROPHETS & MESSENGERS
+   prophets.css
+========================================================= */
+
+:root {
+    --primary: #087f5b;
+    --primary-dark: #056044;
+    --primary-light: #e7f7f1;
+
+    --gold: #c99a2e;
+    --gold-light: #fff7df;
+
+    --background: #f5f8f7;
+    --surface: #ffffff;
+    --surface-soft: #f0f5f3;
+
+    --text: #17201d;
+    --text-soft: #64716d;
+    --border: #dfe8e4;
+
+    --danger: #c94b4b;
+
+    --radius-small: 12px;
+    --radius-medium: 18px;
+    --radius-large: 24px;
+
+    --shadow:
+        0 8px 24px rgba(0, 0, 0, 0.06);
+
+    --story-size: 17px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    font: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(8, 127, 91, 0.25);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.prophets-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding:
+        12px
+        max(16px, calc((100vw - 900px) / 2));
+
+    background: var(--primary);
+    color: white;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.back-button,
+.header-bookmark {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.14);
+    color: white;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 22px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-button:hover,
+.header-bookmark:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.back-button:active,
+.header-bookmark:active {
+    transform: scale(0.94);
+}
+
+.header-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 14px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    font-size: 22px;
+}
+
+.header-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.header-title h1 {
+    font-size: 18px;
+    font-weight: 800;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-title p {
+    margin-top: 1px;
+
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.prophets-page {
+    width: min(900px, 100%);
+    margin: 0 auto;
+
+    padding:
+        18px
+        16px
+        80px;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.intro-card {
+    display: flex;
+    gap: 16px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #edf8f4
+        );
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 22px;
+}
+
+.intro-icon {
+    width: 54px;
+    height: 54px;
+
+    flex: 0 0 54px;
+
+    border-radius: 17px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--primary-light);
+
+    font-size: 27px;
+}
+
+.intro-content {
+    min-width: 0;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 3px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.intro-content h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 9px;
+}
+
+.intro-content p {
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+.source-note {
+    margin-top: 10px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid var(--border);
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-section {
+    margin-bottom: 15px;
+}
+
+.search-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    min-height: 52px;
+
+    padding: 0 14px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #9aa6a2;
+}
+
+.clear-search {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: var(--surface-soft);
+
+    color: var(--text-soft);
+
+    font-size: 19px;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filter-section {
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+    margin-bottom: 22px;
+
+    scrollbar-width: none;
+}
+
+.filter-section::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-button {
+    flex: 0 0 auto;
+
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.filter-button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+
+/* =========================================================
+   RESULTS HEADER
+========================================================= */
+
+.results-header {
+    margin-bottom: 12px;
+}
+
+.results-header h2 {
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.results-header p {
+    margin-top: 2px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROPHET LIST
+========================================================= */
+
+.prophet-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+
+/* =========================================================
+   PROPHET CARD
+========================================================= */
+
+.prophet-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 16px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.045);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.prophet-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(8, 127, 91, 0.28);
+
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.prophet-card:active {
+    transform: scale(0.985);
+}
+
+.prophet-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.prophet-card-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    border-radius: 15px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--primary-light);
+
+    font-size: 23px;
+}
+
+.prophet-card-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.prophet-card-info h3 {
+    font-size: 16px;
+    line-height: 1.3;
+
+    margin-bottom: 2px;
+}
+
+.prophet-arabic {
+    color: var(--primary);
+
+    font-size: 14px;
+
+    direction: rtl;
+}
+
+.prophet-card-description {
+    margin-top: 8px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+.prophet-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.prophet-category {
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    background: var(--surface-soft);
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.read-story-button {
+    padding: 7px 11px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.card-bookmark {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--surface-soft);
+
+    font-size: 15px;
+
+    display: grid;
+    place-items: center;
+}
+
+.card-bookmark.saved {
+    background: var(--gold-light);
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-large);
+}
+
+.no-results-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.no-results h2 {
+    font-size: 18px;
+}
+
+.no-results p {
+    margin: 4px 0 15px;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+.reset-button {
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STORY READER
+========================================================= */
+
+.story-reader {
+    animation: storyOpen 0.25s ease;
+}
+
+@keyframes storyOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   STORY HEADER
+========================================================= */
+
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.story-back,
+.story-bookmark {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border-radius: 13px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    display: grid;
+    place-items: center;
+
+    font-size: 19px;
+}
+
+.story-heading {
+    flex: 1;
+    min-width: 0;
+}
+
+.story-arabic-name {
+    display: block;
+
+    direction: rtl;
+
+    color: var(--primary);
+
+    font-size: 15px;
+}
+
+.story-heading h2 {
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.story-heading p {
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STORY HERO
+========================================================= */
+
+.story-hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 22px;
+
+    margin-bottom: 15px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(8, 127, 91, 0.18);
+}
+
+.story-icon {
+    width: 65px;
+    height: 65px;
+
+    flex: 0 0 65px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    display: grid;
+    place-items: center;
+
+    font-size: 32px;
+}
+
+.story-hero-text span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.story-hero-text h2 {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.story-hero-text p {
+    margin-top: 4px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STORY NAVIGATION
+========================================================= */
+
+.story-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.story-nav-button {
+    min-width: 100px;
+
+    padding: 10px;
+
+    border-radius: 13px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.story-nav-button small {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.story-progress {
+    color: var(--text-soft);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STORY CONTENT
+========================================================= */
+
+.story-content {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+}
+
+.story-section {
+    padding: 22px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.story-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 12px;
+}
+
+.story-section-heading span {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--primary-light);
+
+    font-size: 17px;
+}
+
+.story-section-heading h3 {
+    font-size: 17px;
+}
+
+.story-text {
+    font-size: var(--story-size);
+    line-height: 1.9;
+    color: #303b37;
+}
+
+.story-text p {
+    margin-bottom: 14px;
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+.story-text strong {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   LESSONS
+========================================================= */
+
+.lessons-card {
+    margin: 20px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            var(--gold-light)
+        );
+
+    border: 1px solid #f0dfaa;
+}
+
+.lessons-heading {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.lessons-heading > span {
+    font-size: 25px;
+}
+
+.lessons-heading h3 {
+    font-size: 17px;
+}
+
+.lessons-heading p {
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+.lessons-card ul {
+    padding-left: 21px;
+}
+
+.lessons-card li {
+    margin-bottom: 9px;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.lessons-card li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   QURAN REFERENCES
+========================================================= */
+
+.quran-references {
+    margin: 20px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: var(--primary-light);
+
+    border: 1px solid #cde9df;
+}
+
+.references-heading {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.references-heading > span {
+    font-size: 24px;
+}
+
+.references-heading h3 {
+    font-size: 17px;
+}
+
+.references-heading p {
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+.reference-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.quran-reference {
+    padding: 8px 11px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--primary-dark);
+
+    border: 1px solid #cde9df;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   AUTHENTICITY NOTE
+========================================================= */
+
+.authenticity-note {
+    display: flex;
+    gap: 12px;
+
+    margin: 20px;
+
+    padding: 16px;
+
+    border-radius: 17px;
+
+    background: #f4f7f6;
+
+    border: 1px solid var(--border);
+}
+
+.note-icon {
+    font-size: 20px;
+}
+
+.authenticity-note h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.authenticity-note p {
+    color: var(--text-soft);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTTOM STORY NAVIGATION
+========================================================= */
+
+.story-bottom-navigation {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.bottom-nav-button {
+    flex: 1;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOOKMARK PANEL
+========================================================= */
+
+.bookmarks-panel {
+    position: fixed;
+
+    inset:
+        0
+        0
+        0
+        auto;
+
+    z-index: 300;
+
+    width: min(380px, 92vw);
+
+    background: var(--surface);
+
+    box-shadow:
+        -10px 0 35px rgba(0, 0, 0, 0.18);
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    transform: translateX(105%);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.bookmarks-panel.open {
+    transform: translateX(0);
+}
+
+.bookmarks-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.bookmarks-header h2 {
+    font-size: 19px;
+}
+
+.bookmarks-header p {
+    color: var(--text-soft);
+    font-size: 12px;
+}
+
+.bookmarks-header button {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: var(--surface-soft);
+
+    font-size: 21px;
+}
+
+.bookmarks-list {
+    display: grid;
+    gap: 10px;
+
+    padding-top: 15px;
+}
+
+.bookmark-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: white;
+
+    text-align: left;
+}
+
+.bookmark-item-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--primary-light);
+}
+
+.bookmark-item-info {
+    min-width: 0;
+}
+
+.bookmark-item-info h3 {
+    font-size: 14px;
+}
+
+.bookmark-item-info p {
+    color: var(--text-soft);
+    font-size: 11px;
+}
+
+.empty-bookmarks {
+    text-align: center;
+
+    padding: 55px 20px;
+
+    color: var(--text-soft);
+}
+
+.empty-bookmarks > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.empty-bookmarks h3 {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.empty-bookmarks p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   READING CONTROLS
+========================================================= */
+
+.reading-controls {
+    position: fixed;
+
+    right: 15px;
+    bottom: 18px;
+
+    z-index: 150;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 9px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.reading-controls button {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary-dark);
+
+    font-weight: 800;
+}
+
+.reading-controls span {
+    color: var(--text-soft);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 75px;
+
+    z-index: 500;
+
+    max-width: calc(100vw - 35px);
+
+    padding: 11px 16px;
+
+    border-radius: 13px;
+
+    background: #18221f;
+    color: white;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform:
+        translate(-50%, 12px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .prophets-page {
+        padding:
+            14px
+            12px
+            90px;
+    }
+
+    .prophets-header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .intro-card {
+        padding: 17px;
+    }
+
+    .intro-content h2 {
+        font-size: 20px;
+    }
+
+    .prophet-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .prophet-card {
+        padding: 15px;
+    }
+
+    .story-hero {
+        padding: 18px;
+    }
+
+    .story-icon {
+        width: 56px;
+        height: 56px;
+        flex-basis: 56px;
+    }
+
+    .story-hero-text h2 {
+        font-size: 21px;
+    }
+
+    .story-section {
+        padding: 19px 16px;
+    }
+
+    .lessons-card,
+    .quran-references,
+    .authenticity-note {
+        margin: 15px;
+    }
+
+    .story-bottom-navigation {
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .header-icon {
+        display: none;
+    }
+
+    .header-title h1 {
+        font-size: 16px;
+    }
+
+    .intro-card {
+        flex-direction: column;
+    }
+
+    .story-navigation {
+        gap: 5px;
+    }
+
+    .story-nav-button {
+        min-width: 80px;
+    }
+
+}

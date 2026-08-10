@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#087f5b"
+    >
+
+    <meta
+        name="description"
+        content="Read detailed stories and lessons from the Prophets and Messengers mentioned in the Qur'an."
+    >
+
+    <title>Prophets & Messengers • IQRANIX</title>
+
+    <link
+        rel="stylesheet"
+        href="prophets.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="prophets-header">
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+            aria-label="Go back"
+        >
+            ←
+        </button>
+
+        <div class="header-icon">
+            🌙
+        </div>
+
+        <div class="header-title">
+
+            <h1>
+                Prophets & Messengers
+            </h1>
+
+            <p>
+                Stories, lessons & guidance
+            </p>
+
+        </div>
+
+        <button
+            id="bookmarkButton"
+            class="header-bookmark"
+            type="button"
+            aria-label="View bookmarked stories"
+        >
+            🔖
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="prophets-page">
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="intro-card">
+
+            <div class="intro-icon">
+                📖
+            </div>
+
+            <div class="intro-content">
+
+                <span class="section-label">
+                    ISLAMIC STORIES
+                </span>
+
+                <h2>
+                    The Prophets of Allah
+                </h2>
+
+                <p>
+                    Explore detailed stories of the Prophets
+                    and Messengers mentioned in the Qur'an.
+                    Learn about their struggles, patience,
+                    faith, miracles and the lessons they left
+                    for humanity.
+                </p>
+
+                <p class="source-note">
+                    Stories are presented from the Qur'an and
+                    reliable Islamic sources. Where details are
+                    not established, IQRANIX will clearly
+                    distinguish them from authentic information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SEARCH
+        ================================================== -->
+
+        <section class="search-section">
+
+            <label
+                for="prophetSearch"
+                class="search-label"
+            >
+                Search for a Prophet
+            </label>
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="search"
+                    id="prophetSearch"
+                    placeholder="Search prophets..."
+                    autocomplete="off"
+                    aria-label="Search prophets"
+                >
+
+                <button
+                    id="clearSearch"
+                    class="clear-search"
+                    type="button"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FILTERS
+        ================================================== -->
+
+        <section class="filter-section">
+
+            <button
+                class="filter-button active"
+                data-filter="all"
+                type="button"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="ulul-azm"
+                type="button"
+            >
+                Ulul Azm
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="quran"
+                type="button"
+            >
+                Qur'an
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="bookmarked"
+                type="button"
+            >
+                🔖 Saved
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PROPHET COUNT
+        ================================================== -->
+
+        <div class="results-header">
+
+            <div>
+
+                <h2>
+                    Prophets & Messengers
+                </h2>
+
+                <p id="prophetCount">
+                    25 Prophets mentioned in the Qur'an
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PROPHET LIST
+        ================================================== -->
+
+        <section
+            id="prophetList"
+            class="prophet-list"
+            aria-live="polite"
+        >
+
+            <!--
+                Prophet cards are generated by prophets.js.
+            -->
+
+        </section>
+
+
+        <!-- =================================================
+             NO RESULTS
+        ================================================== -->
+
+        <section
+            id="noResults"
+            class="no-results"
+            hidden
+        >
+
+            <div class="no-results-icon">
+                🔍
+            </div>
+
+            <h2>
+                No prophets found
+            </h2>
+
+            <p>
+                Try searching with another name.
+            </p>
+
+            <button
+                id="resetSearch"
+                class="reset-button"
+                type="button"
+            >
+                Show All Prophets
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             STORY READER
+        ================================================== -->
+
+        <section
+            id="storyReader"
+            class="story-reader"
+            hidden
+        >
+
+            <!-- STORY HEADER -->
+
+            <div class="story-header">
+
+                <button
+                    id="closeStory"
+                    class="story-back"
+                    type="button"
+                    aria-label="Back to prophets"
+                >
+                    ←
+                </button>
+
+                <div class="story-heading">
+
+                    <span
+                        id="storyArabicName"
+                        class="story-arabic-name"
+                    >
+                    </span>
+
+                    <h2 id="storyTitle">
+                    </h2>
+
+                    <p id="storySubtitle">
+                    </p>
+
+                </div>
+
+                <button
+                    id="storyBookmark"
+                    class="story-bookmark"
+                    type="button"
+                    aria-label="Bookmark story"
+                >
+                    🔖
+                </button>
+
+            </div>
+
+
+            <!-- STORY HERO -->
+
+            <div class="story-hero">
+
+                <div
+                    id="storyIcon"
+                    class="story-icon"
+                >
+                    🌙
+                </div>
+
+                <div class="story-hero-text">
+
+                    <span>
+                        STORY OF
+                    </span>
+
+                    <h2 id="storyHeroName">
+                    </h2>
+
+                    <p id="storyHeroDescription">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STORY NAVIGATION
+            ================================================== -->
+
+            <div class="story-navigation">
+
+                <button
+                    id="previousProphet"
+                    class="story-nav-button"
+                    type="button"
+                >
+                    <span>←</span>
+                    <small>Previous</small>
+                </button>
+
+                <div class="story-progress">
+
+                    <span id="storyProgress">
+                        1 / 25
+                    </span>
+
+                </div>
+
+                <button
+                    id="nextProphet"
+                    class="story-nav-button"
+                    type="button"
+                >
+                    <small>Next</small>
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 STORY CONTENT
+            ================================================== -->
+
+            <article class="story-content">
+
+
+                <!-- INTRODUCTION -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            🌙
+                        </span>
+
+                        <h3>
+                            Introduction
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyIntroduction"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- EARLY LIFE -->
+
+                <section
+                    id="earlyLifeSection"
+                    class="story-section"
+                >
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            🌱
+                        </span>
+
+                        <h3>
+                            Early Life
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyEarlyLife"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- CALL TO ALLAH -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            🕌
+                        </span>
+
+                        <h3>
+                            The Call to Allah
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyCall"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- MAJOR EVENTS -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            ✨
+                        </span>
+
+                        <h3>
+                            Major Events
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyEvents"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- TRIALS -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            🤲
+                        </span>
+
+                        <h3>
+                            Trials & Patience
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyTrials"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- MIRACLES -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            ⭐
+                        </span>
+
+                        <h3>
+                            Signs & Miracles
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyMiracles"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- END OF STORY -->
+
+                <section class="story-section">
+
+                    <div class="story-section-heading">
+
+                        <span>
+                            🌿
+                        </span>
+
+                        <h3>
+                            The End of the Story
+                        </h3>
+
+                    </div>
+
+                    <div
+                        id="storyEnding"
+                        class="story-text"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     LESSONS
+                ================================================== -->
+
+                <section class="lessons-card">
+
+                    <div class="lessons-heading">
+
+                        <span>
+                            💡
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Lessons From This Story
+                            </h3>
+
+                            <p>
+                                What we can learn from this Prophet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <ul id="storyLessons">
+                    </ul>
+
+                </section>
+
+
+                <!-- =================================================
+                     QURAN REFERENCES
+                ================================================== -->
+
+                <section class="quran-references">
+
+                    <div class="references-heading">
+
+                        <span>
+                            📖
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Qur'an References
+                            </h3>
+
+                            <p>
+                                Where this story appears in the Qur'an
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="quranReferences"
+                        class="reference-list"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     IMPORTANT NOTE
+                ================================================== -->
+
+                <section class="authenticity-note">
+
+                    <div class="note-icon">
+                        ℹ️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Authenticity Note
+                        </h3>
+
+                        <p id="authenticityText">
+                            IQRANIX prioritizes information established
+                            by the Qur'an and reliable Islamic sources.
+                            Details that are not firmly established will
+                            not be presented as certain facts.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            </article>
+
+
+            <!-- =================================================
+                 STORY BOTTOM NAVIGATION
+            ================================================== -->
+
+            <div class="story-bottom-navigation">
+
+                <button
+                    id="bottomPrevious"
+                    class="bottom-nav-button"
+                    type="button"
+                >
+                    ← Previous Prophet
+                </button>
+
+                <button
+                    id="bottomNext"
+                    class="bottom-nav-button"
+                    type="button"
+                >
+                    Next Prophet →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BOOKMARKS PANEL
+        ================================================== -->
+
+        <aside
+            id="bookmarksPanel"
+            class="bookmarks-panel"
+            aria-hidden="true"
+        >
+
+            <div class="bookmarks-header">
+
+                <div>
+
+                    <h2>
+                        Saved Stories
+                    </h2>
+
+                    <p>
+                        Your bookmarked prophets
+                    </p>
+
+                </div>
+
+                <button
+                    id="closeBookmarks"
+                    type="button"
+                    aria-label="Close bookmarks"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="bookmarksList"
+                class="bookmarks-list"
+            >
+            </div>
+
+            <div
+                id="emptyBookmarks"
+                class="empty-bookmarks"
+            >
+
+                <div>
+                    🔖
+                </div>
+
+                <h3>
+                    No saved stories
+                </h3>
+
+                <p>
+                    Bookmark a prophet's story to find it here.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             TEXT SIZE CONTROLS
+        ================================================== -->
+
+        <div
+            id="readingControls"
+            class="reading-controls"
+        >
+
+            <button
+                id="decreaseText"
+                type="button"
+                aria-label="Decrease text size"
+            >
+                A−
+            </button>
+
+            <span>
+                Reading
+            </span>
+
+            <button
+                id="increaseText"
+                type="button"
+                aria-label="Increase text size"
+            >
+                A+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             TOAST
+        ================================================== -->
+
+        <div
+            id="toast"
+            class="toast"
+            role="status"
+            aria-live="polite"
+        >
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="prophets.js"></script>
+
+</body>
+</html>

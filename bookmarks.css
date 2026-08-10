@@ -1,0 +1,768 @@
+/* =========================================================
+   IQRANIX — BOOKMARKS
+   Premium Islamic UI
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    color: #ffffff;
+    background: #061f17;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.page-background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(11, 110, 79, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(8, 127, 91, 0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #04150f,
+            #073b2b 50%,
+            #02120d
+        );
+}
+
+.page-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.42)
+        );
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.bookmarks-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 20px;
+
+    background: rgba(3, 27, 20, 0.88);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button,
+.clear-button {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-button:hover,
+.clear-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+.clear-button {
+    color: #ffb4a8;
+    border: none;
+}
+
+/* =========================================================
+   HEADER TITLE
+   ========================================================= */
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-align: left;
+}
+
+.header-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #d8ffe9;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b6e4f,
+            #087f5b
+        );
+
+    box-shadow:
+        0 8px 25px rgba(8, 127, 91, 0.3);
+}
+
+.header-title span {
+    display: block;
+
+    color: #9bd9c0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.header-title h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    line-height: 1.1;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.bookmarks-container {
+    width: min(100%, 900px);
+    margin: auto;
+    padding: 26px 18px 50px;
+}
+
+/* =========================================================
+   INTRO CARD
+   ========================================================= */
+
+.intro-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 28px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11, 110, 79, 0.68),
+            rgba(4, 43, 32, 0.72)
+        );
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 22px;
+}
+
+.intro-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    top: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: #9fe3c5;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.intro-card h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(28px, 7vw, 40px);
+
+    margin-bottom: 10px;
+}
+
+.intro-card p {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   BOOKMARK COUNT
+   ========================================================= */
+
+.bookmark-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 18px;
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    color: #d8ffe9;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.filter-section {
+    display: flex;
+    gap: 9px;
+
+    overflow-x: auto;
+
+    padding: 4px 1px 14px;
+
+    scrollbar-width: none;
+}
+
+.filter-section::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-button {
+    flex: 0 0 auto;
+
+    padding: 10px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 13px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.filter-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.filter-button.active {
+    color: #ffffff;
+
+    background: #0b6e4f;
+
+    border-color: #0b6e4f;
+
+    box-shadow:
+        0 7px 20px rgba(11, 110, 79, 0.28);
+}
+
+/* =========================================================
+   BOOKMARK LIST
+   ========================================================= */
+
+.bookmarks-section {
+    width: 100%;
+}
+
+.bookmarks-list {
+    display: grid;
+    gap: 14px;
+}
+
+/* =========================================================
+   BOOKMARK CARD
+   ========================================================= */
+
+.bookmark-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 19px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.065);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.bookmark-card:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.095);
+
+    border-color: rgba(159, 227, 197, 0.25);
+}
+
+/* =========================================================
+   BOOKMARK ICON
+   ========================================================= */
+
+.bookmark-type-icon {
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #d8ffe9;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b6e4f,
+            #087f5b
+        );
+}
+
+/* =========================================================
+   BOOKMARK CONTENT
+   ========================================================= */
+
+.bookmark-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.bookmark-type {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8ed8b9;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.bookmark-title {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    margin-bottom: 6px;
+}
+
+.bookmark-text {
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+.bookmark-arabic {
+    margin-top: 10px;
+
+    color: #f4fff8;
+
+    font-family: "Noto Naskh Arabic", serif;
+
+    font-size: 21px;
+    line-height: 1.8;
+
+    direction: rtl;
+    text-align: right;
+}
+
+/* =========================================================
+   BOOKMARK ACTIONS
+   ========================================================= */
+
+.bookmark-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.bookmark-action {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 11px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.bookmark-action:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.bookmark-action.delete:hover {
+    color: #ffb4a8;
+    background: rgba(255, 80, 70, 0.12);
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    display: none;
+
+    text-align: center;
+
+    padding: 55px 25px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.empty-state.show {
+    display: block;
+}
+
+.empty-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 22px;
+
+    color: #8ed8b9;
+
+    background: rgba(11, 110, 79, 0.25);
+
+    font-size: 28px;
+}
+
+.empty-state h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 26px;
+
+    margin-bottom: 9px;
+}
+
+.empty-state p {
+    max-width: 450px;
+
+    margin: auto;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   EXPLORE BUTTON
+   ========================================================= */
+
+.explore-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 22px;
+    padding: 12px 18px;
+
+    border-radius: 13px;
+
+    color: #ffffff;
+
+    background: #0b6e4f;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px rgba(11, 110, 79, 0.28);
+
+    transition: 0.2s ease;
+}
+
+.explore-button:hover {
+    transform: translateY(-2px);
+    background: #087f5b;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.bookmarks-footer {
+    padding: 35px 20px 40px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.footer-logo {
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 5px;
+}
+
+.bookmarks-footer p {
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin: 18px 0;
+}
+
+.footer-links a {
+    color: #9fe3c5;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.bookmarks-footer small {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.bookmark-card {
+    animation: bookmarkAppear 0.35s ease both;
+}
+
+@keyframes bookmarkAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .bookmarks-header {
+        padding: 12px 14px;
+    }
+
+    .bookmarks-container {
+        padding: 20px 14px 40px;
+    }
+
+    .intro-card {
+        padding: 24px 19px;
+        border-radius: 21px;
+    }
+
+    .header-title h1 {
+        font-size: 18px;
+    }
+
+    .header-title span {
+        font-size: 8px;
+    }
+
+    .header-icon,
+    .back-button,
+    .clear-button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .bookmark-card {
+        padding: 15px;
+        gap: 11px;
+        border-radius: 17px;
+    }
+
+    .bookmark-type-icon {
+        flex-basis: 41px;
+        width: 41px;
+        height: 41px;
+        border-radius: 12px;
+    }
+
+    .bookmark-title {
+        font-size: 15px;
+    }
+
+    .bookmark-text {
+        font-size: 12px;
+    }
+
+    .bookmark-arabic {
+        font-size: 19px;
+    }
+
+    .bookmark-actions {
+        gap: 5px;
+    }
+
+    .bookmark-action {
+        width: 34px;
+        height: 34px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

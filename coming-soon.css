@@ -1,0 +1,290 @@
+/* =====================================================
+   IQRANIX — COMING SOON
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061f18,
+            #0B6E4F,
+            #073f30
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.coming-soon-page {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   CARD
+   ===================================================== */
+
+.coming-soon-card {
+
+    width: 100%;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* =====================================================
+   ICON
+   ===================================================== */
+
+.icon-circle {
+
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 42px;
+
+}
+
+
+.icon-circle span {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.brand {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+
+    opacity: 0.85;
+}
+
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+
+.badge {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.22);
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: clamp(30px, 7vw, 46px);
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   ARABIC
+   ===================================================== */
+
+.arabic {
+
+    font-size: 26px;
+
+    margin-bottom: 22px;
+
+    direction: rtl;
+
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.message {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   UPDATES
+   ===================================================== */
+
+.updates {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================================================
+   DUA
+   ===================================================== */
+
+.dua {
+
+    padding: 17px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(0, 0, 0, 0.12);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+
+}
+
+
+/* =====================================================
+   BUTTON
+   ===================================================== */
+
+.back-button {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 14px 24px;
+
+    background: #ffffff;
+
+    color: #0B6E4F;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.back-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.back-button:active {
+
+    transform: scale(0.96);
+
+}

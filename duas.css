@@ -1,0 +1,1735 @@
+/* =========================================================
+   IQRANIX — DAILY DUAS
+   Complete CSS matching daily-duas.html
+   ========================================================= */
+
+:root {
+    --green: #078b68;
+    --green-dark: #05664d;
+    --green-light: #e8f7f1;
+
+    --text: #24302d;
+    --muted: #687773;
+
+    --white: #ffffff;
+    --bg: #f3f8f6;
+
+    --border: rgba(0, 0, 0, 0.07);
+
+    --shadow:
+        0 8px 28px rgba(18, 53, 45, 0.09);
+
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.duas-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078b68,
+            #056f55
+        );
+
+    color: white;
+
+    box-shadow:
+        0 5px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Back button from HTML */
+
+.back-button {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.23);
+}
+
+.back-button:active {
+    transform: scale(0.9);
+}
+
+/* Header text */
+
+.header-text {
+    min-width: 0;
+}
+
+.header-text h1 {
+    margin: 0;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+.header-text p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.88;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.duas-container {
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    padding:
+        22px
+        16px
+        70px;
+}
+
+/* =========================================================
+   INTRO CARD
+   ========================================================= */
+
+.intro-card {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    padding: 25px 21px;
+
+    border-radius: var(--radius-xl);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e6f8f1,
+            #ffffff
+        );
+
+    border: 1px solid rgba(7, 139, 104, 0.09);
+
+    box-shadow: var(--shadow);
+}
+
+.intro-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -65px;
+    top: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(7, 139, 104, 0.08);
+}
+
+.intro-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.intro-card h2 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 0 8px;
+
+    color: var(--green-dark);
+
+    font-size: 25px;
+}
+
+.intro-card p {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    line-height: 1.65;
+
+    font-size: 15px;
+}
+
+/* =========================================================
+   CONTROLS CARD
+   ========================================================= */
+
+.controls-card {
+    margin-bottom: 22px;
+
+    padding: 20px;
+
+    border-radius: var(--radius-lg);
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.controls-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-wrapper {
+    position: relative;
+
+    margin-bottom: 18px;
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 21px;
+
+    color: var(--muted);
+
+    pointer-events: none;
+}
+
+#duaSearch {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+        13px
+        15px
+        13px
+        47px;
+
+    border:
+        1px solid
+        #dce7e3;
+
+    border-radius: 16px;
+
+    outline: none;
+
+    background: #fbfdfc;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#duaSearch:focus {
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 139, 104, 0.1);
+}
+
+#duaSearch::placeholder {
+    color: #899793;
+}
+
+/* =========================================================
+   CATEGORY SELECT
+   ========================================================= */
+
+#categorySelect {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+        12px
+        42px
+        12px
+        15px;
+
+    border:
+        1px solid
+        #dce7e3;
+
+    border-radius: 16px;
+
+    outline: none;
+
+    background: #fbfdfc;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#categorySelect:focus {
+    border-color: var(--green);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 139, 104, 0.1);
+}
+
+/* =========================================================
+   FEATURED DUA
+   ========================================================= */
+
+.featured-dua {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    padding: 21px;
+
+    border-radius: var(--radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            #e5f7ef,
+            #d4f0e5
+        );
+
+    border:
+        1px solid
+        rgba(7, 139, 104, 0.08);
+
+    box-shadow: var(--shadow);
+}
+
+.featured-heading {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 17px;
+}
+
+.featured-heading span {
+    font-size: 23px;
+}
+
+.featured-heading h2 {
+    margin: 0;
+
+    color: var(--green-dark);
+
+    font-size: 22px;
+}
+
+#featuredDua {
+    position: relative;
+    z-index: 2;
+}
+
+.loading-text {
+    margin: 0;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.dua-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 11px;
+
+    margin-bottom: 15px;
+}
+
+.stat-box {
+    padding: 17px 10px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 5px 18px
+        rgba(18, 53, 45, 0.06);
+}
+
+.stat-box strong {
+    display: block;
+
+    color: var(--green-dark);
+
+    font-size: 24px;
+
+    font-weight: 850;
+}
+
+.stat-box span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.dua-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 11px;
+
+    margin-bottom: 25px;
+}
+
+.action-button {
+    min-height: 50px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: var(--green);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px
+        rgba(7, 139, 104, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.action-button:hover {
+    background: var(--green-dark);
+
+    box-shadow:
+        0 9px 20px
+        rgba(7, 139, 104, 0.22);
+}
+
+.action-button:active {
+    transform: scale(0.96);
+}
+
+.action-button.secondary {
+    background: white;
+
+    color: var(--green-dark);
+
+    border:
+        1px solid
+        rgba(7, 139, 104, 0.15);
+
+    box-shadow:
+        0 5px 16px
+        rgba(18, 53, 45, 0.06);
+}
+
+/* =========================================================
+   ALL DUAS SECTION
+   ========================================================= */
+
+.duas-section {
+    margin-top: 5px;
+}
+
+.section-heading {
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    color: var(--text);
+
+    font-size: 25px;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+/* =========================================================
+   DUA LIST
+   ========================================================= */
+
+.duas-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+/* =========================================================
+   DUA CARD
+   These classes are also compatible with your data renderer.
+   ========================================================= */
+
+.dua-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 21px;
+
+    border-radius: var(--radius-xl);
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.04);
+
+    box-shadow: var(--shadow);
+
+    animation:
+        duaCardIn
+        0.4s
+        ease
+        both;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dua-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 35px
+        rgba(18, 53, 45, 0.12);
+}
+
+.dua-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -65px;
+    top: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.3);
+
+    pointer-events: none;
+}
+
+.dua-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    left: -45px;
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.18);
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   CARD COLOURS
+   ========================================================= */
+
+.dua-card.color-green {
+    background:
+        linear-gradient(
+            145deg,
+            #e5f7ef,
+            #d4f0e5
+        );
+}
+
+.dua-card.color-purple {
+    background:
+        linear-gradient(
+            145deg,
+            #eee7ff,
+            #e1d6ff
+        );
+}
+
+.dua-card.color-blue {
+    background:
+        linear-gradient(
+            145deg,
+            #e5f3ff,
+            #d5eaff
+        );
+}
+
+.dua-card.color-gold {
+    background:
+        linear-gradient(
+            145deg,
+            #fff5d9,
+            #ffebbd
+        );
+}
+
+.dua-card.color-pink {
+    background:
+        linear-gradient(
+            145deg,
+            #ffeaf1,
+            #ffdce8
+        );
+}
+
+.dua-card.color-teal {
+    background:
+        linear-gradient(
+            145deg,
+            #def8f5,
+            #ccefeb
+        );
+}
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.dua-card-top {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.dua-category-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.68);
+
+    color: var(--green-dark);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.dua-number {
+    min-width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   DUA TITLE
+   ========================================================= */
+
+.dua-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0
+        0
+        15px;
+
+    color: #173d34;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   ARABIC
+   ========================================================= */
+
+.dua-arabic {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 16px;
+
+    padding:
+        22px
+        17px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.5);
+
+    text-align: right;
+
+    direction: rtl;
+
+    font-family:
+        "Amiri",
+        "Noto Naskh Arabic",
+        "Traditional Arabic",
+        serif;
+
+    font-size: 27px;
+
+    line-height: 2;
+
+    color: #173d34;
+}
+
+/* =========================================================
+   TRANSLITERATION
+   ========================================================= */
+
+.dua-transliteration {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0
+        0
+        14px;
+
+    color: #49645d;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    line-height: 1.75;
+}
+
+/* =========================================================
+   TRANSLATION
+   ========================================================= */
+
+.dua-translation {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.63);
+
+    color: #293c37;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.dua-translation-title {
+    margin-bottom: 5px;
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+
+    font-weight: 850;
+}
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.dua-source {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 13px;
+
+    color: #667a74;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.dua-source strong {
+    color: var(--green-dark);
+}
+
+/* =========================================================
+   CARD ACTIONS
+   ========================================================= */
+
+.dua-card .dua-actions {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 17px;
+
+    margin-bottom: 0;
+}
+
+.dua-action {
+    flex: 1;
+
+    min-height: 44px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.76);
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    transition: 0.2s ease;
+}
+
+.dua-action:hover {
+    background: white;
+}
+
+.dua-action:active {
+    transform: scale(0.95);
+}
+
+.dua-action.bookmarked {
+    background: #f8c84e;
+
+    color: #4d3b00;
+}
+
+/* =========================================================
+   LOADING CARD
+   ========================================================= */
+
+.loading-card {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border-radius: var(--radius-xl);
+
+    background: white;
+
+    color: var(--muted);
+
+    box-shadow: var(--shadow);
+}
+
+.loading-spinner {
+    width: 34px;
+    height: 34px;
+
+    margin:
+        0
+        auto
+        13px;
+
+    border:
+        4px
+        solid
+        #dcebe6;
+
+    border-top-color: var(--green);
+
+    border-radius: 50%;
+
+    animation:
+        spin
+        0.8s
+        linear
+        infinite;
+}
+
+.loading-card p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+/* =========================================================
+   NO RESULTS
+   ========================================================= */
+
+.no-results {
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border-radius: var(--radius-xl);
+
+    background: white;
+
+    color: var(--muted);
+
+    box-shadow: var(--shadow);
+}
+
+.no-results-icon {
+    margin-bottom: 10px;
+
+    font-size: 44px;
+}
+
+.no-results h3 {
+    margin:
+        0
+        0
+        8px;
+
+    color: var(--text);
+
+    font-size: 20px;
+}
+
+.no-results p {
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.dua-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+}
+
+.dua-modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(4, 25, 20, 0.65);
+
+    backdrop-filter:
+        blur(5px);
+}
+
+.modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(650px, 100%);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 28px 22px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.25);
+
+    animation:
+        modalIn
+        0.25s
+        ease;
+}
+
+.close-modal {
+    position: absolute;
+
+    right: 14px;
+    top: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf5f2;
+
+    color: var(--green-dark);
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+.close-modal:active {
+    transform: scale(0.9);
+}
+
+.modal-icon {
+    width: 58px;
+    height: 58px;
+
+    margin:
+        0
+        auto
+        12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: var(--green-light);
+
+    font-size: 28px;
+}
+
+.modal-content h2 {
+    margin:
+        0
+        0
+        18px;
+
+    text-align: center;
+
+    color: var(--green-dark);
+
+    font-size: 23px;
+}
+
+.modal-dua-content {
+    line-height: 1.8;
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    max-width: calc(100% - 30px);
+
+    padding:
+        12px
+        18px;
+
+    border-radius: 999px;
+
+    background: #173d34;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes duaCardIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .duas-header {
+        padding:
+            13px
+            14px;
+    }
+
+    .back-button {
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .header-text h1 {
+        font-size: 22px;
+    }
+
+    .header-text p {
+        font-size: 12px;
+    }
+
+    .duas-container {
+        padding:
+            17px
+            12px
+            55px;
+    }
+
+    .intro-card {
+        padding:
+            22px
+            18px;
+    }
+
+    .intro-card h2 {
+        font-size: 23px;
+    }
+
+    .controls-card {
+        padding: 17px;
+    }
+
+    .featured-dua {
+        padding: 18px;
+    }
+
+    .featured-heading h2 {
+        font-size: 20px;
+    }
+
+    .dua-card {
+        padding: 17px;
+
+        border-radius: 24px;
+    }
+
+    .dua-arabic {
+        padding:
+            19px
+            14px;
+
+        font-size: 24px;
+
+        line-height: 1.95;
+    }
+
+    .dua-title {
+        font-size: 18px;
+    }
+
+    .dua-transliteration {
+        font-size: 14px;
+    }
+
+    .dua-translation {
+        font-size: 14px;
+    }
+
+    .dua-card .dua-actions {
+        flex-wrap: wrap;
+    }
+
+    .dua-card .dua-action {
+        min-width:
+            calc(50% - 5px);
+    }
+
+    .modal-content {
+        padding:
+            25px
+            17px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-text p {
+        font-size: 11px;
+    }
+
+    .dua-stats {
+        gap: 7px;
+    }
+
+    .stat-box {
+        padding:
+            14px
+            6px;
+    }
+
+    .stat-box strong {
+        font-size: 21px;
+    }
+
+    .stat-box span {
+        font-size: 11px;
+    }
+
+    .dua-arabic {
+        font-size: 22px;
+    }
+
+    .dua-action {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --text: #edf5f2;
+        --muted: #afc3bc;
+        --bg: #101816;
+        --white: #19231f;
+    }
+
+    body {
+        background: #101816;
+        color: #edf5f2;
+    }
+
+    .duas-header {
+        background:
+            linear-gradient(
+                135deg,
+                #087f5b,
+                #056044
+            );
+    }
+
+    .intro-card {
+        background:
+            linear-gradient(
+                145deg,
+                #163b31,
+                #122c25
+            );
+
+        border-color:
+            rgba(255,255,255,0.05);
+    }
+
+    .intro-icon {
+        background: #19231f;
+    }
+
+    .intro-card h2 {
+        color: #72d6b2;
+    }
+
+    .intro-card p {
+        color: #b5c9c2;
+    }
+
+    .controls-card {
+        background: #19231f;
+
+        border-color:
+            rgba(255,255,255,0.05);
+    }
+
+    .controls-card label {
+        color: #72d6b2;
+    }
+
+    #duaSearch,
+    #categorySelect {
+        background: #121a17;
+
+        color: white;
+
+        border-color: #30433d;
+    }
+
+    #duaSearch::placeholder {
+        color: #789089;
+    }
+
+    .featured-dua {
+        background:
+            linear-gradient(
+                145deg,
+                #163b31,
+                #122c25
+            );
+    }
+
+    .featured-heading h2 {
+        color: #72d6b2;
+    }
+
+    .stat-box {
+        background: #19231f;
+
+        border-color:
+            rgba(255,255,255,0.05);
+    }
+
+    .stat-box strong {
+        color: #72d6b2;
+    }
+
+    .stat-box span {
+        color: #a9bdb6;
+    }
+
+    .action-button.secondary {
+        background: #19231f;
+
+        color: #72d6b2;
+
+        border-color:
+            rgba(114,214,178,0.15);
+    }
+
+    .section-heading h2 {
+        color: #edf5f2;
+    }
+
+    .section-heading p {
+        color: #a9bdb6;
+    }
+
+    .dua-card {
+        border-color:
+            rgba(255,255,255,0.05);
+    }
+
+    .dua-card.color-green {
+        background:
+            linear-gradient(
+                145deg,
+                #163b31,
+                #122c25
+            );
+    }
+
+    .dua-card.color-purple {
+        background:
+            linear-gradient(
+                145deg,
+                #302744,
+                #261f38
+            );
+    }
+
+    .dua-card.color-blue {
+        background:
+            linear-gradient(
+                145deg,
+                #173448,
+                #122b3d
+            );
+    }
+
+    .dua-card.color-gold {
+        background:
+            linear-gradient(
+                145deg,
+                #46391b,
+                #382d16
+            );
+    }
+
+    .dua-card.color-pink {
+        background:
+            linear-gradient(
+                145deg,
+                #452a35,
+                #38232d
+            );
+    }
+
+    .dua-card.color-teal {
+        background:
+            linear-gradient(
+                145deg,
+                #143b38,
+                #102f2d
+            );
+    }
+
+    .dua-category-label,
+    .dua-number {
+        background:
+            rgba(255,255,255,0.12);
+
+        color: #bff5e2;
+    }
+
+    .dua-title {
+        color: #edf5f2;
+    }
+
+    .dua-arabic {
+        color: #e8fff6;
+
+        background:
+            rgba(0,0,0,0.16);
+    }
+
+    .dua-transliteration {
+        color: #c0d4cd;
+    }
+
+    .dua-translation {
+        color: #dce9e5;
+
+        background:
+            rgba(0,0,0,0.16);
+    }
+
+    .dua-translation-title {
+        color: #72d6b2;
+    }
+
+    .dua-source {
+        color: #aebfb9;
+    }
+
+    .dua-source strong {
+        color: #72d6b2;
+    }
+
+    .dua-action {
+        background:
+            rgba(0,0,0,0.18);
+
+        color: #c9f5e6;
+    }
+
+    .loading-card,
+    .no-results {
+        background: #19231f;
+
+        color: #b5c9c2;
+    }
+
+    .no-results h3 {
+        color: #edf5f2;
+    }
+
+    .modal-content {
+        background: #19231f;
+
+        color: #edf5f2;
+    }
+
+    .close-modal {
+        background: #25352f;
+
+        color: #c9f5e6;
+    }
+
+    .modal-content h2 {
+        color: #72d6b2;
+    }
+}

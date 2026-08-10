@@ -1,0 +1,1043 @@
+/* =========================================================
+   IQRANIX — QIBLA COMPASS
+   ========================================================= */
+
+:root {
+    --green: #078b68;
+    --green-dark: #05664d;
+    --green-deep: #064b3a;
+    --green-light: #e8f7f1;
+
+    --gold: #d7a928;
+    --gold-light: #f8e7a7;
+
+    --background: #f2f8f5;
+    --white: #ffffff;
+
+    --text: #19352d;
+    --muted: #71817c;
+
+    --shadow:
+        0 12px 35px rgba(7, 75, 58, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #e8f8f1 0,
+            #f2f8f5 38%,
+            #eef5f2 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.qibla-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078b68,
+            #05664d
+        );
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.13);
+}
+
+.qibla-header h1 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+.qibla-header p {
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+.back-button {
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.back-button:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.qibla-page {
+
+    width: min(650px, 100%);
+
+    margin: auto;
+
+    padding: 20px 14px 60px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-card {
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e3f6ee,
+            #ffffff
+        );
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.intro-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: white;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.08);
+}
+
+.intro-card h2 {
+
+    margin: 0 0 7px;
+
+    color: var(--green-dark);
+
+    font-size: 24px;
+}
+
+.intro-card p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   COMPASS SECTION
+   ========================================================= */
+
+.compass-section {
+
+    padding: 18px 0 22px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   COMPASS
+   ========================================================= */
+
+.compass {
+
+    position: relative;
+
+    width: min(86vw, 390px);
+
+    aspect-ratio: 1 / 1;
+
+    margin: 5px auto 20px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #f8fcfa 46%,
+            #dff1e9 47%,
+            #c8e8dc 53%,
+            #08775b 54%,
+            #05664d 60%,
+            #044b3b 100%
+        );
+
+    border: 7px solid #064d3b;
+
+    box-shadow:
+
+        0 0 0 4px #d8eee5,
+
+        0 0 0 9px rgba(7,139,104,0.10),
+
+        0 20px 45px rgba(4,75,58,0.25);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   INNER RINGS
+   ========================================================= */
+
+.compass-ring {
+
+    position: absolute;
+
+    inset: 13%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.ring-one {
+
+    border:
+        2px solid
+        rgba(7,139,104,0.20);
+}
+
+.ring-two {
+
+    inset: 21%;
+
+    border:
+        1px solid
+        rgba(7,139,104,0.20);
+}
+
+
+/* =========================================================
+   CARDINAL DIRECTIONS
+   ========================================================= */
+
+.direction {
+
+    position: absolute;
+
+    z-index: 8;
+
+    font-weight: 900;
+
+    font-size: 21px;
+
+    color: var(--green-deep);
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,0.9);
+}
+
+.north {
+
+    top: 7%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #b08a1d;
+}
+
+.east {
+
+    right: 7%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.south {
+
+    bottom: 7%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.west {
+
+    left: 7%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   DEGREE MARKS
+   ========================================================= */
+
+.degree-mark {
+
+    position: absolute;
+
+    z-index: 4;
+
+    width: 2px;
+
+    height: 12px;
+
+    left: calc(50% - 1px);
+
+    top: 3%;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    transform-origin:
+        1px calc(47% / 0.47);
+}
+
+
+/* Simple visible ticks */
+
+.mark-0 {
+    transform: rotate(0deg);
+}
+
+.mark-45 {
+    transform: rotate(45deg);
+}
+
+.mark-90 {
+    transform: rotate(90deg);
+}
+
+.mark-135 {
+    transform: rotate(135deg);
+}
+
+.mark-180 {
+    transform: rotate(180deg);
+}
+
+.mark-225 {
+    transform: rotate(225deg);
+}
+
+.mark-270 {
+    transform: rotate(270deg);
+}
+
+.mark-315 {
+    transform: rotate(315deg);
+}
+
+
+/* =========================================================
+   ISLAMIC STAR
+   ========================================================= */
+
+.compass-star {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(-100px);
+
+    z-index: 3;
+
+    color:
+        rgba(215,169,40,0.28);
+
+    font-size: 34px;
+}
+
+
+/* =========================================================
+   QIBLA ARROW
+   ========================================================= */
+
+.qibla-arrow {
+
+    position: absolute;
+
+    z-index: 15;
+
+    width: 100%;
+
+    height: 100%;
+
+    left: 0;
+
+    top: 0;
+
+    transform:
+        rotate(0deg);
+
+    transform-origin:
+        center center;
+
+    transition:
+        transform 0.12s ease-out;
+
+    pointer-events: none;
+}
+
+
+/* Arrow shaft */
+
+.arrow-shaft {
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 34%;
+
+    left: calc(50% - 4.5px);
+
+    top: 18%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b38719,
+            #f0ce61,
+            #b38719
+        );
+
+    box-shadow:
+        0 3px 12px rgba(80,55,0,0.25);
+}
+
+
+/* Arrow head */
+
+.arrow-head {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 9%;
+
+    transform:
+        translateX(-50%);
+
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5d46c,
+            #c69a22
+        );
+
+    border:
+        4px solid white;
+
+    box-shadow:
+        0 5px 18px rgba(70,50,0,0.25);
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   CENTER
+   ========================================================= */
+
+.compass-center {
+
+    position: absolute;
+
+    z-index: 20;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 78px;
+
+    height: 78px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #087f5b,
+            #04543f
+        );
+
+    border:
+        5px solid white;
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.25);
+}
+
+.center-inner {
+
+    width: 54px;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.55);
+
+    color: white;
+
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   QIBLA LABEL
+   ========================================================= */
+
+.qibla-label {
+
+    position: absolute;
+
+    z-index: 25;
+
+    left: 50%;
+
+    bottom: 19%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    color: var(--green-deep);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INSTRUCTION
+   ========================================================= */
+
+.compass-instruction {
+
+    margin: 0 auto;
+
+    max-width: 420px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.controls-card {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.primary-button,
+.secondary-button {
+
+    flex: 1;
+
+    min-height: 52px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.primary-button {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078b68,
+            #05664d
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(7,139,104,0.22);
+}
+
+.secondary-button {
+
+    color: var(--green-dark);
+
+    background: white;
+
+    box-shadow: var(--shadow);
+}
+
+.primary-button:active,
+.secondary-button:active {
+
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   INFO GRID
+   ========================================================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 11px;
+
+    margin-bottom: 16px;
+}
+
+.info-card {
+
+    padding: 18px 14px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.info-icon {
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.info-label {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.info-card strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--green-dark);
+
+    font-size: 21px;
+}
+
+.info-card small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    margin-bottom: 16px;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4f7ef,
+            #ffffff
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.status-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: var(--green);
+
+    color: white;
+
+    font-size: 23px;
+}
+
+.status-card strong {
+
+    display: block;
+
+    color: var(--green-dark);
+}
+
+.status-card p {
+
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   KAABA CARD
+   ========================================================= */
+
+.kaaba-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 19px;
+
+    border-radius: 21px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #075943,
+            #043e30
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.kaaba-symbol {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    font-size: 29px;
+}
+
+.kaaba-card h2 {
+
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.kaaba-card p {
+
+    margin: 4px 0 0;
+
+    font-size: 12px;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    z-index: 999;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform:
+        translate(-50%, 20px);
+
+    padding: 12px 18px;
+
+    border-radius: 999px;
+
+    background:
+        #173d34;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .qibla-page {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .compass {
+        width: min(91vw, 370px);
+    }
+
+    .controls-card {
+        flex-direction: column;
+    }
+
+    .info-card strong {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .qibla-header h1 {
+        font-size: 21px;
+    }
+
+    .compass {
+        width: 88vw;
+    }
+
+    .compass-center {
+        width: 68px;
+        height: 68px;
+    }
+
+    .center-inner {
+        width: 47px;
+        height: 47px;
+    }
+
+    .arrow-head {
+        width: 54px;
+        height: 54px;
+    }
+
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Prayer Time Adjustments • Iqranix</title>
+
+<meta name="theme-color"
+      content="#0B6E4F">
+
+<link rel="stylesheet"
+      href="prayer-adjustments.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html"
+   class="backButton"
+   aria-label="Back to Settings">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+    src="logo.png"
+    alt="Iqranix Logo"
+    class="heroLogo">
+
+<h1>
+Prayer Time Adjustments
+</h1>
+
+<p>
+Fine-tune your prayer times to match your local mosque or personal preference.
+</p>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="card">
+
+<h2>
+⏱ Prayer Time Adjustments
+</h2>
+
+<p class="description">
+
+Adjust each prayer by up to ±30 minutes.
+
+Your adjustments are saved on this device and are applied
+after the selected calculation method and Madhhab.
+
+</p>
+
+
+<!-- FAJR -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+🌅 Fajr
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="fajr"
+    aria-label="Decrease Fajr adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="fajrValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="fajr"
+    aria-label="Increase Fajr adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SUNRISE -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+🌄 Sunrise
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="sunrise"
+    aria-label="Decrease Sunrise adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="sunriseValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="sunrise"
+    aria-label="Increase Sunrise adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- DHUHR -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+☀️ Dhuhr
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="dhuhr"
+    aria-label="Decrease Dhuhr adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="dhuhrValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="dhuhr"
+    aria-label="Increase Dhuhr adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ASR -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+🌤 Asr
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="asr"
+    aria-label="Decrease Asr adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="asrValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="asr"
+    aria-label="Increase Asr adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MAGHRIB -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+🌇 Maghrib
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="maghrib"
+    aria-label="Decrease Maghrib adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="maghribValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="maghrib"
+    aria-label="Increase Maghrib adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ISHA -->
+
+<div class="adjustmentRow">
+
+<div class="prayerName">
+🌙 Isha
+</div>
+
+<div class="adjustmentControls">
+
+<button
+    type="button"
+    class="adjustmentButton minus"
+    data-prayer="isha"
+    aria-label="Decrease Isha adjustment">
+
+−
+
+</button>
+
+<span
+    class="adjustmentValue"
+    id="ishaValue">
+
++0 min
+
+</span>
+
+<button
+    type="button"
+    class="adjustmentButton plus"
+    data-prayer="isha"
+    aria-label="Increase Isha adjustment">
+
++
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- INFORMATION -->
+
+<div class="infoBox">
+
+<h3>
+ℹ️ About Prayer Time Adjustments
+</h3>
+
+<p>
+
+These adjustments allow you to fine-tune calculated prayer
+times to match your local mosque or community timetable.
+
+</p>
+
+<p>
+
+Each prayer can be adjusted between
+<strong>−30 minutes</strong> and
+<strong>+30 minutes</strong>.
+
+</p>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="buttonGroup">
+
+<button
+    type="button"
+    id="resetAdjustments"
+    class="secondaryButton">
+
+🔄 Reset to Default
+
+</button>
+
+<button
+    type="button"
+    id="saveAdjustments"
+    class="primaryButton">
+
+💾 Save Adjustments
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script src="prayer-adjustments.js"></script>
+
+</body>
+
+</html>

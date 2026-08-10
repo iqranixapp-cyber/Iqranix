@@ -1,0 +1,1445 @@
+/* =====================================================
+   IQranix — Hijri Calendar
+   hijri-calendar.css
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --green-dark: #031f18;
+    --green-deep: #052b21;
+
+    --green: #087f5b;
+    --green-light: #0ca678;
+
+    --mint: #5ee0b6;
+    --mint-light: #8ce8ca;
+
+    --card: #092d24;
+    --card-light: #103b30;
+
+    --border: rgba(150, 230, 205, 0.12);
+
+    --text: #f5fffb;
+    --text-soft: #a6beb7;
+
+    --today: #48d8ad;
+
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, 0.20);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(12, 166, 120, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            var(--green-dark),
+            #021914 100%
+        );
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.app-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    min-height: 108px;
+
+    padding:
+        18px
+        max(20px, calc((100vw - 900px) / 2));
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07875f,
+            #07976b
+        );
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+.icon-button,
+.month-arrow {
+
+    border: 0;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.icon-button {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 20px;
+
+    font-size: 32px;
+
+    flex-shrink: 0;
+}
+
+
+.icon-button:hover,
+.month-arrow:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-2px);
+}
+
+
+.header-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    font-size: 38px;
+
+    flex-shrink: 0;
+}
+
+
+.header-text {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.header-text h1 {
+
+    font-size: 27px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.header-text p {
+
+    margin-top: 6px;
+
+    font-size: 16px;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+}
+
+
+.today-button {
+
+    border: 0;
+
+    min-width: 104px;
+
+    height: 54px;
+
+    padding: 0 20px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #08634c;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.calendar-page {
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    padding:
+        30px
+        20px
+        80px;
+}
+
+
+/* =====================================================
+   TODAY CARD
+===================================================== */
+
+.today-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 38px 28px 30px;
+
+    border-radius: 38px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #087f5b,
+            #07976b
+        );
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 22px;
+}
+
+
+.today-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    right: -100px;
+
+    top: -130px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+.today-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    left: -100px;
+
+    bottom: -120px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.today-badge {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: fit-content;
+
+    margin: 0 auto 24px;
+
+    padding: 11px 23px;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+.today-label {
+
+    position: relative;
+
+    z-index: 1;
+
+    color:
+        rgba(255, 255, 255, 0.76);
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.today-card h2 {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-size: clamp(29px, 6vw, 44px);
+
+    line-height: 1.15;
+
+    font-weight: 850;
+}
+
+
+.today-gregorian {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 12px;
+
+    font-size: 22px;
+
+    color:
+        rgba(255, 255, 255, 0.88);
+}
+
+
+/* =====================================================
+   TODAY DETAILS
+===================================================== */
+
+.today-details {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+.detail-card {
+
+    min-height: 86px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    text-align: left;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+
+.detail-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+.detail-card span {
+
+    display: block;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.detail-card strong {
+
+    display: block;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   SELECTED DATE
+===================================================== */
+
+.selected-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 30px;
+
+    background:
+        rgba(10, 45, 36, 0.88);
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+.selected-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(12, 166, 120, 0.12);
+
+    font-size: 34px;
+
+    flex-shrink: 0;
+}
+
+
+.selected-content span {
+
+    display: block;
+
+    color: var(--text-soft);
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.selected-content strong {
+
+    display: block;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+}
+
+
+.selected-content p {
+
+    margin-top: 5px;
+
+    color: var(--text-soft);
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   CALENDAR CARD
+===================================================== */
+
+.calendar-card {
+
+    padding: 30px 22px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 36px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 58, 47, 0.96),
+            rgba(5, 38, 30, 0.96)
+        );
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   MONTH HEADER
+===================================================== */
+
+.month-header {
+
+    display: grid;
+
+    grid-template-columns: 62px 1fr 62px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.month-arrow {
+
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 20px;
+
+    font-size: 40px;
+
+    color: var(--mint);
+}
+
+
+.month-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    text-align: left;
+}
+
+
+.moon-box {
+
+    width: 76px;
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 23px;
+
+    background:
+        #fff5d4;
+
+    font-size: 46px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.month-title h2 {
+
+    color: var(--mint);
+
+    font-size: 28px;
+
+    line-height: 1.1;
+
+    font-weight: 850;
+}
+
+
+.month-title p {
+
+    margin-top: 7px;
+
+    color: var(--text-soft);
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   WEEKDAYS
+===================================================== */
+
+.weekdays {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+.weekdays span {
+
+    text-align: center;
+
+    color: #91a9a2;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   CALENDAR GRID
+===================================================== */
+
+.calendar-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    gap: 9px;
+
+    min-height: 350px;
+}
+
+
+.calendar-day {
+
+    position: relative;
+
+    min-height: 76px;
+
+    border: 1px solid rgba(
+        150,
+        230,
+        205,
+        0.04
+    );
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+
+.calendar-day:hover {
+
+    transform: translateY(-2px);
+
+    background:
+        rgba(72, 216, 173, 0.10);
+
+    border-color:
+        rgba(72, 216, 173, 0.22);
+}
+
+
+.hijri-number {
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.gregorian-number {
+
+    color: #819b93;
+
+    font-size: 12px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   TODAY CIRCLE
+===================================================== */
+
+/*
+   This is the special TODAY marker.
+
+   The entire day remains a calendar cell,
+   while the Hijri number gets a circular
+   green outline/background.
+*/
+
+.calendar-day.today {
+
+    background:
+        rgba(72, 216, 173, 0.10);
+
+    border-color:
+        rgba(72, 216, 173, 0.30);
+}
+
+
+.calendar-day.today::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 48px;
+
+    height: 48px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -58%);
+
+    border-radius: 50%;
+
+    border: 3px solid var(--today);
+
+    background:
+        rgba(72, 216, 173, 0.12);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(72, 216, 173, 0.06),
+
+        0 0 18px
+        rgba(72, 216, 173, 0.18);
+
+    pointer-events: none;
+}
+
+
+.calendar-day.today .hijri-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+.calendar-day.today .gregorian-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: var(--mint-light);
+}
+
+
+/* =====================================================
+   EMPTY CELLS
+===================================================== */
+
+.calendar-empty {
+
+    min-height: 76px;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-day {
+
+    opacity: 0.35;
+
+    cursor: default;
+}
+
+
+.loading-day:hover {
+
+    transform: none;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* =====================================================
+   LEGEND
+===================================================== */
+
+.calendar-legend {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    margin-top: 18px;
+
+    border-top:
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color: #91aaa2;
+
+    font-size: 14px;
+}
+
+
+.calendar-legend div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.calendar-legend i {
+
+    display: block;
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+}
+
+
+.legend-today {
+
+    background:
+        var(--today);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(72, 216, 173, 0.12);
+}
+
+
+.legend-hijri {
+
+    background:
+        #d9fff2;
+}
+
+
+.legend-gregorian {
+
+    background:
+        #6d827c;
+}
+
+
+/* =====================================================
+   INFORMATION
+===================================================== */
+
+.info-section {
+
+    padding: 38px 4px 20px;
+}
+
+
+.mosque-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+.info-section h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 16px;
+}
+
+
+.info-section > p {
+
+    color: #d4e2de;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    margin-bottom: 22px;
+}
+
+
+.info-list {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+
+.info-list div {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #c6d8d2;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .app-header {
+
+        min-height: 96px;
+
+        padding: 14px 16px;
+
+        gap: 10px;
+    }
+
+
+    .icon-button,
+    .header-icon {
+
+        width: 58px;
+
+        height: 58px;
+
+        border-radius: 18px;
+    }
+
+
+    .icon-button {
+
+        font-size: 28px;
+    }
+
+
+    .header-icon {
+
+        font-size: 34px;
+    }
+
+
+    .header-text h1 {
+
+        font-size: 23px;
+    }
+
+
+    .header-text p {
+
+        font-size: 14px;
+    }
+
+
+    .today-button {
+
+        min-width: 82px;
+
+        height: 48px;
+
+        padding: 0 15px;
+
+        font-size: 15px;
+    }
+
+
+    .calendar-page {
+
+        padding:
+            20px
+            12px
+            60px;
+    }
+
+
+    .today-card {
+
+        padding:
+            30px
+            18px
+            22px;
+
+        border-radius: 30px;
+    }
+
+
+    .today-card h2 {
+
+        font-size: 30px;
+    }
+
+
+    .today-gregorian {
+
+        font-size: 19px;
+    }
+
+
+    .today-details {
+
+        gap: 9px;
+    }
+
+
+    .detail-card {
+
+        padding: 11px;
+
+        gap: 8px;
+
+        border-radius: 19px;
+    }
+
+
+    .detail-icon {
+
+        width: 46px;
+
+        height: 46px;
+
+        border-radius: 15px;
+
+        font-size: 24px;
+    }
+
+
+    .detail-card span {
+
+        font-size: 12px;
+    }
+
+
+    .detail-card strong {
+
+        font-size: 14px;
+    }
+
+
+    .selected-card {
+
+        padding: 18px;
+
+        border-radius: 25px;
+    }
+
+
+    .selected-icon {
+
+        width: 58px;
+
+        height: 58px;
+
+        border-radius: 18px;
+
+        font-size: 28px;
+    }
+
+
+    .selected-content strong {
+
+        font-size: 18px;
+    }
+
+
+    .selected-content p {
+
+        font-size: 15px;
+    }
+
+
+    .calendar-card {
+
+        padding:
+            24px
+            10px
+            17px;
+
+        border-radius: 30px;
+    }
+
+
+    .month-header {
+
+        grid-template-columns:
+            50px 1fr 50px;
+
+        gap: 8px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .month-arrow {
+
+        width: 50px;
+
+        height: 50px;
+
+        border-radius: 17px;
+
+        font-size: 34px;
+    }
+
+
+    .moon-box {
+
+        width: 66px;
+
+        height: 66px;
+
+        border-radius: 20px;
+
+        font-size: 39px;
+    }
+
+
+    .month-title {
+
+        gap: 10px;
+    }
+
+
+    .month-title h2 {
+
+        font-size: 22px;
+    }
+
+
+    .month-title p {
+
+        font-size: 15px;
+    }
+
+
+    .weekdays {
+
+        gap: 4px;
+    }
+
+
+    .weekdays span {
+
+        font-size: 10px;
+    }
+
+
+    .calendar-grid {
+
+        gap: 6px;
+
+        min-height: 320px;
+    }
+
+
+    .calendar-day {
+
+        min-height: 62px;
+
+        border-radius: 16px;
+
+        gap: 3px;
+    }
+
+
+    .hijri-number {
+
+        font-size: 18px;
+    }
+
+
+    .gregorian-number {
+
+        font-size: 10px;
+    }
+
+
+    .calendar-day.today::before {
+
+        width: 40px;
+
+        height: 40px;
+
+        border-width: 2px;
+    }
+
+
+    .calendar-empty {
+
+        min-height: 62px;
+    }
+
+
+    .calendar-legend {
+
+        gap: 12px;
+
+        font-size: 12px;
+    }
+
+
+    .info-section h2 {
+
+        font-size: 28px;
+    }
+
+
+    .info-section > p {
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .app-header {
+
+        padding:
+            12px 10px;
+    }
+
+
+    .icon-button,
+    .header-icon {
+
+        width: 52px;
+
+        height: 52px;
+    }
+
+
+    .header-text h1 {
+
+        font-size: 20px;
+    }
+
+
+    .header-text p {
+
+        font-size: 12px;
+    }
+
+
+    .today-button {
+
+        min-width: 72px;
+
+        padding: 0 11px;
+
+        font-size: 14px;
+    }
+
+
+    .calendar-page {
+
+        padding-left: 8px;
+
+        padding-right: 8px;
+    }
+
+
+    .calendar-day {
+
+        min-height: 55px;
+
+        border-radius: 14px;
+    }
+
+
+    .calendar-empty {
+
+        min-height: 55px;
+    }
+
+
+    .hijri-number {
+
+        font-size: 16px;
+    }
+
+
+    .gregorian-number {
+
+        font-size: 9px;
+    }
+
+
+    .calendar-day.today::before {
+
+        width: 36px;
+
+        height: 36px;
+    }
+
+}

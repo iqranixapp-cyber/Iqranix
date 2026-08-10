@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Prayer Times • Iqranix</title>
+
+<meta name="theme-color"
+content="#0B6E4F">
+
+<link rel="stylesheet"
+href="prayer.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<a href="index.html"
+class="back-btn">
+
+<i class="fas fa-arrow-left"></i>
+
+</a>
+
+<div>
+
+<h1>Prayer Times</h1>
+
+<p>Your daily Salah schedule</p>
+
+</div>
+
+<button class="refresh-btn"
+id="refreshBtn">
+
+<i class="fas fa-rotate-right"></i>
+
+</button>
+
+</header>
+
+<!-- LOCATION -->
+
+<section class="location-card">
+
+<div class="location-left">
+
+<i class="fas fa-location-dot"></i>
+
+<div>
+
+<h3 id="city">
+Detecting location...
+</h3>
+
+<p id="country">
+Loading...
+</p>
+
+</div>
+
+</div>
+
+<div class="date-box">
+
+<p id="gregorianDate">
+
+Loading...
+
+</p>
+
+<p id="hijriDate">
+
+Loading...
+
+</p>
+
+</div>
+
+</section>
+
+<!-- NEXT PRAYER -->
+
+<section class="next-prayer">
+
+<p class="label">
+
+Next Prayer
+
+</p>
+
+<h2 id="nextPrayer">
+
+Loading...
+
+</h2>
+
+<h1 id="countdown">
+
+--:--
+
+</h1>
+
+<div class="progress">
+
+<div class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TODAY'S PRAYERS -->
+
+<section class="prayers">
+
+<h2>
+
+Today's Prayer Times
+
+</h2><div class="prayer-card active">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            🌅
+        </div>
+
+        <div>
+
+            <h3>Fajr</h3>
+
+            <p>Dawn Prayer</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="fajrTime">--:--</h2>
+
+</div>
+
+<div class="prayer-card">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            🌄
+        </div>
+
+        <div>
+
+            <h3>Sunrise</h3>
+
+            <p>Sunrise</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="sunriseTime">--:--</h2>
+
+</div>
+
+<div class="prayer-card">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            ☀️
+        </div>
+
+        <div>
+
+            <h3>Dhuhr</h3>
+
+            <p>Noon Prayer</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="dhuhrTime">--:--</h2>
+
+</div>
+
+<div class="prayer-card">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            🌤️
+        </div>
+
+        <div>
+
+            <h3>Asr</h3>
+
+            <p>Afternoon Prayer</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="asrTime">--:--</h2>
+
+</div>
+
+<div class="prayer-card">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            🌇
+        </div>
+
+        <div>
+
+            <h3>Maghrib</h3>
+
+            <p>Sunset Prayer</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="maghribTime">--:--</h2>
+
+</div>
+
+<div class="prayer-card">
+
+    <div class="prayer-info">
+
+        <div class="prayer-icon">
+            🌙
+        </div>
+
+        <div>
+
+            <h3>Isha</h3>
+
+            <p>Night Prayer</p>
+
+        </div>
+
+    </div>
+
+    <h2 id="ishaTime">--:--</h2>
+
+</div>
+
+</section>
+
+<!-- QUICK ACTIONS -->
+
+<section class="quick-actions">
+
+<h2>
+
+Quick Actions
+
+</h2>
+
+<div class="action-grid">
+
+<a href="qibla.html" class="action-card">
+
+<div class="action-icon">
+🧭
+</div>
+
+<h3>Qibla</h3>
+
+<p>Find Direction</p>
+
+</a>
+
+<a href="tasbih.html" class="action-card">
+
+<div class="action-icon">
+📿
+</div>
+
+<h3>Tasbih</h3>
+
+<p>Digital Counter</p>
+
+</a>
+
+</div>
+
+</section><!-- ================= PRAYER TIPS ================= -->
+
+<section class="tips-section">
+
+    <h2>Prayer Reminder</h2>
+
+    <div class="tips-card">
+
+        <div class="tips-icon">
+            🤲
+        </div>
+
+        <div class="tips-content">
+
+            <h3>Prepare for Salah</h3>
+
+            <p>
+                Perform Wudu early, answer the Adhan, and pray with
+                sincerity and humility. May Allah accept your prayers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+
+<nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item">
+
+        <i class="fas fa-house"></i>
+
+        <span>Home</span>
+
+    </a>
+
+    <a href="quran.html" class="nav-item">
+
+        <i class="fas fa-book-quran"></i>
+
+        <span>Quran</span>
+
+    </a>
+
+    <a href="prayer.html" class="nav-item active">
+
+        <i class="fas fa-mosque"></i>
+
+        <span>Prayer</span>
+
+    </a>
+
+    <a href="qibla.html" class="nav-item">
+
+        <i class="fas fa-compass"></i>
+
+        <span>Qibla</span>
+
+    </a>
+
+    <a href="settings.html" class="nav-item">
+
+        <i class="fas fa-gear"></i>
+
+        <span>Settings</span>
+
+    </a>
+
+</nav>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <h3>Iqranix</h3>
+
+    <p>Your Complete Islamic Companion</p>
+
+    <small>© 2026 Iqranix. All rights reserved.</small>
+
+</footer>
+
+<script src="prayer.js"></script>
+
+</div>
+
+</body>
+</html>

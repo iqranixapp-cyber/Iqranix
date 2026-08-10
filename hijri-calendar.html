@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#087f5b"
+    >
+
+    <title>Hijri Calendar • IQranix</title>
+
+    <link
+        rel="stylesheet"
+        href="hijri-calendar.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header class="app-header">
+
+        <button
+            id="backButton"
+            class="icon-button"
+            type="button"
+            aria-label="Go back"
+        >
+            ←
+        </button>
+
+        <div class="header-icon">
+            🌙
+        </div>
+
+        <div class="header-text">
+
+            <h1>
+                Hijri Calendar
+            </h1>
+
+            <p>
+                Islamic Calendar
+            </p>
+
+        </div>
+
+        <button
+            id="todayButton"
+            class="today-button"
+            type="button"
+        >
+            Today
+        </button>
+
+    </header>
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="calendar-page">
+
+
+        <!-- ==================================================
+             TODAY CARD
+        =================================================== -->
+
+        <section class="today-card">
+
+            <div class="today-badge">
+                🌙
+                <span>Today</span>
+            </div>
+
+            <p class="today-label">
+                Today's Hijri Date
+            </p>
+
+            <h2 id="todayHijri">
+                Loading...
+            </h2>
+
+            <p
+                id="todayGregorian"
+                class="today-gregorian"
+            >
+                Loading...
+            </p>
+
+
+            <div class="today-details">
+
+                <div class="detail-card">
+
+                    <div class="detail-icon">
+                        🌙
+                    </div>
+
+                    <div>
+                        <span>
+                            Hijri Day
+                        </span>
+
+                        <strong id="todayDay">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <div class="detail-icon calendar-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <span>
+                            Gregorian
+                        </span>
+
+                        <strong id="todayGregorianShort">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SELECTED DATE
+        =================================================== -->
+
+        <section class="selected-card">
+
+            <div class="selected-icon">
+                📖
+            </div>
+
+            <div class="selected-content">
+
+                <span>
+                    Selected Date
+                </span>
+
+                <strong id="selectedHijri">
+                    Loading...
+                </strong>
+
+                <p id="selectedGregorian">
+                    Loading...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CALENDAR
+        =================================================== -->
+
+        <section class="calendar-card">
+
+
+            <!-- MONTH HEADER -->
+
+            <div class="month-header">
+
+                <button
+                    id="previousMonth"
+                    class="month-arrow"
+                    type="button"
+                    aria-label="Previous month"
+                >
+                    ‹
+                </button>
+
+
+                <div class="month-title">
+
+                    <div class="moon-box">
+                        🌙
+                    </div>
+
+                    <div>
+
+                        <h2 id="hijriMonthName">
+                            Loading...
+                        </h2>
+
+                        <p id="hijriYear">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="nextMonth"
+                    class="month-arrow"
+                    type="button"
+                    aria-label="Next month"
+                >
+                    ›
+                </button>
+
+            </div>
+
+
+            <!-- WEEKDAYS -->
+
+            <div class="weekdays">
+
+                <span>SUN</span>
+                <span>MON</span>
+                <span>TUE</span>
+                <span>WED</span>
+                <span>THU</span>
+                <span>FRI</span>
+                <span>SAT</span>
+
+            </div>
+
+
+            <!-- DAYS -->
+
+            <div
+                id="calendarGrid"
+                class="calendar-grid"
+            >
+                <!-- JavaScript inserts days here -->
+            </div>
+
+
+            <!-- LEGEND -->
+
+            <div class="calendar-legend">
+
+                <div>
+                    <i class="legend-today"></i>
+                    <span>Today</span>
+                </div>
+
+                <div>
+                    <i class="legend-hijri"></i>
+                    <span>Hijri day</span>
+                </div>
+
+                <div>
+                    <i class="legend-gregorian"></i>
+                    <span>Gregorian day</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             INFORMATION
+        =================================================== -->
+
+        <section class="info-section">
+
+            <div class="mosque-icon">
+                🕌
+            </div>
+
+            <h2>
+                Islamic Calendar
+            </h2>
+
+            <p>
+                The Hijri calendar is the lunar calendar
+                used by Muslims to determine important
+                Islamic dates, months and occasions.
+            </p>
+
+            <div class="info-list">
+
+                <div>
+                    🌙
+                    <span>
+                        The Hijri calendar has 12 lunar months.
+                    </span>
+                </div>
+
+                <div>
+                    🕋
+                    <span>
+                        Important Islamic occasions follow
+                        the Hijri calendar.
+                    </span>
+                </div>
+
+                <div>
+                    📅
+                    <span>
+                        Dates may vary depending on the
+                        moon-sighting or calculation method.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="hijri-calendar.js"></script>
+
+</body>
+</html>

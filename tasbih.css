@@ -1,0 +1,1093 @@
+/* =========================================================
+   IQRANIX — TASBIH
+   Matching CSS for tasbih.html
+   ========================================================= */
+
+:root {
+    --green: #078b68;
+    --green-dark: #05664f;
+    --green-deep: #034b3b;
+    --green-light: #e8f8f3;
+
+    --text: #18352e;
+    --muted: #6b7f79;
+
+    --white: #ffffff;
+    --background: #f3f9f7;
+
+    --gold: #d9a62e;
+    --gold-light: #fff5d7;
+
+    --border: rgba(7, 139, 104, 0.10);
+
+    --shadow:
+        0 12px 35px rgba(12, 71, 58, 0.09);
+
+    --radius-xl: 30px;
+    --radius-lg: 23px;
+    --radius-md: 17px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(7, 139, 104, 0.08),
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.tasbih-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078b68,
+            #05664f
+        );
+
+    color: white;
+
+    padding: 14px 16px;
+
+    box-shadow:
+        0 6px 25px rgba(0, 0, 0, 0.14);
+}
+
+.header-content {
+    width: min(900px, 100%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.back-button {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s ease;
+}
+
+.back-button:active {
+    transform: scale(0.90);
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.header-content h1 {
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+.header-content p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.tasbih-container {
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    padding:
+        20px 15px 60px;
+}
+
+
+/* =========================================================
+   INTRO CARD
+   ========================================================= */
+
+.intro-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5f8f1,
+            #ffffff
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-xl);
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.intro-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 19px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 29px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.intro-card h2 {
+    margin: 0 0 5px;
+
+    color: var(--green-dark);
+
+    font-size: 22px;
+}
+
+.intro-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settings-card {
+    background: white;
+
+    border-radius:
+        var(--radius-lg);
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        var(--shadow);
+
+    border:
+        1px solid var(--border);
+}
+
+.settings-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.settings-card label:not(:first-child) {
+    margin-top: 16px;
+}
+
+.settings-card select,
+.settings-card input {
+    width: 100%;
+
+    min-height: 50px;
+
+    border:
+        1px solid #dce8e4;
+
+    border-radius: 15px;
+
+    background: #f9fcfb;
+
+    color: var(--text);
+
+    padding:
+        0 15px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    appearance: auto;
+
+    transition: 0.2s ease;
+}
+
+.settings-card select:focus,
+.settings-card input:focus {
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(7, 139, 104, 0.10);
+
+    background: white;
+}
+
+
+/* =========================================================
+   COUNTER CARD
+   ========================================================= */
+
+.counter-card {
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #087f61,
+            #04523f
+        );
+
+    color: white;
+
+    border-radius:
+        34px;
+
+    padding:
+        30px 20px 28px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(4, 82, 63, 0.24);
+}
+
+.counter-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    right: -100px;
+    top: -110px;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+.counter-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    left: -80px;
+    bottom: -90px;
+
+    background:
+        rgba(255,255,255,0.05);
+}
+
+.counter-decoration {
+    position: relative;
+    z-index: 2;
+
+    color:
+        #cdeee3;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.counter-label {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+}
+
+.count-display {
+    position: relative;
+    z-index: 2;
+
+    margin:
+        7px 0 3px;
+
+    font-size:
+        clamp(70px, 18vw, 110px);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    font-variant-numeric:
+        tabular-nums;
+
+    text-shadow:
+        0 4px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+.target-display {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 14px;
+}
+
+.target-display strong {
+    color: white;
+}
+
+.progress-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(400px, 90%);
+
+    margin:
+        20px auto 15px;
+}
+
+.progress-track {
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.16);
+}
+
+.progress-bar {
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8be5c6,
+            #ffffff
+        );
+
+    transition:
+        width 0.25s ease;
+}
+
+.current-dhikr {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+
+    padding:
+        8px 16px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: #e8fff7;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TAP BUTTON
+   ========================================================= */
+
+.tap-section {
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+.tap-button {
+    position: relative;
+
+    width: min(310px, 78vw);
+    height: min(310px, 78vw);
+
+    max-width: 310px;
+    max-height: 310px;
+
+    border:
+        10px solid
+        rgba(7, 139, 104, 0.13);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #13a67f,
+            #067456 65%,
+            #04513f
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(5, 102, 79, 0.25),
+        inset 0 3px 12px
+        rgba(255,255,255,0.13);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    transition:
+        transform 0.10s ease,
+        box-shadow 0.15s ease;
+}
+
+.tap-button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.tap-button:active {
+    transform:
+        scale(0.94);
+
+    box-shadow:
+        0 7px 18px
+        rgba(5, 102, 79, 0.20),
+        inset 0 5px 15px
+        rgba(0,0,0,0.12);
+}
+
+.tap-icon {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 48px;
+}
+
+.tap-text {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.tap-button small {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 11px;
+
+    opacity: 0.78;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.microphone-button,
+.reset-button {
+    min-height: 55px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.microphone-button {
+    background:
+        linear-gradient(
+            135deg,
+            #e5f8f2,
+            #d1f0e6
+        );
+
+    color:
+        var(--green-dark);
+
+    box-shadow:
+        0 7px 20px
+        rgba(7,139,104,0.08);
+}
+
+.reset-button {
+    background: white;
+
+    color:
+        #61736e;
+
+    border:
+        1px solid #e1e9e6;
+
+    box-shadow:
+        0 7px 20px
+        rgba(0,0,0,0.04);
+}
+
+.microphone-button:active,
+.reset-button:active {
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================================================
+   MICROPHONE ACTIVE STATE
+   ========================================================= */
+
+.microphone-button.active,
+.microphone-button.listening {
+    background:
+        linear-gradient(
+            135deg,
+            #078b68,
+            #05664f
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(7,139,104,0.24);
+}
+
+.microphone-button.listening {
+    animation:
+        microphonePulse 1.3s ease-in-out infinite;
+}
+
+@keyframes microphonePulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 8px 25px
+            rgba(7,139,104,0.24);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 35px
+            rgba(7,139,104,0.50);
+    }
+
+}
+
+
+/* =========================================================
+   VOICE CARD
+   ========================================================= */
+
+.voice-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+.voice-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background:
+        var(--green-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.voice-content h3 {
+    margin: 0 0 4px;
+
+    color:
+        var(--green-dark);
+
+    font-size: 16px;
+}
+
+.voice-content p {
+    margin: 0;
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INFO CARD
+   ========================================================= */
+
+.info-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #fff5d9
+        );
+
+    border:
+        1px solid
+        rgba(217,166,46,0.13);
+
+    border-radius:
+        var(--radius-lg);
+
+    padding: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(110, 81, 10, 0.06);
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.info-card h3 {
+    margin: 0 0 7px;
+
+    color:
+        #705515;
+
+    font-size: 16px;
+}
+
+.info-card p {
+    margin: 0 0 5px;
+
+    color:
+        #665b3d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+}
+
+.info-card small {
+    color:
+        #8b7848;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    z-index: 9999;
+
+    max-width: calc(100% - 30px);
+
+    padding:
+        12px 18px;
+
+    border-radius:
+        999px;
+
+    background:
+        #173d34;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, 20px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =========================================================
+   COMPLETED TARGET
+   ========================================================= */
+
+.counter-card.completed {
+    background:
+        linear-gradient(
+            145deg,
+            #0a9b74,
+            #05664f
+        );
+}
+
+.counter-card.completed .count-display {
+    color:
+        #fff5c7;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .tasbih-container {
+        padding:
+            16px 12px 45px;
+    }
+
+    .intro-card {
+        padding: 18px;
+
+        border-radius: 24px;
+    }
+
+    .intro-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+    .intro-card h2 {
+        font-size: 20px;
+    }
+
+    .counter-card {
+        border-radius: 28px;
+
+        padding:
+            25px 15px 23px;
+    }
+
+    .count-display {
+        font-size: 78px;
+    }
+
+    .tap-button {
+        width: 76vw;
+        height: 76vw;
+
+        max-width: 290px;
+        max-height: 290px;
+    }
+
+    .tap-icon {
+        font-size: 42px;
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-content h1 {
+        font-size: 22px;
+    }
+
+    .header-content p {
+        font-size: 12px;
+    }
+
+    .settings-card {
+        padding: 16px;
+    }
+
+    .count-display {
+        font-size: 68px;
+    }
+
+    .tap-button {
+        width: 72vw;
+        height: 72vw;
+    }
+
+    .tap-icon {
+        font-size: 36px;
+    }
+
+    .tap-text {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}

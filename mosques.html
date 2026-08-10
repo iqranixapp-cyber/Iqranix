@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#0B6E4F">
+
+    <meta name="description"
+          content="Find nearby mosques with IQRANIX.">
+
+    <title>Nearby Mosques • IQRANIX</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Mosque page CSS -->
+    <link rel="stylesheet"
+          href="mosques.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE
+         ===================================================== -->
+
+    <main class="mosques-page">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="mosques-header">
+
+            <a href="Index.html"
+               class="back-button"
+               aria-label="Back to IQRANIX">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </a>
+
+
+            <div class="header-title">
+
+                <span class="header-label">
+                    COMMUNITY
+                </span>
+
+                <h1>
+                    Nearby Mosques
+                </h1>
+
+            </div>
+
+
+            <button id="refresh-button"
+                    class="refresh-button"
+                    type="button"
+                    aria-label="Refresh mosques">
+
+                <i class="fa-solid fa-rotate"></i>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- =================================================
+             INTRO
+             ================================================= -->
+
+        <section class="mosques-intro">
+
+            <div class="intro-icon">
+
+                <i class="fa-solid fa-mosque"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    Find a Mosque Near You
+                </h2>
+
+                <p id="location-status">
+                    We need your location to find nearby mosques.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOCATION BUTTON
+             ================================================= -->
+
+        <button id="location-button"
+                class="location-button"
+                type="button">
+
+            <i class="fa-solid fa-location-crosshairs"></i>
+
+            <span>
+                Find Mosques Near Me
+            </span>
+
+        </button>
+
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <section id="loading-state"
+                 class="state-card"
+                 hidden>
+
+            <div class="loading-spinner"></div>
+
+            <h2>
+                Finding nearby mosques...
+            </h2>
+
+            <p>
+                Please wait while we search around your location.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ERROR
+             ================================================= -->
+
+        <section id="error-state"
+                 class="state-card error-state"
+                 hidden>
+
+            <div class="state-icon">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+            <h2 id="error-title">
+                Location unavailable
+            </h2>
+
+            <p id="error-message">
+                We could not access your location.
+            </p>
+
+            <button id="retry-button"
+                    class="retry-button"
+                    type="button">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Try Again
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTS HEADER
+             ================================================= -->
+
+        <section id="results-section"
+                 hidden>
+
+            <div class="results-heading">
+
+                <div>
+
+                    <span class="header-label">
+                        DISCOVER
+                    </span>
+
+                    <h2>
+                        Mosques Near You
+                    </h2>
+
+                </div>
+
+                <span id="mosque-count"
+                      class="mosque-count">
+
+                    0
+
+                </span>
+
+            </div>
+
+
+            <!-- Mosque cards will be inserted by JavaScript -->
+
+            <div id="mosque-list"
+                 class="mosque-list">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NO RESULTS
+             ================================================= -->
+
+        <section id="empty-state"
+                 class="state-card"
+                 hidden>
+
+            <div class="state-icon">
+
+                <i class="fa-solid fa-mosque"></i>
+
+            </div>
+
+            <h2>
+                No Mosques Found
+            </h2>
+
+            <p>
+                We couldn't find any mosques nearby.
+                Try refreshing or checking a wider area.
+            </p>
+
+            <button id="empty-retry-button"
+                    class="retry-button"
+                    type="button">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Search Again
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRIVACY NOTE
+             ================================================= -->
+
+        <section class="privacy-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <p>
+                Your location is used to search for nearby
+                mosques and is not displayed publicly by IQRANIX.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="mosques-footer">
+
+            <strong>
+                IQRANIX
+            </strong>
+
+            <p>
+                Helping you stay connected with the Muslim community.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="mosques.js"></script>
+
+</body>
+
+</html>

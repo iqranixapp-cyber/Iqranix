@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Prayer Calculation Method • Iqranix</title>
+
+<meta name="theme-color"
+content="#0B6E4F">
+
+<link rel="stylesheet"
+href="calculation-method.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html"
+class="backButton"
+aria-label="Back to Settings">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<h1>
+🕒 Prayer Calculation Method
+</h1>
+
+<p>
+Choose the calculation method used to calculate your daily prayer times.
+</p>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="card">
+
+<h2>
+🕌 Calculation Method
+</h2>
+
+<p class="description">
+Different organizations use different astronomical calculation methods.
+Choose the method that best matches your local mosque or community.
+</p>
+
+
+<div class="methodGroup">
+
+<label for="calculationMethod">
+Prayer Calculation Method
+</label>
+
+<select id="calculationMethod">
+
+<option value="MWL">
+Muslim World League
+</option>
+
+<option value="ISNA">
+Islamic Society of North America
+</option>
+
+<option value="Egypt">
+Egyptian General Authority of Survey
+</option>
+
+<option value="Makkah">
+Umm Al-Qura University, Makkah
+</option>
+
+<option value="Karachi">
+University of Islamic Sciences, Karachi
+</option>
+
+<option value="Tehran">
+Institute of Geophysics, University of Tehran
+</option>
+
+<option value="JAKIM">
+JAKIM
+</option>
+
+<option value="Gulf">
+Gulf Region
+</option>
+
+<option value="Custom">
+Custom
+</option>
+
+</select>
+
+</div>
+
+
+<div class="currentMethod">
+
+<div class="methodIcon">
+🕒
+</div>
+
+<div>
+
+<strong>Current Method</strong>
+
+<p id="currentMethodText">
+Muslim World League
+</p>
+
+</div>
+
+</div>
+
+
+<div class="infoBox">
+
+<h3>
+ℹ️ How it works
+</h3>
+
+<p>
+The selected calculation method determines the astronomical angles
+used to calculate Fajr and Isha, along with the other prayer times.
+</p>
+
+<p>
+For the most accurate results, choose the method recommended by
+your local mosque or Islamic authority.
+</p>
+
+</div>
+
+
+<div class="buttonGroup">
+
+<button
+type="button"
+id="resetMethod"
+class="secondaryButton">
+
+🔄 Reset to Default
+
+</button>
+
+<button
+type="button"
+id="saveMethod"
+class="primaryButton">
+
+💾 Save Method
+
+</button>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>
+🌍 Recommended Methods
+</h2>
+
+<div class="recommendation">
+
+<strong>🇰🇪 Kenya / East Africa</strong>
+
+<p>
+If your local mosque does not specify a method, Muslim World League
+is a reasonable starting option. Always compare with your local
+mosque timetable when available.
+</p>
+
+</div>
+
+<div class="recommendation">
+
+<strong>🌎 North America</strong>
+
+<p>
+Islamic Society of North America (ISNA) is commonly used.
+</p>
+
+</div>
+
+<div class="recommendation">
+
+<strong>🇸🇦 Saudi Arabia</strong>
+
+<p>
+Umm Al-Qura University, Makkah is commonly used.
+</p>
+
+</div>
+
+<div class="recommendation">
+
+<strong>🌙 South Asia</strong>
+
+<p>
+University of Islamic Sciences, Karachi is commonly used.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<script src="calculation-method.js"></script>
+
+</body>
+
+</html>

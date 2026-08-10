@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+          viewport-fit=cover">
+
+    <meta name="theme-color"
+          content="#0B6E4F">
+
+    <meta name="description"
+          content="IQRANIX Daily Reminders — beneficial Islamic reminders for every day.">
+
+    <title>Daily Reminders • IQRANIX</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet"
+          href="reminders.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+
+    <div class="page-background"></div>
+
+    <div class="page-overlay"></div>
+
+
+    <!-- Header -->
+
+    <header class="reminders-header">
+
+        <a href="index.html"
+           class="back-button"
+           aria-label="Back to home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </a>
+
+
+        <div class="header-brand">
+
+            <div class="header-icon">
+
+                <i class="fa-solid fa-bell"></i>
+
+            </div>
+
+            <div>
+
+                <span class="header-brand-name">
+                    IQRANIX
+                </span>
+
+                <h1>
+                    Daily Reminders
+                </h1>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="reminders-container">
+
+
+        <!-- Welcome -->
+
+        <section class="reminders-hero">
+
+            <span class="section-label">
+                DAILY BENEFIT
+            </span>
+
+            <h2>
+                A reminder for your heart
+            </h2>
+
+            <p>
+                Take a moment to remember Allah, reflect on
+                beneficial knowledge, and strengthen your faith.
+            </p>
+
+        </section>
+
+
+        <!-- Main reminder -->
+
+        <section class="daily-reminder-card">
+
+            <div class="reminder-heading">
+
+                <div class="reminder-icon">
+
+                    <i class="fa-solid fa-star-and-crescent"></i>
+
+                </div>
+
+                <div>
+
+                    <span id="reminder-category">
+                        DAILY REMINDER
+                    </span>
+
+                    <h2>
+                        Today's Reminder
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Arabic -->
+
+            <div id="reminder-arabic"
+                 class="reminder-arabic">
+
+                بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
+
+            </div>
+
+
+            <!-- Translation / reminder -->
+
+            <p id="reminder-text"
+               class="reminder-text">
+
+                Surely, in the remembrance of Allah do hearts
+                find comfort.
+
+            </p>
+
+
+            <!-- Source -->
+
+            <div id="reminder-source"
+                 class="reminder-source">
+
+                Qur'an • Surah Ar-Ra'd 13:28
+
+            </div>
+
+
+            <!-- New reminder -->
+
+            <button id="new-reminder"
+                    class="reminder-button">
+
+                <i class="fa-solid fa-rotate"></i>
+
+                <span>
+                    New Reminder
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <!-- Categories -->
+
+        <section class="categories-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    EXPLORE
+                </span>
+
+                <h2>
+                    Reminder Categories
+                </h2>
+
+                <p>
+                    Choose what you would like to reflect on.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <button class="category-card"
+                        data-category="quran">
+
+                    <i class="fa-solid fa-book-quran"></i>
+
+                    <span>
+                        Quran
+                    </span>
+
+                </button>
+
+
+                <button class="category-card"
+                        data-category="dhikr">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <span>
+                        Dhikr
+                    </span>
+
+                </button>
+
+
+                <button class="category-card"
+                        data-category="salah">
+
+                    <i class="fa-solid fa-mosque"></i>
+
+                    <span>
+                        Salah
+                    </span>
+
+                </button>
+
+
+                <button class="category-card"
+                        data-category="character">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    <span>
+                        Character
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Completion -->
+
+        <section class="completion-card">
+
+            <div class="completion-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <div class="completion-content">
+
+                <span class="section-label">
+                    TODAY
+                </span>
+
+                <h2>
+                    Reminder completed
+                </h2>
+
+                <p>
+                    Mark today's reminder as remembered.
+                </p>
+
+            </div>
+
+
+            <button id="complete-reminder"
+                    class="complete-button"
+                    aria-label="Complete reminder">
+
+                <i class="fa-solid fa-check"></i>
+
+            </button>
+
+        </section>
+
+
+        <!-- Information -->
+
+        <section class="reminder-info">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <p>
+                IQRANIX provides reminders for beneficial
+                reflection and learning. For matters requiring
+                detailed religious guidance, consult a qualified
+                Islamic scholar.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="reminders.js"></script>
+
+</body>
+
+</html>

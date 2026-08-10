@@ -1,0 +1,989 @@
+/* =========================================================
+   IQRANIX — DAILY REMINDERS
+   reminders.css
+   ========================================================= */
+
+:root {
+    --primary: #0B6E4F;
+    --primary-dark: #07553D;
+    --primary-light: #18A879;
+
+    --gold: #D6A84F;
+    --gold-light: #F1D58A;
+
+    --white: #FFFFFF;
+    --text: #17352B;
+    --muted: #667A72;
+
+    --card: rgba(255, 255, 255, 0.94);
+    --border: rgba(11, 110, 79, 0.12);
+
+    --shadow:
+        0 18px 45px rgba(7, 83, 61, 0.12);
+
+    --radius: 24px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            145deg,
+            #F3FBF7 0%,
+            #E7F5EF 45%,
+            #F8FBF9 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.page-background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(24, 168, 121, 0.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(214, 168, 79, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(11, 110, 79, 0.08),
+            transparent 35%
+        );
+}
+
+
+.page-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.42)
+        );
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.reminders-header {
+
+    width: min(100%, 1100px);
+
+    margin: 0 auto;
+
+    padding:
+        24px
+        20px
+        18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* Back button */
+
+.back-button {
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: var(--primary);
+
+    background: rgba(255,255,255,0.86);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 8px 24px rgba(7,83,61,0.08);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.back-button:hover {
+
+    transform: translateX(-3px);
+
+    background: var(--white);
+}
+
+
+.back-button:active {
+
+    transform: scale(0.94);
+}
+
+
+/* Header brand */
+
+.header-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.header-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-light)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(11,110,79,0.20);
+}
+
+
+.header-icon i {
+
+    font-size: 20px;
+}
+
+
+.header-brand-name {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+}
+
+
+.header-brand h1 {
+
+    margin-top: 2px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(21px, 5vw, 28px);
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.reminders-container {
+
+    width: min(100%, 900px);
+
+    margin: 0 auto;
+
+    padding:
+        8px
+        20px
+        50px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.reminders-hero {
+
+    text-align: center;
+
+    padding:
+        30px
+        18px
+        28px;
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: var(--primary);
+}
+
+
+.reminders-hero h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(27px, 7vw, 42px);
+
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+}
+
+
+.reminders-hero p {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MAIN REMINDER CARD
+   ========================================================= */
+
+.daily-reminder-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 28px;
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.98),
+            rgba(241,250,246,0.95)
+        );
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+
+/* Decorative glow */
+
+.daily-reminder-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(24,168,121,0.10);
+
+    pointer-events: none;
+}
+
+
+.daily-reminder-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    bottom: -75px;
+    left: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(214,168,79,0.10);
+
+    pointer-events: none;
+}
+
+
+/* Reminder heading */
+
+.reminder-heading {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+}
+
+
+.reminder-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #B98628
+        );
+
+    box-shadow:
+        0 10px 25px rgba(183,134,40,0.20);
+}
+
+
+.reminder-icon i {
+
+    font-size: 21px;
+}
+
+
+.reminder-heading > div:last-child {
+
+    text-align: left;
+}
+
+
+#reminder-category {
+
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    color: var(--primary);
+}
+
+
+.reminder-heading h2 {
+
+    margin-top: 2px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   ARABIC REMINDER
+   ========================================================= */
+
+.reminder-arabic {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin: 10px auto 22px;
+
+    max-width: 760px;
+
+    font-family:
+        "Noto Naskh Arabic",
+        serif;
+
+    font-size: clamp(27px, 7vw, 42px);
+
+    line-height: 1.9;
+
+    color: var(--primary-dark);
+
+    direction: rtl;
+}
+
+
+/* =========================================================
+   REMINDER TEXT
+   ========================================================= */
+
+.reminder-text {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 680px;
+
+    margin: 0 auto 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(17px, 4.5vw, 22px);
+
+    line-height: 1.65;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.reminder-source {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.reminder-button {
+
+    position: relative;
+
+    z-index: 2;
+
+    border: none;
+
+    min-height: 48px;
+
+    padding:
+        0
+        22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-light)
+        );
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(11,110,79,0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.reminder-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(11,110,79,0.25);
+}
+
+
+.reminder-button:active {
+
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
+
+.categories-section {
+
+    margin-top: 45px;
+}
+
+
+.section-heading {
+
+    margin-bottom: 18px;
+}
+
+
+.section-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 6px;
+}
+
+
+.section-heading p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* Category grid */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+.category-card {
+
+    min-height: 110px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    color: var(--text);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(7,83,61,0.06);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.category-card i {
+
+    font-size: 24px;
+
+    color: var(--primary);
+}
+
+
+.category-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(11,110,79,0.25);
+
+    background: var(--white);
+}
+
+
+.category-card:active {
+
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   COMPLETION CARD
+   ========================================================= */
+
+.completion-card {
+
+    margin-top: 28px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 21px;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 10px 30px rgba(7,83,61,0.06);
+}
+
+
+.completion-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: var(--primary);
+
+    background:
+        rgba(11,110,79,0.10);
+}
+
+
+.completion-content {
+
+    flex: 1;
+}
+
+
+.completion-content .section-label {
+
+    margin-bottom: 3px;
+}
+
+
+.completion-content h2 {
+
+    font-size: 17px;
+
+    margin-bottom: 3px;
+}
+
+
+.completion-content p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.complete-button {
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--primary);
+
+    background: transparent;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.complete-button:hover {
+
+    transform: scale(1.06);
+}
+
+
+.complete-button.completed {
+
+    color: var(--white);
+
+    background: var(--primary);
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.reminder-info {
+
+    margin-top: 24px;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(11,110,79,0.06);
+
+    color: var(--muted);
+}
+
+
+.reminder-info i {
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+
+    color: var(--primary);
+}
+
+
+.reminder-info p {
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .category-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .reminders-header {
+
+        padding:
+            18px
+            14px;
+    }
+
+
+    .reminders-container {
+
+        padding:
+            5px
+            14px
+            40px;
+    }
+
+
+    .reminders-hero {
+
+        padding:
+            22px
+            8px
+            25px;
+    }
+
+
+    .daily-reminder-card {
+
+        padding: 22px 16px;
+    }
+
+
+    .reminder-heading {
+
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+
+    .reminder-arabic {
+
+        font-size: 29px;
+
+        line-height: 1.85;
+    }
+
+
+    .reminder-text {
+
+        font-size: 17px;
+    }
+
+
+    .category-card {
+
+        min-height: 95px;
+    }
+
+
+    .completion-card {
+
+        padding: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+
+    }
+
+}

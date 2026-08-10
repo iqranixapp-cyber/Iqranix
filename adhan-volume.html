@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adhan Volume • Iqranix</title>
+
+<meta name="theme-color" content="#0B6E4F">
+
+<link rel="stylesheet" href="adhan-volume.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html" class="backButton">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+src="logo.png"
+alt="Iqranix Logo"
+class="heroLogo">
+
+<h1>
+
+Adhan Volume
+
+</h1>
+
+<p>
+
+Adjust the volume used when Iqranix plays the offline Adhan at prayer time.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>
+
+🔊 Adhan Volume
+
+</h2>
+
+<p class="description">
+
+Choose a comfortable Adhan volume. This setting only affects the Adhan played by Iqranix and does not change your device's system volume.
+
+</p>
+
+<div class="volumeContainer">
+
+<div class="volumeIcons">
+
+<span>
+
+🔈
+
+</span>
+
+<input
+type="range"
+id="adhanVolume"
+min="0"
+max="100"
+value="80">
+
+<span>
+
+🔊
+
+</span>
+
+</div>
+
+<h3 id="volumeValue">
+
+80%
+
+</h3>
+
+</div>
+
+<button id="previewVolume" class="secondaryButton">
+
+▶ Preview Adhan
+
+</button>
+<!-- EXTRA OPTIONS -->
+
+<div class="settingsGroup">
+
+<h2>
+
+🎧 Playback Options
+
+</h2>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+🔔 Use Media Volume
+
+</h3>
+
+<p>
+
+Play the Adhan using your device's media volume.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="mediaVolume" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+📳 Vibrate with Adhan
+
+</h3>
+
+<p>
+
+Vibrate the device when the Adhan starts.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="vibrateWithAdhan">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+🔕 Fade In Adhan
+
+</h3>
+
+<p>
+
+Gradually increase the Adhan volume for a smoother start.
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="fadeInAdhan" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="settingRow">
+
+<div>
+
+<h3>
+
+🔉 Lower Other Audio
+
+</h3>
+
+<p>
+
+Reduce other media sounds while the Adhan is playing (where supported).
+
+</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="duckAudio">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+<div class="infoBox">
+
+<h3>
+
+ℹ️ About Adhan Volume
+
+</h3>
+
+<p>
+
+The selected volume is used whenever Iqranix plays an offline Adhan. The actual loudness may also depend on your device's current media volume and system settings.
+
+</p>
+
+</div>
+<!-- ACTION BUTTONS -->
+
+<div class="buttonGroup">
+
+<button
+id="resetVolume"
+class="secondaryButton">
+
+🔄 Reset to Default
+
+</button>
+
+<button
+id="saveVolume"
+class="primaryButton">
+
+💾 Save Settings
+
+</button>
+
+</div>
+
+</section>
+
+<!-- NOTE -->
+
+<section class="card">
+
+<h2>
+
+💡 Recommendation
+
+</h2>
+
+<p class="description">
+
+For the best experience, keep your device's media volume above 70% and allow Iqranix to play offline Adhan sounds without battery restrictions. This helps ensure the Adhan can be heard clearly at prayer time.
+
+</p>
+
+</section>
+
+</main>
+
+<script src="adhan-volume.js"></script>
+
+</body>
+
+</html>

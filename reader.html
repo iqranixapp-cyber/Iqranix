@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Iqranix Quran Reader</title>
+
+<link rel="stylesheet" href="reader.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<main class="reader-page">
+
+<header class="hero">
+
+<button
+id="backButton"
+class="icon-btn">
+
+<i class="fas fa-arrow-left"></i>
+
+</button>
+
+<div class="hero-text">
+
+<h1 id="surahName">
+
+Loading...
+
+</h1>
+
+<h2 id="surahArabic">
+
+...
+
+</h2>
+
+<p id="surahInfo">
+
+Loading Surah...
+
+</p>
+
+</div>
+
+<button
+id="bookmarkBtn"
+class="icon-btn">
+
+<i class="far fa-bookmark"></i>
+
+</button>
+
+</header>
+
+<section class="reading-card">
+
+<div class="reading-badge">
+
+<i class="fas fa-book-open"></i>
+
+Now Reading
+
+</div>
+
+<h3>
+
+Surah
+
+<span id="currentSurahNumber">
+
+1
+
+</span>
+
+of 114
+
+</h3>
+
+</section><!--==================================
+        QURAN RECITATION
+===================================-->
+
+<section class="audio-card">
+
+    <h3>
+
+        <i class="fas fa-headphones"></i>
+
+        Quran Recitation
+
+    </h3>
+
+    <select id="reciterSelect">
+
+        <option>
+
+            Loading reciters...
+
+        </option>
+
+    </select>
+
+    <audio
+        id="audioPlayer"
+        controls
+        preload="metadata">
+
+    </audio>
+
+</section>
+
+<!--==================================
+        SURAH NAVIGATION
+===================================-->
+
+<section class="tools-grid">
+
+    <button
+        id="previousSurah">
+
+        <i class="fas fa-chevron-left"></i>
+
+        Previous
+
+    </button>
+
+    <button
+        id="nextSurah">
+
+        Next
+
+        <i class="fas fa-chevron-right"></i>
+
+    </button>
+
+</section>
+
+<!--==================================
+        READING TOOLS
+===================================-->
+
+<section class="tools-grid">
+
+    <button id="fontDecrease">
+
+        <i class="fas fa-minus"></i>
+
+        A-
+
+    </button>
+
+    <button id="fontIncrease">
+
+        <i class="fas fa-plus"></i>
+
+        A+
+
+    </button>
+
+    <button id="toggleTranslation">
+
+        <i class="fas fa-language"></i>
+
+        Translation
+
+    </button>
+
+    <button id="memorizeMode">
+
+        <i class="fas fa-brain"></i>
+
+        Hifz Mode
+
+    </button>
+
+    <button id="recordRecitation">
+
+        <i class="fas fa-microphone"></i>
+
+        AI Coach
+
+    </button>
+
+</section><!--==================================
+        MEMORIZATION PROGRESS
+===================================-->
+
+<section class="progress-card">
+
+    <h3>📊 Memorization Progress</h3>
+
+    <div class="progress-bar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+    <p id="progressText">0%</p>
+
+</section>
+
+<!--==================================
+        QURAN VERSES
+===================================-->
+
+<section
+    id="versesContainer"
+    class="verses-container">
+
+    <div class="loading-card">
+
+        <i class="fas fa-book-quran"></i>
+
+        <p>Loading Surah...</p>
+
+    </div>
+
+</section>
+<!--==================================
+        TAFSIR
+===================================-->
+
+<section class="tafsir-controls">
+
+    <h3>
+
+        <i class="fas fa-book-open"></i>
+
+        Tafsir
+
+    </h3>
+
+    <select id="tafsirSelect">
+
+        <option value="1">
+            Tafsir Al-Muyassar
+        </option>
+
+        <option value="2">
+            Tafsir Ibn Kathir
+        </option>
+
+        <option value="3">
+            Tafsir Al-Jalalayn
+        </option>
+
+    </select>
+
+</section>
+
+<section
+id="tafsirPanel"
+class="tafsir-panel">
+
+<h2>
+
+📚 Tafsir
+
+</h2>
+
+<div id="tafsirContent">
+
+Tap any ayah to read its tafsir.
+
+</div>
+
+</section>
+<!--==================================
+        FOOTER
+===================================-->
+
+<footer class="reader-footer">
+
+    <h2>🕌 Iqranix</h2>
+
+    <p>Read • Listen • Reflect • Memorize</p>
+
+    <p style="margin-top:12px;">
+        © 2026 Iqranix
+    </p>
+
+</footer>
+
+</main>
+
+<script src="reader.js"></script>
+
+<script>
+
+const backButton =
+document.getElementById("backButton");
+
+if(backButton){
+
+    backButton.addEventListener("click",()=>{
+
+        history.back();
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

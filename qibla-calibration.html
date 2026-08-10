@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Qibla Calibration • Iqranix</title>
+
+<meta name="theme-color"
+content="#0B6E4F">
+
+<link rel="stylesheet"
+href="qibla-calibration.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html"
+class="backButton">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+src="logo.png"
+alt="Iqranix Logo"
+class="heroLogo">
+
+<h1>
+
+Qibla Calibration
+
+</h1>
+
+<p>
+
+Calibrate your device's compass to improve Qibla direction accuracy.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>
+
+🧭 Compass Status
+
+</h2>
+
+<p class="description">
+
+Compass accuracy is shown below. Follow the calibration steps if your compass is inaccurate.
+
+</p>
+
+<div class="statusBox">
+
+<h3 id="compassStatus">
+
+Not Calibrated
+
+</h3>
+
+<p id="statusDescription">
+
+Press the button below to begin compass calibration.
+
+</p>
+
+</div>
+
+<button
+id="startCalibration"
+class="primaryButton">
+
+🧭 Start Calibration
+
+</button>
+
+</section>
+<section class="card">
+
+<h2>
+
+🔄 Calibration Guide
+
+</h2>
+
+<p class="description">
+
+Follow these steps to improve your device's compass accuracy.
+
+</p>
+
+<div class="stepList">
+
+<div class="stepItem">
+
+<span class="stepNumber">
+
+1
+
+</span>
+
+<div>
+
+<h3>
+
+Hold Your Device Flat
+
+</h3>
+
+<p>
+
+Keep your phone parallel to the ground while calibrating.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stepItem">
+
+<span class="stepNumber">
+
+2
+
+</span>
+
+<div>
+
+<h3>
+
+Move in a Figure Eight
+
+</h3>
+
+<p>
+
+Slowly move your phone in a large figure-eight motion for several seconds.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="stepItem">
+
+<span class="stepNumber">
+
+3
+
+</span>
+
+<div>
+
+<h3>
+
+Stay Away From Metal
+
+</h3>
+
+<p>
+
+Keep away from magnets, speakers, vehicles, and other metal objects that may interfere with the compass.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="progressContainer">
+
+<h3>
+
+Calibration Progress
+
+</h3>
+
+<div class="progressBar">
+
+<div id="progressFill"></div>
+
+</div>
+
+<p id="progressText">
+
+0% Complete
+
+</p>
+
+</div>
+
+<div class="buttonGroup">
+
+<button
+id="checkAccuracy"
+class="secondaryButton">
+
+✅ Check Accuracy
+
+</button>
+
+</div>
+
+</section>
+<!-- CALIBRATION TIPS -->
+
+<section class="card">
+
+<h2>
+
+💡 Tips for Better Accuracy
+
+</h2>
+
+<div class="tipsList">
+
+<div class="tipItem">
+
+<span>📱</span>
+
+<p>
+
+Remove magnetic phone cases or accessories before calibrating.
+
+</p>
+
+</div>
+
+<div class="tipItem">
+
+<span>🧲</span>
+
+<p>
+
+Stay away from large metal objects, power lines, and electronic equipment.
+
+</p>
+
+</div>
+
+<div class="tipItem">
+
+<span>🌍</span>
+
+<p>
+
+Repeat calibration whenever you travel a long distance or notice incorrect Qibla direction.
+
+</p>
+
+</div>
+
+<div class="tipItem">
+
+<span>🧭</span>
+
+<p>
+
+For the best results, calibrate outdoors in an open area.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INFORMATION -->
+
+<section class="card">
+
+<h2>
+
+ℹ️ Calibration Information
+
+</h2>
+
+<p class="description">
+
+Iqranix uses your device's built-in compass sensors to determine the Qibla direction. Calibration improves accuracy but depends on your device's hardware and environment.
+
+</p>
+
+<div class="buttonGroup">
+
+<button
+id="saveCalibration"
+class="primaryButton">
+
+💾 Save Calibration
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="qibla-calibration.js"></script>
+
+</body>
+
+</html>

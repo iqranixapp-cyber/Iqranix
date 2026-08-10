@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications • Iqranix</title>
+
+<link rel="stylesheet" href="notifications.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="notifications-container">
+
+<header class="hero">
+
+<img src="banner.png" class="hero-banner" alt="Iqranix Banner">
+
+<div class="hero-overlay">
+
+<a href="settings.html" class="back-btn">←</a>
+
+<img src="logo.png" class="hero-logo" alt="Iqranix Logo">
+
+<span class="hero-badge">
+
+Smart Notification Center
+
+</span>
+
+<h1>
+
+Notifications
+
+</h1>
+
+<p class="hero-tagline">
+
+Personalize your prayer reminders, Adhan, and Islamic notifications.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<!-- GENERAL SETTINGS -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+General
+
+</span>
+
+<h2>
+
+Notification Preferences
+
+</h2>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Enable Notifications</h3>
+
+<p>Allow Iqranix to send reminders and alerts.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="notificationsToggle" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Do Not Disturb</h3>
+
+<p>Temporarily silence all notifications.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="dndToggle">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- PRAYER REMINDERS -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+Prayer
+
+</span>
+
+<h2>
+
+Prayer Notifications
+
+</h2>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Prayer Notifications</h3>
+
+<p>Receive notifications for every prayer.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="prayerNotifications" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>Reminder Before Prayer</h3>
+
+<p>Receive a reminder before the Adhan.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="beforePrayerReminder" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-group">
+
+<label>
+
+Reminder Time
+
+</label>
+
+<select id="reminderTime">
+
+<option value="5">5 Minutes</option>
+
+<option value="10" selected>10 Minutes</option>
+
+<option value="15">15 Minutes</option>
+
+<option value="20">20 Minutes</option>
+
+<option value="30">30 Minutes</option>
+
+</select>
+
+</div>
+
+</section>
+
+<!-- ADHAN MANAGER -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+Adhan Manager
+
+</span>
+
+<h2>
+
+Choose an Adhan for Each Prayer
+
+</h2>
+
+<p>
+
+All Adhans are stored offline and will play without an internet connection.
+
+</p>        <!-- FAJR -->
+
+        <div class="adhan-row">
+
+            <div class="prayer-name">
+
+                🌅 Fajr
+
+            </div>
+
+            <select class="adhan-select" id="fajrAdhan">
+
+                <option value="fajr.mp3" selected>Fajr Adhan</option>
+                <option value="makkah.mp3">Makkah</option>
+                <option value="madinah.mp3">Madinah</option>
+                <option value="dubai.mp3">Dubai</option>
+                <option value="egypt.mp3">Egypt</option>
+                <option value="pakistan.mp3">Pakistan</option>
+                <option value="abdulbasit.mp3">Abdul Basit</option>
+                <option value="alaqsa.mp3">Al-Aqsa</option>
+
+            </select>
+
+            <button class="preview-btn" data-audio="fajr.mp3">
+
+                ▶ Preview
+
+            </button>
+
+        </div>
+
+        <!-- DHUHR -->
+
+        <div class="adhan-row">
+
+            <div class="prayer-name">
+
+                ☀️ Dhuhr
+
+            </div>
+
+            <select class="adhan-select" id="dhuhrAdhan">
+
+                <option value="makkah.mp3" selected>Makkah</option>
+                <option value="madinah.mp3">Madinah</option>
+                <option value="dubai.mp3">Dubai</option>
+                <option value="egypt.mp3">Egypt</option>
+                <option value="pakistan.mp3">Pakistan</option>
+                <option value="abdulbasit.mp3">Abdul Basit</option>
+                <option value="alaqsa.mp3">Al-Aqsa</option>
+                <option value="fajr.mp3">Fajr Adhan</option>
+
+            </select>
+
+            <button class="preview-btn" data-audio="makkah.mp3">
+
+                ▶ Preview
+
+            </button>
+
+        </div>
+
+        <!-- ASR -->
+
+        <div class="adhan-row">
+
+            <div class="prayer-name">
+
+                🌤 Asr
+
+            </div>
+
+            <select class="adhan-select" id="asrAdhan">
+
+                <option value="madinah.mp3" selected>Madinah</option>
+                <option value="makkah.mp3">Makkah</option>
+                <option value="dubai.mp3">Dubai</option>
+                <option value="egypt.mp3">Egypt</option>
+                <option value="pakistan.mp3">Pakistan</option>
+                <option value="abdulbasit.mp3">Abdul Basit</option>
+                <option value="alaqsa.mp3">Al-Aqsa</option>
+                <option value="fajr.mp3">Fajr Adhan</option>
+
+            </select>
+
+            <button class="preview-btn" data-audio="madinah.mp3">
+
+                ▶ Preview
+
+            </button>
+
+        </div>        <!-- MAGHRIB -->
+
+        <div class="adhan-row">
+
+            <div class="prayer-name">
+
+                🌇 Maghrib
+
+            </div>
+
+            <select class="adhan-select" id="maghribAdhan">
+
+                <option value="alaqsa.mp3" selected>Al-Aqsa</option>
+                <option value="makkah.mp3">Makkah</option>
+                <option value="madinah.mp3">Madinah</option>
+                <option value="dubai.mp3">Dubai</option>
+                <option value="egypt.mp3">Egypt</option>
+                <option value="pakistan.mp3">Pakistan</option>
+                <option value="abdulbasit.mp3">Abdul Basit</option>
+                <option value="fajr.mp3">Fajr Adhan</option>
+
+            </select>
+
+            <button class="preview-btn" data-audio="alaqsa.mp3">
+
+                ▶ Preview
+
+            </button>
+
+        </div>
+
+        <!-- ISHA -->
+
+        <div class="adhan-row">
+
+            <div class="prayer-name">
+
+                🌙 Isha
+
+            </div>
+
+            <select class="adhan-select" id="ishaAdhan">
+
+                <option value="egypt.mp3" selected>Egypt</option>
+                <option value="makkah.mp3">Makkah</option>
+                <option value="madinah.mp3">Madinah</option>
+                <option value="dubai.mp3">Dubai</option>
+                <option value="pakistan.mp3">Pakistan</option>
+                <option value="abdulbasit.mp3">Abdul Basit</option>
+                <option value="alaqsa.mp3">Al-Aqsa</option>
+                <option value="fajr.mp3">Fajr Adhan</option>
+
+            </select>
+
+            <button class="preview-btn" data-audio="egypt.mp3">
+
+                ▶ Preview
+
+            </button>
+
+        </div>
+
+        <div class="save-adhan">
+
+            <button id="saveAdhanSettings" class="save-btn">
+
+                💾 Save Adhan Preferences
+
+            </button>
+
+        </div>
+
+</section>
+
+<!-- DAILY REMINDERS -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+Daily Reminders
+
+</span>
+
+<h2>
+
+Strengthen Your Daily Worship
+
+</h2>
+
+<p>
+
+Receive beneficial Islamic reminders throughout the day to help you stay connected to Allah ﷻ.
+
+</p>
+
+<div class="setting-item">
+
+<div>
+
+<h3>📖 Daily Qur'an Verse</h3>
+
+<p>Receive one inspiring Qur'an verse every day.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="dailyQuran" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>📜 Daily Hadith</h3>
+
+<p>Receive one authentic Hadith every day.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="dailyHadith" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🤲 Daily Du'a</h3>
+
+<p>Receive a beautiful daily supplication.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="dailyDua" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🌅 Morning Adhkar</h3>
+
+<p>Morning remembrance reminders.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="morningAdhkar">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🌙 Evening Adhkar</h3>
+
+<p>Evening remembrance reminders.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="eveningAdhkar">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section><!-- SPECIAL REMINDERS -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+Special Occasions
+
+</span>
+
+<h2>
+
+Islamic Event Notifications
+
+</h2>
+
+<p>
+
+Never miss important Islamic occasions and blessed days throughout the year.
+
+</p>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🕌 Jumu'ah Reminder</h3>
+
+<p>Receive a reminder every Friday before Jumu'ah prayer.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="jumuahReminder" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🌙 Ramadan Reminders</h3>
+
+<p>Receive Suhoor, Iftar and Ramadan notifications.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="ramadanReminder" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🌙 Last Ten Nights</h3>
+
+<p>Receive reminders during the blessed last ten nights of Ramadan.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="lastTenNights" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-item">
+
+<div>
+
+<h3>🎉 Eid Notifications</h3>
+
+<p>Receive reminders for Eid al-Fitr and Eid al-Adha.</p>
+
+</div>
+
+<label class="switch">
+
+<input type="checkbox" id="eidReminder" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- SAVE SETTINGS -->
+
+<section class="settings-card">
+
+<span class="section-title">
+
+Save
+
+</span>
+
+<h2>
+
+Save Notification Settings
+
+</h2>
+
+<p>
+
+Your notification preferences, Adhan selections, and reminder settings will be saved and automatically applied every time you use Iqranix.
+
+</p>
+
+<button id="saveNotifications" class="save-btn">
+
+💾 Save All Settings
+
+</button>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<img src="logo.png"
+
+class="footer-logo"
+
+alt="Iqranix Logo">
+
+<h2>
+
+IQRANIX
+
+</h2>
+
+<p>
+
+Faith • Knowledge • Excellence
+
+</p>
+
+<div class="footer-divider"></div>
+
+<small>
+
+© 2026 Iqranix. All Rights Reserved.
+
+</small>
+
+<small>
+
+May Allah ﷻ accept our efforts, increase us in beneficial knowledge, and make Iqranix a means of guidance and goodness for the Ummah.
+
+</small>
+
+</footer>
+
+</div>
+
+<script src="notifications.js"></script>
+
+</body>
+
+</html>

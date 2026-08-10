@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0B6E4F"
+    >
+
+    <meta
+        name="description"
+        content="Iqranix Fiqh — Learn Islamic jurisprudence, the four Sunni schools of thought, worship, family life, financial matters, and contemporary questions."
+    >
+
+    <title>Fiqh • Iqranix</title>
+
+    <link
+        rel="stylesheet"
+        href="fiqh.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+<!-- =====================================
+        FIQH DISCLAIMER
+===================================== -->
+
+<section class="fiqh-disclaimer">
+
+    <div class="disclaimer-icon">
+        ⚠️
+    </div>
+
+    <h2>Important Disclaimer</h2>
+
+    <p>
+        The information presented in this Fiqh section is provided
+        for educational and general informational purposes only.
+        It should not be treated as a personal fatwa or a substitute
+        for qualified Islamic scholarship.
+    </p>
+
+    <p>
+        Islamic rulings can differ according to the evidence,
+        circumstances, madhhab and scholarly interpretation.
+        Therefore, do not rely too heavily on online fatwas or use
+        information from this section to make important religious
+        decisions without seeking proper guidance.
+    </p>
+
+    <p>
+        For personal circumstances or questions requiring a fatwa,
+        please consult a qualified and trustworthy Islamic scholar
+        or recognised local religious authority.
+    </p>
+
+    <div class="disclaimer-note">
+        <strong>📚 Remember:</strong>
+        Learn from reliable sources, ask qualified scholars,
+        and verify matters of religion carefully.
+    </div>
+
+</section>
+
+
+<div class="more-topics-notice">
+
+    <span>✨</span>
+
+    <div>
+        <strong>More topics coming soon, InshaAllah</strong>
+
+        <p>
+            We will continue adding more Fiqh topics and explanations
+            from reliable Islamic sources.
+        </p>
+    </div>
+
+</div>
+<header class="fiqh-header">
+
+    <a
+        href="Index.html"
+        class="back-button"
+        aria-label="Back Home"
+    >
+        ←
+    </a>
+
+    <div class="header-content">
+
+        <span class="header-label">
+            IQRANIX • ISLAMIC JURISPRUDENCE
+        </span>
+
+        <h1>
+            Fiqh
+        </h1>
+
+        <p>
+            Learn • Understand • Practice
+        </p>
+
+    </div>
+
+</header>
+
+
+<main class="fiqh-main">
+
+
+    <!-- HERO -->
+
+    <section class="fiqh-hero">
+
+        <div class="hero-icon">
+            ⚖️
+        </div>
+
+        <span class="hero-label">
+            ISLAMIC JURISPRUDENCE
+        </span>
+
+        <h2>
+            Understanding Fiqh
+        </h2>
+
+        <p>
+            Explore how Muslim scholars understand and apply
+            the teachings of the Qur'an and Sunnah to everyday
+            life, worship, family, business and society.
+        </p>
+
+        <div class="hero-note">
+            📚 This section presents recognized scholarly
+            positions and highlights legitimate differences
+            between the Sunni schools of law.
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="fiqh-search-section">
+
+        <label for="fiqhSearch">
+            Search Fiqh
+        </label>
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                id="fiqhSearch"
+                type="search"
+                placeholder="Search prayer, fasting, marriage, zakah..."
+                autocomplete="off"
+            >
+
+            <button
+                id="clearSearch"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY FILTER -->
+
+    <section class="category-section">
+
+        <div class="section-heading">
+
+            <span class="heading-icon">
+                🗂️
+            </span>
+
+            <div>
+
+                <span class="heading-label">
+                    EXPLORE
+                </span>
+
+                <h2>
+                    Fiqh Topics
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div
+            id="categoryButtons"
+            class="category-buttons"
+        ></div>
+
+    </section>
+
+
+    <!-- ARTICLES -->
+
+    <section
+        id="fiqhList"
+        class="fiqh-list"
+    ></section>
+
+
+    <!-- NO RESULTS -->
+
+    <section
+        id="noResults"
+        class="no-results hidden"
+    >
+
+        <div>
+            🔎
+        </div>
+
+        <h3>
+            No Fiqh topics found
+        </h3>
+
+        <p>
+            Try searching for another topic.
+        </p>
+
+    </section>
+
+
+    <!-- READER -->
+
+    <section
+        id="fiqhReader"
+        class="fiqh-reader hidden"
+    >
+
+        <div class="reader-top">
+
+            <button
+                id="backToTopics"
+                type="button"
+                class="back-topics"
+            >
+                ← All Topics
+            </button>
+
+        </div>
+
+        <article>
+
+            <div
+                id="readerCategory"
+                class="reader-category"
+            ></div>
+
+            <h2 id="readerTitle"></h2>
+
+            <p
+                id="readerIntro"
+                class="reader-intro"
+            ></p>
+
+            <div
+                id="readerContent"
+                class="reader-content"
+            ></div>
+
+        </article>
+
+    </section>
+
+
+    <!-- SOURCE NOTICE -->
+
+    <section class="source-notice">
+
+        <div class="source-icon">
+            📖
+        </div>
+
+        <div>
+
+            <h3>
+                About the Sources
+            </h3>
+
+            <p>
+                Iqranix presents educational summaries based
+                on the Qur'an, authentic Sunnah and recognized
+                works of Islamic jurisprudence. Where scholars
+                differ, the disagreement is identified rather
+                than hidden.
+            </p>
+
+            <p>
+                A Fiqh article is not a substitute for asking
+                a qualified scholar about a personal situation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="fiqh-footer">
+
+    <div class="footer-logo">
+        🕌 Iqranix
+    </div>
+
+    <p>
+        Read • Listen • Reflect • Memorize
+    </p>
+
+    <small>
+        © 2026 Iqranix
+    </small>
+
+</footer>
+
+
+<script src="fiqh.js"></script>
+
+</body>
+
+</html>

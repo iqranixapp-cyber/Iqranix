@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#07895b"
+    >
+
+    <title>Quran Audio - Muslim Bro</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            background: #f5faf8;
+
+            color: #17201c;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            min-height: 100vh;
+
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .top-header {
+
+            background: #07895b;
+
+            color: white;
+
+            padding:
+                16px
+                16px
+                20px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,0.12);
+
+        }
+
+        .header-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .back-button {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.16);
+
+            color: white;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+        }
+
+        .header-title {
+
+            flex: 1;
+
+        }
+
+        .header-title h1 {
+
+            font-size: 21px;
+
+            font-weight: 700;
+
+        }
+
+        .header-title p {
+
+            font-size: 12px;
+
+            opacity: 0.9;
+
+            margin-top: 3px;
+
+        }
+
+        /* ================================
+           MAIN
+        ================================= */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 18px 15px 40px;
+
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #07895b,
+                    #056f4b
+                );
+
+            color: white;
+
+            border-radius: 20px;
+
+            padding: 24px 20px;
+
+            text-align: center;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(7,137,91,0.18);
+
+        }
+
+        .hero-icon {
+
+            width: 62px;
+
+            height: 62px;
+
+            margin:
+                0 auto 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.15);
+
+            font-size: 28px;
+
+        }
+
+        .hero h2 {
+
+            font-size: 22px;
+
+            margin-bottom: 6px;
+
+        }
+
+        .hero p {
+
+            font-size: 13px;
+
+            opacity: 0.9;
+
+        }
+
+        /* ================================
+           CARD
+        ================================= */
+
+        .card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            margin-bottom: 16px;
+
+            box-shadow:
+                0 4px 18px
+                rgba(0,0,0,0.06);
+
+            border:
+                1px solid #e7efeb;
+
+        }
+
+        .card-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: #07895b;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 14px;
+
+        }
+
+        /* ================================
+           LABEL
+        ================================= */
+
+        label {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+
+            color: #34413b;
+
+        }
+
+        /* ================================
+           SELECT
+        ================================= */
+
+        select {
+
+            width: 100%;
+
+            height: 48px;
+
+            border-radius: 12px;
+
+            border:
+                1px solid #d8e5df;
+
+            background: #fbfdfc;
+
+            padding:
+                0 13px;
+
+            font-size: 14px;
+
+            color: #1e2b26;
+
+            outline: none;
+
+        }
+
+        select:focus {
+
+            border-color: #07895b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(7,137,91,0.1);
+
+        }
+
+        .field {
+
+            margin-bottom: 16px;
+
+        }
+
+        .field:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+        /* ================================
+           SEARCH
+        ================================= */
+
+        .search-box {
+
+            position: relative;
+
+        }
+
+        .search-box i {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #829089;
+
+        }
+
+        .search-box input {
+
+            width: 100%;
+
+            height: 46px;
+
+            border:
+                1px solid #d8e5df;
+
+            border-radius: 12px;
+
+            padding:
+                0 14px 0 42px;
+
+            outline: none;
+
+            font-size: 14px;
+
+        }
+
+        .search-box input:focus {
+
+            border-color: #07895b;
+
+        }
+
+        /* ================================
+           SURAH INFORMATION
+        ================================= */
+
+        .surah-info {
+
+            text-align: center;
+
+            padding: 8px 5px 18px;
+
+        }
+
+        .arabic-name {
+
+            font-family:
+                "Times New Roman",
+                serif;
+
+            font-size: 34px;
+
+            direction: rtl;
+
+            color: #07895b;
+
+            margin-bottom: 7px;
+
+        }
+
+        .english-name {
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            margin-bottom: 6px;
+
+        }
+
+        .surah-meta {
+
+            color: #718079;
+
+            font-size: 12px;
+
+        }
+
+        /* ================================
+           AUDIO
+        ================================= */
+
+        .audio-wrapper {
+
+            background:
+                #f3f8f5;
+
+            border-radius: 15px;
+
+            padding: 15px;
+
+        }
+
+        audio {
+
+            width: 100%;
+
+            height: 45px;
+
+        }
+
+        .audio-status {
+
+            text-align: center;
+
+            font-size: 12px;
+
+            color: #718079;
+
+            margin-top: 10px;
+
+        }
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .button-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr 1fr;
+
+            gap: 9px;
+
+            margin-top: 15px;
+
+        }
+
+        .btn {
+
+            border: none;
+
+            border-radius: 12px;
+
+            min-height: 45px;
+
+            padding: 8px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+        }
+
+        .btn-secondary {
+
+            background: #edf5f1;
+
+            color: #08704c;
+
+        }
+
+        .btn-primary {
+
+            background: #07895b;
+
+            color: white;
+
+        }
+
+        .btn-danger {
+
+            background: #fff0f0;
+
+            color: #c0392b;
+
+        }
+
+        .btn:active {
+
+            transform: scale(0.97);
+
+        }
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        .navigation {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+        .nav-btn {
+
+            border: none;
+
+            min-height: 48px;
+
+            border-radius: 13px;
+
+            background: #edf5f1;
+
+            color: #08704c;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+        .nav-btn i {
+
+            margin: 0 5px;
+
+        }
+
+        /* ================================
+           LOADING
+        ================================= */
+
+        .loading {
+
+            text-align: center;
+
+            padding: 18px;
+
+            color: #07895b;
+
+            font-size: 13px;
+
+            display: none;
+
+        }
+
+        .loading.show {
+
+            display: block;
+
+        }
+
+        /* ================================
+           ERROR
+        ================================= */
+
+        .error {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 20px;
+
+            color: #b3261e;
+
+            background: #fff5f4;
+
+            border-radius: 14px;
+
+            font-size: 13px;
+
+        }
+
+        .error.show {
+
+            display: block;
+
+        }
+
+        /* ================================
+           SMALL SCREEN
+        ================================= */
+
+        @media (max-width: 420px) {
+
+            .button-row {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .arabic-name {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="top-header">
+
+        <div class="header-row">
+
+            <a
+    href="quran.html"
+    class="back-button"
+    aria-label="Back to Quran"
+>
+    <i class="fas fa-arrow-left"></i>
+</a>
+
+            <div class="header-title">
+
+                <h1>Quran Audio</h1>
+
+                <p>
+                    Listen to the Holy Quran
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================
+         MAIN
+    ================================== -->
+
+    <main class="container">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-icon">
+
+                <i class="fas fa-headphones"></i>
+
+            </div>
+
+            <h2>Quran Recitation</h2>
+
+            <p>
+                Choose a Surah and reciter
+                to begin listening.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             SURAH SELECTOR
+        ================================== -->
+
+        <section class="card">
+
+            <div class="card-title">
+
+                <i class="fas fa-book-quran"></i>
+
+                Choose Surah
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="surahSearch">
+                    Search Surah
+                </label>
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="search"
+                        id="surahSearch"
+                        placeholder="Search by name or number..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="surahSelect">
+                    Surah
+                </label>
+
+                <select
+                    id="surahSelect"
+                >
+
+                    <option value="">
+                        Loading Surahs...
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="loading" id="surahLoading">
+
+                <i class="fas fa-spinner fa-spin"></i>
+
+                Loading Surah...
+
+            </div>
+
+
+            <div
+                class="error"
+                id="surahError"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SURAH INFORMATION
+        ================================== -->
+
+        <section class="card">
+
+            <div class="surah-info">
+
+                <div
+                    class="arabic-name"
+                    id="arabicName"
+                >
+                    القرآن الكريم
+                </div>
+
+
+                <div
+                    class="english-name"
+                    id="englishName"
+                >
+                    Select a Surah
+                </div>
+
+
+                <div
+                    class="surah-meta"
+                    id="surahMeta"
+                >
+                    Choose a Surah above
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             RECITER
+        ================================== -->
+
+        <section class="card">
+
+            <div class="card-title">
+
+                <i class="fas fa-microphone-lines"></i>
+
+                Choose Reciter
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="reciterSelect">
+                    Reciter
+                </label>
+
+
+                <select
+                    id="reciterSelect"
+                >
+
+                    <option value="">
+                        Loading reciters...
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             AUDIO PLAYER
+        ================================== -->
+
+        <section class="card">
+
+            <div class="card-title">
+
+                <i class="fas fa-volume-high"></i>
+
+                Audio Player
+
+            </div>
+
+
+            <div class="audio-wrapper">
+
+                <audio
+                    id="quranAudio"
+                    controls
+                    preload="metadata"
+                ></audio>
+
+
+                <div
+                    class="audio-status"
+                    id="audioStatus"
+                >
+                    Select a Surah to begin.
+                </div>
+
+            </div>
+
+
+            <div class="button-row">
+
+                <button
+                    class="btn btn-secondary"
+                    id="rewindButton"
+                    type="button"
+                >
+
+                    <i class="fas fa-backward"></i>
+
+                    Restart
+
+                </button>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="playButton"
+                    type="button"
+                >
+
+                    <i class="fas fa-play"></i>
+
+                    Play
+
+                </button>
+
+
+                <button
+                    class="btn btn-danger"
+                    id="stopButton"
+                    type="button"
+                >
+
+                    <i class="fas fa-stop"></i>
+
+                    Stop
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             SURAH NAVIGATION
+        ================================== -->
+
+        <section class="card">
+
+            <div class="card-title">
+
+                <i class="fas fa-arrows-left-right"></i>
+
+                Surah Navigation
+
+            </div>
+
+
+            <div class="navigation">
+
+                <button
+                    class="nav-btn"
+                    id="previousButton"
+                    type="button"
+                >
+
+                    <i class="fas fa-chevron-left"></i>
+
+                    Previous
+
+                </button>
+
+
+                <button
+                    class="nav-btn"
+                    id="nextButton"
+                    type="button"
+                >
+
+                    Next
+
+                    <i class="fas fa-chevron-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script src="quran-audio.js"></script>
+
+
+</body>
+
+</html>

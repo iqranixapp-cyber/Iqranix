@@ -1,0 +1,467 @@
+/* =========================================
+   IQRANIX - PRAYER CALCULATION METHOD
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #061b17;
+    color: #f5f7f6;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #0b8457,
+        #0b6e4f,
+        #10a875
+    );
+
+    padding: 35px 20px 45px;
+    text-align: center;
+
+    border-radius: 0 0 45px 45px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.backButton {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    transition: 0.2s;
+}
+
+.backButton:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.backButton:active {
+    transform: scale(0.92);
+}
+
+.heroContent {
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero h1 {
+    color: #ffe38a;
+
+    font-size: clamp(30px, 8vw, 46px);
+
+    margin-bottom: 15px;
+
+    font-weight: 800;
+}
+
+.hero p {
+    color: white;
+
+    font-size: 17px;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 35px auto;
+
+    padding: 0 16px 50px;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.card {
+    background: #102723;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 28px;
+
+    padding: 28px 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+.card h2 {
+    color: #ffe38a;
+
+    font-size: 29px;
+
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #d5dfdc;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   METHOD SELECTOR
+   ========================================= */
+
+.methodGroup {
+    margin-top: 20px;
+}
+
+.methodGroup label {
+    display: block;
+
+    color: #ffe38a;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.methodGroup select {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid #267d67;
+
+    background: #081d19;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.methodGroup select:focus {
+    border-color: #19b47a;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 180, 122, 0.18);
+}
+
+.methodGroup select option {
+    background: #102723;
+
+    color: white;
+}
+
+
+/* =========================================
+   CURRENT METHOD
+   ========================================= */
+
+.currentMethod {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: #172f2a;
+
+    border: 1px solid rgba(25, 180, 122, 0.25);
+}
+
+.methodIcon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0b8457;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+.currentMethod strong {
+    display: block;
+
+    color: #ffe38a;
+
+    font-size: 16px;
+}
+
+.currentMethod p {
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   INFORMATION BOX
+   ========================================= */
+
+.infoBox {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #0b211d;
+
+    border-left: 4px solid #19b47a;
+
+    border-radius: 15px;
+}
+
+.infoBox h3 {
+    color: #ffe38a;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.infoBox p {
+    color: #d3dfdb;
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+.infoBox p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.buttonGroup {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+.buttonGroup button {
+    flex: 1;
+
+    min-width: 180px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 15px 18px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+}
+
+.buttonGroup button:active {
+    transform: scale(0.96);
+}
+
+.primaryButton {
+    background: #10a875;
+
+    color: white;
+}
+
+.secondaryButton {
+    background: #263d38;
+
+    color: #ffe38a;
+
+    border: 1px solid #3c5d55 !important;
+}
+
+.buttonGroup button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   RECOMMENDATIONS
+   ========================================= */
+
+.recommendation {
+    background: #172f2a;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-top: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.recommendation strong {
+    display: block;
+
+    color: #ffe38a;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.recommendation p {
+    color: #d5dfdc;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 45px 18px 40px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    main {
+        margin-top: 25px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card {
+        padding: 23px 17px;
+
+        border-radius: 24px;
+    }
+
+    .card h2 {
+        font-size: 27px;
+    }
+
+    .currentMethod {
+        align-items: flex-start;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+
+    .buttonGroup button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .methodGroup select {
+        font-size: 15px;
+    }
+}

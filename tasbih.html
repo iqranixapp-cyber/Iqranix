@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tasbih — IQRANIX</title>
+
+    <meta
+        name="description"
+        content="A beautiful digital Tasbih counter for remembering Allah."
+    >
+
+    <meta
+        name="theme-color"
+        content="#078b68"
+    >
+
+    <link
+        rel="stylesheet"
+        href="tasbih.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="tasbih-header">
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+            aria-label="Go back"
+        >
+            ←
+        </button>
+
+        <div class="header-content">
+
+            <div class="header-icon">
+                📿
+            </div>
+
+            <div>
+
+                <h1>
+                    Tasbih
+                </h1>
+
+                <p>
+                    Remember Allah with every count
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="tasbih-container">
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="intro-card">
+
+            <div class="intro-icon">
+                🤲
+            </div>
+
+            <div>
+
+                <h2>
+                    Digital Tasbih
+                </h2>
+
+                <p>
+                    Count your dhikr with ease and keep
+                    your heart connected to Allah.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DHIKR SELECTOR
+        ================================================== -->
+
+        <section class="settings-card">
+
+            <label for="dhikrSelect">
+                🌙 Choose Dhikr
+            </label>
+
+            <select id="dhikrSelect">
+
+                <option value="subhanallah">
+                    SubhanAllah
+                </option>
+
+                <option value="alhamdulillah">
+                    Alhamdulillah
+                </option>
+
+                <option value="allahu-akbar">
+                    Allahu Akbar
+                </option>
+
+                <option value="astaghfirullah">
+                    Astaghfirullah
+                </option>
+
+                <option value="la-ilaha-illallah">
+                    La ilaha illallah
+                </option>
+
+                <option value="salawat">
+                    Salawat
+                </option>
+
+            </select>
+
+
+            <label for="targetInput">
+                🎯 Target
+            </label>
+
+            <input
+                id="targetInput"
+                type="number"
+                min="1"
+                value="33"
+                inputmode="numeric"
+            >
+
+        </section>
+
+
+        <!-- =================================================
+             COUNTER
+        ================================================== -->
+
+        <section class="counter-card">
+
+            <div class="counter-decoration">
+                ✦
+            </div>
+
+            <p class="counter-label">
+                CURRENT COUNT
+            </p>
+
+
+            <div
+                id="countDisplay"
+                class="count-display"
+            >
+                0
+            </div>
+
+
+            <div class="target-display">
+
+                <span>
+                    Target:
+                </span>
+
+                <strong id="targetDisplay">
+                    33
+                </strong>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress-container">
+
+                <div class="progress-track">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                        style="width: 0%;"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DHIKR NAME -->
+
+            <div
+                id="currentDhikr"
+                class="current-dhikr"
+            >
+                SubhanAllah
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN TAP BUTTON
+        ================================================== -->
+
+        <section class="tap-section">
+
+            <button
+                id="tapButton"
+                class="tap-button"
+                type="button"
+                aria-label="Count one dhikr"
+            >
+
+                <span class="tap-icon">
+                    📿
+                </span>
+
+                <span class="tap-text">
+                    TAP TO COUNT
+                </span>
+
+                <small>
+                    Tap once for each dhikr
+                </small>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTION BUTTONS
+        ================================================== -->
+
+        <section class="action-buttons">
+
+            <button
+                id="microphoneButton"
+                class="microphone-button"
+                type="button"
+            >
+                🎤 Count with Microphone
+            </button>
+
+
+            <button
+                id="resetButton"
+                class="reset-button"
+                type="button"
+            >
+                🔄 Reset Counter
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             MICROPHONE STATUS
+        ================================================== -->
+
+        <section class="voice-card">
+
+            <div class="voice-icon">
+                🎤
+            </div>
+
+            <div class="voice-content">
+
+                <h3>
+                    Voice Counting
+                </h3>
+
+                <p id="statusText">
+                    Tap the microphone to start.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INFORMATION
+        ================================================== -->
+
+        <section class="info-card">
+
+            <div class="info-icon">
+                💚
+            </div>
+
+            <div>
+
+                <h3>
+                    Keep Remembering Allah
+                </h3>
+
+                <p>
+                    "Verily, in the remembrance of Allah
+                    do hearts find rest."
+                </p>
+
+                <small>
+                    Qur'an 13:28
+                </small>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="tasbih.js"></script>
+
+</body>
+</html>

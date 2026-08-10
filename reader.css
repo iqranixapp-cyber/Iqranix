@@ -1,0 +1,876 @@
+/*=====================================
+            IQRANIX READER
+======================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+    --primary:#0B8F6C;
+
+    --primary-dark:#07624A;
+
+    --gold:#F4C95D;
+
+    --bg:#071E1A;
+
+    --card:#102B26;
+
+    --card2:#173A34;
+
+    --text:#FFFFFF;
+
+    --text2:#D9D9D9;
+
+    --radius:22px;
+
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+/*==============================*/
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+background:linear-gradient(
+
+180deg,
+
+#071E1A,
+
+#0B2A25
+
+);
+
+font-family:"Poppins",sans-serif;
+
+color:white;
+
+min-height:100vh;
+
+}
+
+/*==============================*/
+
+.reader-page{
+
+max-width:900px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+/*==============================
+ HERO
+==============================*/
+
+.hero{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:linear-gradient(
+
+135deg,
+
+var(--primary),
+
+#11B387
+
+);
+
+padding:24px;
+
+border-radius:28px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:22px;
+
+}
+
+.hero-text{
+
+flex:1;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:1.6rem;
+
+font-weight:700;
+
+}
+
+.hero h2{
+
+font-family:"Amiri",serif;
+
+font-size:2rem;
+
+margin-top:8px;
+
+}
+
+.hero p{
+
+margin-top:8px;
+
+opacity:.9;
+
+}
+
+.icon-btn{
+
+width:52px;
+
+height:52px;
+
+border:none;
+
+border-radius:16px;
+
+background:white;
+
+color:var(--primary);
+
+font-size:22px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.icon-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/*==============================
+ NOW READING
+==============================*/
+
+.reading-card{
+
+background:var(--card);
+
+padding:22px;
+
+border-radius:24px;
+
+margin-bottom:20px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+}
+
+.reading-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+background:rgba(11,143,108,.15);
+
+padding:8px 18px;
+
+border-radius:50px;
+
+color:var(--gold);
+
+font-weight:600;
+
+margin-bottom:15px;
+
+}
+
+.reading-number{
+
+font-size:1.1rem;
+
+font-weight:600;
+
+}/*=====================================
+        AUDIO PLAYER CARD
+======================================*/
+
+.audio-card{
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.audio-card h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--gold);
+
+    font-size:1.2rem;
+
+    margin-bottom:18px;
+
+}
+
+.audio-card h3 i{
+
+    font-size:22px;
+
+}
+
+/*=====================================
+      RECITER SELECT
+======================================*/
+
+#reciterSelect{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:var(--card2);
+
+    color:white;
+
+    font-size:16px;
+
+    padding:0 18px;
+
+    margin-bottom:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#reciterSelect:hover{
+
+    background:#204842;
+
+}
+
+#reciterSelect:focus{
+
+    border:2px solid var(--gold);
+
+}
+
+/*=====================================
+        AUDIO PLAYER
+======================================*/
+
+#audioPlayer{
+
+    width:100%;
+
+    height:55px;
+
+    border-radius:14px;
+
+    background:white;
+
+}
+
+/*=====================================
+        TOOL BUTTONS
+======================================*/
+
+.tools-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    margin-bottom:22px;
+
+}
+
+.tools-grid button{
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:15px;
+
+    background:var(--card);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.tools-grid button:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+.tools-grid button i{
+
+    margin-right:8px;
+
+}
+
+/*=====================================
+      MOBILE
+======================================*/
+
+@media(max-width:600px){
+
+    .tools-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}/*=====================================
+        MEMORIZATION CARD
+======================================*/
+
+.progress-card{
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    padding:22px;
+
+    margin-bottom:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.progress-card h3{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#264A44;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--gold),
+        #FFD976
+    );
+
+    transition:.5s;
+
+}
+
+#progressText{
+
+    margin-top:12px;
+
+    text-align:right;
+
+    color:var(--gold);
+
+    font-weight:600;
+
+}
+
+/*=====================================
+        VERSES
+======================================*/
+
+.verses-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/*=====================================
+        AYAH CARD
+======================================*/
+
+.ayah-card{
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    border-left:4px solid var(--gold);
+
+}
+
+.ayah-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/*=====================================
+      AYAH HEADER
+======================================*/
+
+.ayah-header{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:20px;
+
+}
+
+.ayah-number{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#222;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+}
+
+/*=====================================
+      ARABIC
+======================================*/
+
+.ayah-arabic{
+
+    font-family:"Amiri",serif;
+
+    font-size:2.2rem;
+
+    line-height:2.2;
+
+    text-align:right;
+
+    direction:rtl;
+
+    color:white;
+
+    margin-bottom:22px;
+
+}
+
+/*=====================================
+      TRANSLATION
+======================================*/
+
+.ayah-translation{
+
+    color:#E5E5E5;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:18px;
+
+}
+
+/*=====================================
+      LOADING
+======================================*/
+
+.loading-card{
+
+    background:var(--card);
+
+    border-radius:22px;
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.loading-card i{
+
+    color:var(--gold);
+
+    font-size:48px;
+
+    margin-bottom:18px;
+
+}
+
+/*=====================================
+      RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+    .ayah-arabic{
+
+        font-size:1.8rem;
+
+    }
+
+}/*=====================================
+        FOOTER
+======================================*/
+
+.reader-footer{
+
+    margin-top:50px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:#cfd8d5;
+
+}
+
+.reader-footer h2{
+
+    color:var(--gold);
+
+    margin-bottom:8px;
+
+    font-size:1.5rem;
+
+}
+
+.reader-footer p{
+
+    font-size:14px;
+
+    opacity:.85;
+
+}
+
+/*=====================================
+      FLOATING ACTION BUTTON
+======================================*/
+
+.fab{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:20px;
+
+    width:62px;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #14B88A
+    );
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+.fab:hover{
+
+    transform:scale(1.08);
+
+}
+
+/*=====================================
+      SCROLLBAR
+======================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0c2823;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#14B88A;
+
+}
+
+/*=====================================
+      SELECTION
+======================================*/
+
+::selection{
+
+    background:var(--gold);
+
+    color:#222;
+
+}
+
+/*=====================================
+      FADE ANIMATION
+======================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero,
+.reading-card,
+.audio-card,
+.tools-grid,
+.progress-card,
+.ayah-card{
+
+    animation:fadeUp .45s ease;
+
+}
+
+/*=====================================
+      MOBILE
+======================================*/
+
+@media(max-width:480px){
+
+    .hero{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        text-align:center;
+
+    }
+
+    .icon-btn{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+    .hero h1{
+
+        font-size:1.3rem;
+
+    }
+
+    .hero h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .reading-card{
+
+        padding:18px;
+
+    }
+
+    .ayah-card{
+
+        padding:18px;
+
+    }
+
+}/*=====================================
+            TAFSIR
+======================================*/
+
+.tafsir-controls,
+.tafsir-panel{
+
+background:var(--card);
+
+padding:22px;
+
+border-radius:22px;
+
+margin-bottom:20px;
+
+box-shadow:var(--shadow);
+
+}
+
+.tafsir-controls h3{
+
+margin-bottom:15px;
+
+color:var(--gold);
+
+}
+
+#tafsirSelect{
+
+width:100%;
+
+height:52px;
+
+border:none;
+
+border-radius:14px;
+
+background:var(--card2);
+
+color:white;
+
+padding:0 15px;
+
+font-size:16px;
+
+}
+
+.tafsir-panel h2{
+
+margin-bottom:18px;
+
+color:var(--gold);
+
+}
+
+#tafsirContent{
+
+line-height:1.9;
+
+font-size:16px;
+
+color:#ECECEC;
+
+}

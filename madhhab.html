@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Madhhab Settings • Iqranix</title>
+
+<meta name="theme-color" content="#0B6E4F">
+
+<link rel="stylesheet" href="madhhab.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<a href="settings.html" class="backButton">
+
+←
+
+</a>
+
+<div class="heroContent">
+
+<img
+src="logo.png"
+alt="Iqranix Logo"
+class="heroLogo">
+
+<h1>Madhhab</h1>
+
+<p>
+
+Choose the Islamic school used
+for calculating the Asr prayer
+time.
+
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="card">
+
+<h2>
+
+🕌 Select Madhhab
+
+</h2>
+
+<p class="description">
+
+Your choice only affects the
+calculation of the Asr prayer.
+All other prayer times remain
+the same.
+
+</p><div class="madhhabList">
+
+    <label class="madhhabCard">
+
+        <input
+            type="radio"
+            name="madhhab"
+            value="shafii"
+            checked>
+
+        <div class="cardContent">
+
+            <div class="title">
+
+                🕌 Shafi'i
+
+            </div>
+
+            <div class="subtitle">
+
+                Standard method used by most countries and Islamic organizations.
+
+            </div>
+
+        </div>
+
+    </label>
+
+    <label class="madhhabCard">
+
+        <input
+            type="radio"
+            name="madhhab"
+            value="hanafi">
+
+        <div class="cardContent">
+
+            <div class="title">
+
+                🕌 Hanafi
+
+            </div>
+
+            <div class="subtitle">
+
+                Uses the Hanafi method for calculating the Asr prayer time.
+
+            </div>
+
+        </div>
+
+    </label>
+
+</div>
+<!-- INFORMATION -->
+
+<section class="card">
+
+<h2>
+
+ℹ️ About Madhhabs
+
+</h2>
+
+<p class="description">
+
+A Madhhab is a recognized school of Islamic jurisprudence (Fiqh). In Iqranix,
+this setting is used only to calculate the time of the Asr prayer according to
+your preferred method. It does not affect your beliefs, worship, or any other
+prayer times.
+
+</p>
+
+<div class="infoBox">
+
+<h3>🕌 Shafi'i Method</h3>
+
+<p>
+
+The Shafi'i method is widely used in many parts of Africa, Southeast Asia,
+East Africa, Yemen, Egypt, and by many Islamic organizations worldwide.
+It calculates Asr when the length of an object's shadow equals its height
+(excluding the noon shadow).
+
+</p>
+
+</div>
+
+<div class="infoBox">
+
+<h3>🕌 Hanafi Method</h3>
+
+<p>
+
+The Hanafi method is followed by many Muslims in South Asia, Türkiye,
+Central Asia, and other regions. It calculates Asr when the length of an
+object's shadow becomes twice its height (excluding the noon shadow).
+
+</p>
+
+</div>
+
+<div class="noteBox">
+
+<strong>Note:</strong>
+
+Changing your Madhhab in Iqranix only changes the calculation of the
+Asr prayer time. All other prayer times remain unchanged.
+
+</div>
+
+<button id="saveMadhhab" class="saveButton">
+
+💾 Save Madhhab
+
+</button>
+
+</section>
+
+</main>
+
+<script src="madhhab.js"></script>
+
+</body>
+
+</html>
