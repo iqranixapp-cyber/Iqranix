@@ -44,8 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (accepted !== "true") {
         window.location.replace("welcome.html");
     }
-
 });
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then(registration => {
+                console.log("Iqranix service worker registered:", registration.scope);
+            })
+            .catch(error => {
+                console.error("Iqranix service worker registration failed:", error);
+            });
+    });
+}
+</script>
 </script> 
     
 
